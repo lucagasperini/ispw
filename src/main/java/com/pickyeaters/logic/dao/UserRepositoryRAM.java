@@ -15,11 +15,11 @@ public class UserRepositoryRAM implements UserRepository {
 
     public UserRepositoryRAM(Logger logger) {
         this.logger = logger;
-        userList.add(new Restaurateur("1", "lucaR", "luca", "Luca", "Bianchi"));
-        userList.add(new Pickie("2", "lucaP", "luca", "Luca", "Rossi"));
-        userList.add(new Pickie("3", "testP", "test", "Marco", "Bianchi"));
-        userList.add(new Restaurateur("4", "testR", "test", "Marco", "Rossi"));
-        userList.add(new Restaurateur("5", "test", "test", "Giuseppe", "Verdi"));
+        userList.add(new Restaurateur("1", "lucaR", "d70f47790f689414789eeff231703429c7f88a10210775906460edbf38589d90", "Luca", "Bianchi"));
+        userList.add(new Pickie("2", "lucaP", "d70f47790f689414789eeff231703429c7f88a10210775906460edbf38589d90", "Luca", "Rossi"));
+        userList.add(new Pickie("3", "testP", "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08", "Marco", "Bianchi"));
+        userList.add(new Restaurateur("4", "testR", "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08", "Marco", "Rossi"));
+        userList.add(new Restaurateur("5", "test", "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08", "Giuseppe", "Verdi"));
     }
 
     public Optional<User> getUserByEmail(String email) {
