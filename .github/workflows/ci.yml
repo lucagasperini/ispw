@@ -49,11 +49,12 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
-    - name: Build with Maven
-      env:
+    - name: Build, test and analyze with SonarQube
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           PICKY_DATABASE_HOST: localhost
           PICKY_DATABASE_NAME: postgres
           PICKY_DATABASE_PORT: 5432
           PICKY_DATABASE_USER: postgres
           PICKY_DATABASE_PASS: postgres
-      run: mvn -B test --file pom.xml
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=lucagasperini_ispw
