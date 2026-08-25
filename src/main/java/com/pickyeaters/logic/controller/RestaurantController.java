@@ -58,10 +58,12 @@ public class RestaurantController {
         try {
             String userID = loginController.requestUserID(request);
             Restaurant restaurant = new Restaurant(
+                    "",
                     request.getRestaurant().getName(),
                     request.getRestaurant().getPhone(),
                     request.getRestaurant().getAddress(),
-                    request.getRestaurant().getCity()
+                    request.getRestaurant().getCity(),
+                    null
             );
             repository.editRestaurantByOwner(userID, restaurant);
             return Result.ok(new EditRestaurantReply());

@@ -57,8 +57,9 @@ public class MenuRepositoryDB implements MenuRepository {
             query.close();
 
             return ingredientList;
-        } catch (DatabaseControllerException ex) {
-            throw new GenericRepositoryException(ex.getMessage());
+        } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
+            throw new GenericRepositoryException(e.getMessage());
         }
     }
 
@@ -140,8 +141,9 @@ public class MenuRepositoryDB implements MenuRepository {
             for(Ingredient i : dish.getIngredientList()) {
                 createDishIngredient(dishID, i);
             }
-        } catch (DatabaseControllerException ex) {
-            throw new GenericRepositoryException(ex.getMessage());
+        } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
+            throw new GenericRepositoryException(e.getMessage());
         }  catch (NoSuchElementException e) {
             throw new GenericRepositoryException("Cannot read dish id");
         }
@@ -167,8 +169,9 @@ public class MenuRepositoryDB implements MenuRepository {
             query.setString(dishID);
             query.execute();
             query.close();
-        } catch (DatabaseControllerException ex) {
-            throw new GenericRepositoryException(ex.getMessage());
+        } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
+            throw new GenericRepositoryException(e.getMessage());
         }
     }
 
@@ -204,8 +207,9 @@ public class MenuRepositoryDB implements MenuRepository {
             query.close();
 
             return Optional.ofNullable(dish);
-        } catch (DatabaseControllerException ex) {
-            throw new GenericRepositoryException(ex.getMessage());
+        } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
+            throw new GenericRepositoryException(e.getMessage());
         } catch (NoSuchElementException e) {
             return Optional.empty();
         }
@@ -227,8 +231,9 @@ public class MenuRepositoryDB implements MenuRepository {
                 createDishIngredient(dish.getID(), i);
             }
 
-        } catch (DatabaseControllerException ex) {
-            throw new GenericRepositoryException(ex.getMessage());
+        } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
+            throw new GenericRepositoryException(e.getMessage());
         }
     }
 }

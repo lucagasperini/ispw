@@ -10,64 +10,34 @@ import java.util.*;
 public class MenuRepositoryRAM implements MenuRepository {
     private final Logger logger;
     private Map<String, List<Dish>> map = new HashMap<>();
-    private List<Ingredient> ingredientList = new ArrayList<>();
     private int nextDishID = 100;
 
-    public MenuRepositoryRAM(Logger logger) {
+    public MenuRepositoryRAM(Logger logger, IngredientRepository ingredientRepository) {
         this.logger = logger;
-        Allergen a1 = new Allergen("1", "Allergen 1");
-        Allergen a2 = new Allergen("2", "Allergen 2");
-        Allergen a3 = new Allergen("3", "Allergen 3");
-        Allergen a4 = new Allergen("4", "Allergen 4");
-
-        List<Allergen> la1 = new ArrayList<>();
-        la1.add(a1);
-        la1.add(a2);
-        List<Allergen> la2 = new ArrayList<>();
-        la2.add(a3);
-        la2.add(a4);
-        List<Allergen> la3 = new ArrayList<>();
-        la3.add(a1);
-        la3.add(a4);
-        List<Allergen> la4 = new ArrayList<>();
-        la4.add(a3);
-        List<Allergen> la5 = new ArrayList<>();
-
-        Ingredient i1 = new Ingredient("1", "Ingredient 1", la1, false, false);
-        Ingredient i2 = new Ingredient("2", "Ingredient 2", la2, true, true);
-        Ingredient i3 = new Ingredient("3", "Ingredient 3", la3, false, false);
-        Ingredient i4 = new Ingredient("4", "Ingredient 4", la4, true, false);
-        Ingredient i5 = new Ingredient("5", "Ingredient 5", la5, false, true);
-
-        ingredientList.add(i1);
-        ingredientList.add(i2);
-        ingredientList.add(i3);
-        ingredientList.add(i4);
-        ingredientList.add(i5);
 
         List<Ingredient> li1 = new ArrayList<>();
-        li1.add(i1);
-        li1.add(i2);
+        li1.add(ingredientRepository.findIngredientByName("Ingredient 1").orElseThrow());
+        li1.add(ingredientRepository.findIngredientByName("Ingredient 2").orElseThrow());
         List<Ingredient> li2 = new ArrayList<>();
-        li2.add(i1);
-        li2.add(i3);
+        li2.add(ingredientRepository.findIngredientByName("Ingredient 1").orElseThrow());
+        li2.add(ingredientRepository.findIngredientByName("Ingredient 3").orElseThrow());
         List<Ingredient> li3 = new ArrayList<>();
-        li3.add(i2);
+        li3.add(ingredientRepository.findIngredientByName("Ingredient 2").orElseThrow());
         List<Ingredient> li4 = new ArrayList<>();
-        li4.add(i5);
+        li4.add(ingredientRepository.findIngredientByName("Ingredient 5").orElseThrow());
         List<Ingredient> li5 = new ArrayList<>();
-        li5.add(i2);
-        li5.add(i3);
-        li5.add(i4);
+        li5.add(ingredientRepository.findIngredientByName("Ingredient 2").orElseThrow());
+        li5.add(ingredientRepository.findIngredientByName("Ingredient 3").orElseThrow());
+        li5.add(ingredientRepository.findIngredientByName("Ingredient 4").orElseThrow());
         List<Ingredient> li6 = new ArrayList<>();
-        li6.add(i5);
+        li6.add(ingredientRepository.findIngredientByName("Ingredient 5").orElseThrow());
         List<Ingredient> li7 = new ArrayList<>();
-        li7.add(i1);
-        li7.add(i2);
+        li7.add(ingredientRepository.findIngredientByName("Ingredient 1").orElseThrow());
+        li7.add(ingredientRepository.findIngredientByName("Ingredient 2").orElseThrow());
         List<Ingredient> li8 = new ArrayList<>();
-        li8.add(i3);
+        li8.add(ingredientRepository.findIngredientByName("Ingredient 3").orElseThrow());
         List<Ingredient> li9 = new ArrayList<>();
-        li9.add(i5);
+        li9.add(ingredientRepository.findIngredientByName("Ingredient 5").orElseThrow());
 
         List<Dish> r1 = new ArrayList<>();
         r1.add(new DishFirst("1", "R1 Dish name 1", "R1 Description 1", li1));

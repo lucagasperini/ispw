@@ -1,4 +1,4 @@
-package com.pickyeaters.logic.cli;
+package com.pickyeaters.logic.utils;
 
 public class Printer {
     public void println(String text) {

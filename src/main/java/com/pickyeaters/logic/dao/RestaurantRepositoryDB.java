@@ -4,6 +4,8 @@ import com.pickyeaters.logic.controller.DatabaseController;
 import com.pickyeaters.logic.exception.DatabaseControllerException;
 import com.pickyeaters.logic.exception.GenericRepositoryException;
 import com.pickyeaters.logic.model.Restaurant;
+import com.pickyeaters.logic.model.Restaurateur;
+import com.pickyeaters.logic.model.User;
 import com.pickyeaters.logic.utils.Logger;
 
 import java.util.ArrayList;
@@ -14,51 +16,51 @@ import java.util.Optional;
 public class RestaurantRepositoryDB implements RestaurantRepository{
     private final Logger logger;
     private DatabaseController database;
+    private UserRepository userRepository;
 
-    public RestaurantRepositoryDB(Logger logger, DatabaseController database) {
+    public RestaurantRepositoryDB(Logger logger, DatabaseController database, UserRepository userRepository) {
         this.logger = logger;
         this.database = database;
+        this.userRepository = userRepository;
     }
 
-    private Optional<String> readRestaurantIDFromUserID(String userID) {
-        DatabaseController.Query query = database.query(
-                "CALL get_restaurant_id_from_user(?,?)"
-        );
-        query.setString(userID);
-        query.registerOutString();
-        query.execute();
-        Optional<String> restaurantID = query.getString();
-        query.close();
-
-        return restaurantID;
-    }
-
-    public Optional<Restaurant> findRestaurantByOwner(String restaurateurID) {
+    public Optional<Restaurant> findRestaurantByOwner(String userID) {
         try {
-            String restaurantID = null;
-            try {
-                restaurantID = readRestaurantIDFromUserID(restaurateurID).orElseThrow();
-            } catch (NoSuchElementException e) {
-                throw new GenericRepositoryException("Cannot find restaurantID");
+            User user = userRepository.getUserByID(userID).orElseThrow();
+            if (!(user instanceof Restaurateur)) {
+                GenericRepositoryException ex = new GenericRepositoryException("Cannot find restaurantID");
+                logger.error(ex.getMessage(), ex);
+                throw ex;
             }
 
             DatabaseController.Query query = database.query(
-                    "CALL get_restaurant_by_owner(?,?,?,?,?)"
+                    "CALL get_restaurant_by_owner_id(?,?,?,?,?,?)"
             );
-            query.setString(restaurantID);
+            query.setString(userID);
             query.registerOutString();
             query.registerOutString();
             query.registerOutString();
             query.registerOutString();
+            query.registerOutString();
+
             query.execute();
-            String name = query.getString().orElseThrow();
-            String phone = query.getString().orElseThrow();
-            String address = query.getString().orElseThrow();
-            String city = query.getString().orElseThrow();
+            String restID = query.getString().orElseThrow();
+            String restName = query.getString().orElseThrow();
+            String restPhone = query.getString().orElseThrow();
+            String restAddress = query.getString().orElseThrow();
+            String restCity = query.getString().orElseThrow();
             query.close();
 
-            return Optional.of(new Restaurant(restaurantID, name, phone, address, city));
+            return Optional.of(new Restaurant(
+                    restID,
+                    restName,
+                    restPhone,
+                    restAddress,
+                    restCity,
+                    (Restaurateur) user
+            ));
         } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
             throw new GenericRepositoryException(e.getMessage());
         } catch (NoSuchElementException e) {
             return Optional.empty();
@@ -67,7 +69,7 @@ public class RestaurantRepositoryDB implements RestaurantRepository{
 
     public void editRestaurantByOwner(String restaurateurID, Restaurant restaurant) {
         try {
-            String restaurantID = readRestaurantIDFromUserID(restaurateurID).orElseThrow();
+            String restaurantID = findRestaurantByOwner(restaurateurID).orElseThrow().getID();
 
             DatabaseController.Query query = database.query(
                     "UPDATE \"Restaurant\" set name=?, phone=?, address=?, city=? WHERE id = ?::uuid"
@@ -80,6 +82,7 @@ public class RestaurantRepositoryDB implements RestaurantRepository{
             query.execute();
             query.close();
         } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
             throw new GenericRepositoryException(e.getMessage());
         } catch (NoSuchElementException e) {
             throw new GenericRepositoryException("Invalid restaurateurID provided: " + restaurateurID);
@@ -90,7 +93,7 @@ public class RestaurantRepositoryDB implements RestaurantRepository{
         try {
             List<Restaurant> restaurantList = new ArrayList<>();
             DatabaseController.Query query = database.queryResultSet(
-                    "SELECT id, name, phone, address FROM \"Restaurant\" WHERE city = ?;"
+                    "SELECT r.id, r.name, r.phone, r.address, u.id, u.email, u.firstname, u.lastname FROM \"User\" AS u JOIN \"Restaurant\" AS r ON fk_restaurant=r.id WHERE city = ?;"
             );
             query.setString(city);
 
@@ -98,12 +101,28 @@ public class RestaurantRepositoryDB implements RestaurantRepository{
 
             while (query.next()) {
                 try {
+                    String restID = query.getString().orElseThrow();
+                    String restName = query.getString().orElseThrow();
+                    String restPhone = query.getString().orElseThrow();
+                    String restAddress = query.getString().orElseThrow();
+                    String userID = query.getString().orElseThrow();
+                    String userEmail = query.getString().orElseThrow();
+                    String userFirstname = query.getString().orElseThrow();
+                    String userLastname = query.getString().orElseThrow();
+
                     restaurantList.add(new Restaurant(
-                            query.getString().orElseThrow(),
-                            query.getString().orElseThrow(),
-                            query.getString().orElseThrow(),
-                            query.getString().orElseThrow(),
-                            city
+                            restID,
+                            restName,
+                            restPhone,
+                            restAddress,
+                            city,
+                            new Restaurateur(
+                                    userID,
+                                    userEmail,
+                                    "",
+                                    userFirstname,
+                                    userLastname
+                            )
                     ));
                 } catch (NoSuchElementException ignored) {
                     logger.warn("findRestaurantByCity: Skip invalid element on database ");
@@ -113,6 +132,7 @@ public class RestaurantRepositoryDB implements RestaurantRepository{
 
             return restaurantList;
         } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
             throw new GenericRepositoryException(e.getMessage());
         }
     }
@@ -137,6 +157,7 @@ public class RestaurantRepositoryDB implements RestaurantRepository{
 
             return cityList;
         } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
             throw new GenericRepositoryException(e.getMessage());
         }
     }

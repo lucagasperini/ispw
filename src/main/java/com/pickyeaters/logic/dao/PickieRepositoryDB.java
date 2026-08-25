@@ -116,12 +116,13 @@ public class PickieRepositoryDB implements PickieRepository {
             ));
 
         } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
             throw new GenericRepositoryException(e.getMessage());
         }
     }
 
 
-    void createDislikeIngredient(String userID, Ingredient ingredient) {
+    private void createDislikeIngredient(String userID, Ingredient ingredient) {
         DatabaseController.Query query = database.query(
                 "INSERT INTO \"User_ExcludedIngredient\" (fk_user, fk_ingredient) VALUES (?::uuid, ?::uuid)"
         );
@@ -131,7 +132,7 @@ public class PickieRepositoryDB implements PickieRepository {
         query.close();
     }
 
-    void createAllergenListUser(String userID, Allergen allergen) {
+    private void createAllergenListUser(String userID, Allergen allergen) {
         DatabaseController.Query query = database.query(
                 "INSERT INTO \"User_Allergen\" (fk_user, fk_allergen) VALUES (?::uuid, ?::uuid)"
         );
@@ -142,7 +143,7 @@ public class PickieRepositoryDB implements PickieRepository {
     }
 
 
-    void createExcludedGroupListUser(String userID, ExcludedGroup excludedGroup) {
+    private void createExcludedGroupListUser(String userID, ExcludedGroup excludedGroup) {
         DatabaseController.Query query = database.query(
                 "INSERT INTO \"User_ExcludedGroup\" (fk_user, fk_excluded_group) VALUES (?::uuid, ?::uuid)"
         );
@@ -152,7 +153,7 @@ public class PickieRepositoryDB implements PickieRepository {
         query.close();
     }
 
-    void deleteAllUserDislikeIngredient(String userID) {
+    private void deleteAllUserDislikeIngredient(String userID) {
         DatabaseController.Query query = database.query(
                 "DELETE FROM \"User_ExcludedIngredient\" WHERE fk_user = ?::uuid"
         );
@@ -161,7 +162,7 @@ public class PickieRepositoryDB implements PickieRepository {
         query.close();
     }
 
-    void deleteAllUserAllergen(String userID) {
+    private void deleteAllUserAllergen(String userID) {
         DatabaseController.Query query = database.query(
                 "DELETE FROM \"User_Allergen\" WHERE fk_user = ?::uuid"
         );
@@ -170,7 +171,7 @@ public class PickieRepositoryDB implements PickieRepository {
         query.close();
     }
 
-    void deleteAllUserExcludedGroup(String userID) {
+    private void deleteAllUserExcludedGroup(String userID) {
         DatabaseController.Query query = database.query(
                 "DELETE FROM \"User_ExcludedGroup\" WHERE fk_user = ?::uuid"
         );
@@ -198,6 +199,7 @@ public class PickieRepositoryDB implements PickieRepository {
             }
 
         } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
             throw new GenericRepositoryException(e.getMessage());
         }
     }

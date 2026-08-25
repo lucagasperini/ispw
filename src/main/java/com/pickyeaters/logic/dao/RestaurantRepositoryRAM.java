@@ -7,56 +7,70 @@ import com.pickyeaters.logic.utils.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 public class RestaurantRepositoryRAM implements RestaurantRepository {
     private final Logger logger;
-    private final List<Restaurateur> restaurateurList = new ArrayList<>();
     private final List<Restaurant> restaurantList = new ArrayList<>();
 
-    public RestaurantRepositoryRAM(Logger logger) {
+    public RestaurantRepositoryRAM(Logger logger, UserRepository userRepository) {
         this.logger = logger;
-        Restaurant r1 = new Restaurant("1","Test Ristorante", "+32 342", "Via aaa", "Roma");
-        Restaurant r2 = new Restaurant("2","Test Ristorante 2", "+43 342", "Via bbb", "Roma");
-        Restaurant r3 = new Restaurant("3","Test Ristorante 3", "+45 342", "Via ccc", "Torino");
+
+        Restaurant r1 = new Restaurant(
+                "1",
+                "Test Ristorante",
+                "+32 342",
+                "Via aaa",
+                "Roma",
+                (Restaurateur) userRepository.getUserByEmail("lucaR").orElseThrow()
+        );
+
+        Restaurant r2 = new Restaurant(
+                "2",
+                "Test Ristorante 2",
+                "+43 342",
+                "Via bbb",
+                "Roma",
+                (Restaurateur) userRepository.getUserByEmail("testR").orElseThrow()
+        );
+
+        Restaurant r3 = new Restaurant(
+                "3",
+                "Test Ristorante 3",
+                "+45 342",
+                "Via ccc",
+                "Torino",
+                (Restaurateur) userRepository.getUserByEmail("test").orElseThrow()
+        );
 
         restaurantList.add(r1);
         restaurantList.add(r2);
         restaurantList.add(r3);
-
-        Restaurateur u1 = new Restaurateur("1", "lucaR", "", "Luca", "Bianchi", r1);
-        Restaurateur u2 = new Restaurateur("4", "testR", "", "Marco", "Rossi", r3);
-        Restaurateur u3 = new Restaurateur("5", "test", "", "Giuseppe", "Verdi", r2);
-
-        restaurateurList.add(u1);
-        restaurateurList.add(u2);
-        restaurateurList.add(u3);
-
     }
 
     public Optional<Restaurant> findRestaurantByOwner(String restaurateurID){
-        for(Restaurateur r: restaurateurList) {
-            if(r.getID().equals(restaurateurID)) {
-                return Optional.ofNullable(r.getRestaurant());
+        for(Restaurant r: restaurantList) {
+            if(r.getRestaurateur().getID().equals(restaurateurID)) {
+                return Optional.of(r);
             }
         }
         return Optional.empty();
     }
 
     public void editRestaurantByOwner(String restaurateurID, Restaurant restaurant) {
-        for(Restaurateur r: restaurateurList) {
-            if(r.getID().equals(restaurateurID)) {
-                Restaurant old = r.getRestaurant();
-                old.setName(restaurant.getName());
-                old.setAddress(restaurant.getAddress());
-                old.setPhone(restaurant.getPhone());
-                old.setCity(restaurant.getCity());
-                return;
-            }
+        try {
+            Restaurant old = findRestaurantByOwner(restaurateurID).orElseThrow();
+            old.setName(restaurant.getName());
+            old.setAddress(restaurant.getAddress());
+            old.setPhone(restaurant.getPhone());
+            old.setCity(restaurant.getCity());
+
+        } catch (NoSuchElementException e) {
+            GenericRepositoryException ex = new GenericRepositoryException("Cannot find selected restaurant");
+            logger.error(ex.getMessage(), ex);
+            throw ex;
         }
-        GenericRepositoryException e = new GenericRepositoryException("Cannot find selected restaurant");
-        logger.error(e.getMessage(), e);
-        throw e;
     }
 
     public List<Restaurant> findRestaurantByCity(String city) {

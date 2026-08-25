@@ -59,13 +59,13 @@ public class IngredientRepositoryRAM implements IngredientRepository {
         List<Ingredient> li2 = new ArrayList<>();
         li1.add(i5);
 
-        excludedGroupList.add(new ExcludedGroup("1", "PREGNANT", li1));
-        excludedGroupList.add(new ExcludedGroup("2", "HALAL", li2));
-        excludedGroupList.add(new ExcludedGroup("3", "CARNIVORE", li2));
-        excludedGroupList.add(new ExcludedGroup("4", "PESCATARIAN", li2));
-        excludedGroupList.add(new ExcludedGroup("5", "VEGETARIAN", li2));
-        excludedGroupList.add(new ExcludedGroup("6", "KOSHER", li2));
-        excludedGroupList.add(new ExcludedGroup("7", "VEGAN", li2));
+        excludedGroupList.add(new ExcludedGroup("1", ExcludedGroup.GROUP_NAME_PREGNANT, li1));
+        excludedGroupList.add(new ExcludedGroup("2", ExcludedGroup.GROUP_NAME_HALAL, li2));
+        excludedGroupList.add(new ExcludedGroup("3", ExcludedGroup.GROUP_NAME_CARNIVORE, li2));
+        excludedGroupList.add(new ExcludedGroup("4", ExcludedGroup.GROUP_NAME_PESCATARIAN, li2));
+        excludedGroupList.add(new ExcludedGroup("5", ExcludedGroup.GROUP_NAME_VEGETARIAN, li2));
+        excludedGroupList.add(new ExcludedGroup("6", ExcludedGroup.GROUP_NAME_KOSHER, li2));
+        excludedGroupList.add(new ExcludedGroup("7", ExcludedGroup.GROUP_NAME_VEGAN, li2));
     }
 
     public Optional<Ingredient> findIngredientByName(String ingredientName) {

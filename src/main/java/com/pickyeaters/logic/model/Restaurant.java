@@ -6,17 +6,15 @@ public class Restaurant {
     private String phone;
     private String address;
     private String city;
+    private Restaurateur restaurateur;
 
-    public Restaurant(String id, String name, String phone, String address, String city) {
+    public Restaurant(String id, String name, String phone, String address, String city, Restaurateur restaurateur) {
         this.id = id;
         this.name = name;
         this.phone = phone;
         this.address = address;
         this.city = city;
-    }
-
-    public Restaurant(String name, String phone, String address, String city) {
-        this("", name, phone, address, city);
+        this.restaurateur = restaurateur;
     }
 
     public String getID() {
@@ -39,6 +37,10 @@ public class Restaurant {
         return city;
     }
 
+    public Restaurateur getRestaurateur() {
+        return restaurateur;
+    }
+
     public void setID(String id) {
         this.id = id;
     }
@@ -57,5 +59,9 @@ public class Restaurant {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public void setRestaurateur(Restaurateur restaurateur) {
+        this.restaurateur = restaurateur;
     }
 }

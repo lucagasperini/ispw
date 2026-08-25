@@ -13,12 +13,10 @@ public abstract class VirtualForm  {
 
     protected final Application app;
     private final String formName;
-    private final Printer printer;
 
     protected VirtualForm(Application app, String formName) {
         this.formName = formName;
         this.app = app;
-        printer = new Printer();
     }
 
     private void showError(String text, String key) {
@@ -57,7 +55,7 @@ public abstract class VirtualForm  {
     }
 
     public void print(String text) {
-        printer.print(text);
+        app.getPrinter().print(text);
     }
 
     public String i18n(String key) {
@@ -65,7 +63,7 @@ public abstract class VirtualForm  {
     }
 
     public void printField(String key, String value) {
-        printer.println(i18n(key) + ": " + value);
+        app.getPrinter().println(i18n(key) + ": " + value);
     }
 
     public void printFieldList(List<String> value) {
@@ -78,7 +76,7 @@ public abstract class VirtualForm  {
             builder.append(",");
         }
         builder.deleteCharAt(builder.length() - 1);
-        printer.println(builder.toString());
+        app.getPrinter().println(builder.toString());
     }
 
     public void printFieldList(String key, List<String> value) {
@@ -88,13 +86,13 @@ public abstract class VirtualForm  {
             builder.append(",");
         }
         builder.deleteCharAt(builder.length() - 1);
-        printer.println(i18n(key) + ": " + builder);
+        app.getPrinter().println(i18n(key) + ": " + builder);
     }
 
     public void printField(String key, boolean value) {
         String yes = i18n("YES");
         String no = i18n("NO");
-        printer.println(i18n(key) + ": " + (value ? yes : no));
+        app.getPrinter().println(i18n(key) + ": " + (value ? yes : no));
     }
 
     public String askField(String key) {
@@ -104,9 +102,9 @@ public abstract class VirtualForm  {
     public String askField(String key, String defaultValue) {
         Scanner userInput = new Scanner(System.in);
         if(defaultValue.isEmpty()) {
-            printer.print(i18n(key) + ": ");
+            app.getPrinter().print(i18n(key) + ": ");
         } else {
-            printer.print(i18n(key) + " [" + defaultValue + "]: ");
+            app.getPrinter().print(i18n(key) + " [" + defaultValue + "]: ");
         }
         String out = userInput.nextLine();
         if(out.isEmpty()) {
@@ -119,7 +117,7 @@ public abstract class VirtualForm  {
     public boolean askFieldBoolean(String key) {
         Scanner userInput = new Scanner(System.in);
 
-        printer.print(i18n(key) + "? [Y/N]: ");
+        app.getPrinter().print(i18n(key) + "? [Y/N]: ");
         String out = userInput.nextLine().toUpperCase();
 
         return out.equals("Y");
@@ -141,14 +139,14 @@ public abstract class VirtualForm  {
     protected void requestLoop() {
         Scanner userInput = new Scanner(System.in);
         while(true) {
-            printer.print(formName + "> ");
+            app.getPrinter().print(formName + "> ");
             String input = userInput.nextLine().toLowerCase();
             switch (input) {
                 case "b", "back" -> {
                     return;
                 }
                 case "q", "quit" -> System.exit(0);
-                case "h", "help" -> printer.println("""
+                case "h", "help" -> app.getPrinter().println("""
                                 [back, b]
                                 [quit, q]
                                 """ +

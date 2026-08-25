@@ -20,19 +20,25 @@
   <component name="ChangeListManager">
     <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Remove some code smell">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/DatabaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/DatabaseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/PickieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/PickieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/MainCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/MainCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/utils/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/VirtualForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/VirtualForm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/RestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/RestaurantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryRAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryRAM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryRAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryRAM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepositoryDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepositoryRAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepositoryRAM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepositoryDB.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepositoryRAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepositoryRAM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/UserRepositoryRAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/UserRepositoryRAM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/factory/DishFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/factory/DishFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/factory/UserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/factory/UserFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/utils/LiteralMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/utils/LiteralMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/UserRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/UserRepositoryDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/ExcludedGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/ExcludedGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Restaurant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Restaurateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Restaurateur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/utils/FileLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/utils/FileLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/setup.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +48,7 @@
   <component name="DatabaseLocalColorSettings">
     <colors>
       <entry key="0ca48321-52ac-41c8-a9ee-bbac3b120ced" value="" />
+      <entry key="29df8ba2-dcc9-4bcf-89ea-50e3cd3bdfd1" value="" />
     </colors>
   </component>
   <component name="EmbeddingIndexingInfo">
@@ -200,7 +207,7 @@
       <command value="mvn javafx:run" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainCLI">
+  <component name="RunManager" selected="Application.MainGUI DB">
     <configuration name="MainCLI DB" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.pickyeaters.logic.cli.MainCLI" />
       <module name="PickyEaters" />
@@ -444,8 +451,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PickieTest" />
         <item itemvalue="JUnit.RestaurateurTest" />
+        <item itemvalue="JUnit.PickieTest" />
         <item itemvalue="Application.MainGUI" />
       </list>
     </recent_temporary>
@@ -499,6 +506,16 @@
           <properties class="java.lang.UnsupportedOperationException" package="java.lang" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/RestaurantDetailsForm.java</url>
+          <line>57</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/restaurant/RestaurantView.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

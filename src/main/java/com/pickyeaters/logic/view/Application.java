@@ -8,6 +8,7 @@ import com.pickyeaters.logic.factory.DishFactory;
 import com.pickyeaters.logic.factory.UserFactory;
 import com.pickyeaters.logic.utils.FileLogger;
 import com.pickyeaters.logic.utils.Logger;
+import com.pickyeaters.logic.utils.Printer;
 import com.pickyeaters.logic.utils.VoidLogger;
 import com.pickyeaters.logic.view.dish.AddDishView;
 import com.pickyeaters.logic.view.dish.ChangeDishView;
@@ -20,6 +21,7 @@ import com.pickyeaters.logic.view.restaurant.ShowRestaurantView;
 public class Application {
     private final SystemParameterBean systemParameter = new SystemParameterBean();
 
+    private final Printer printer;
     private Logger logger;
 
     private final ConfigView configView;
@@ -57,6 +59,7 @@ public class Application {
     private UserFactory userFactory;
 
     public Application(String[] args) {
+        printer = new Printer();
         processSystemParameter(args);
         setupLogger();
         databaseController = new DatabaseController(logger);
@@ -69,7 +72,7 @@ public class Application {
         if(systemParameter.getLogFile().isEmpty()) {
             logger = new VoidLogger();
         } else {
-            logger = new FileLogger(systemParameter.getLogFile());
+            logger = new FileLogger(printer, systemParameter.getLogFile());
         }
     }
 
@@ -85,6 +88,10 @@ public class Application {
         }
     }
 
+    public Printer getPrinter() {
+        return printer;
+    }
+
     public void systemStart() {
         parameterCheck();
 
@@ -96,14 +103,14 @@ public class Application {
             ingredientRepository = new IngredientRepositoryDB(logger, databaseController);
             userRepository = new UserRepositoryDB(logger, databaseController, userFactory);
             menuRepository = new MenuRepositoryDB(logger, databaseController, ingredientRepository, dishFactory);
-            restaurantRepository = new RestaurantRepositoryDB(logger, databaseController);
+            restaurantRepository = new RestaurantRepositoryDB(logger, databaseController, userRepository);
             pickieRepository = new PickieRepositoryDB(logger, databaseController, ingredientRepository);
         } else {
             logger.info("Selected data mode: memory connection");
             ingredientRepository = new IngredientRepositoryRAM(logger);
             userRepository = new UserRepositoryRAM(logger);
-            menuRepository = new MenuRepositoryRAM(logger);
-            restaurantRepository = new RestaurantRepositoryRAM(logger);
+            menuRepository = new MenuRepositoryRAM(logger, ingredientRepository);
+            restaurantRepository = new RestaurantRepositoryRAM(logger, userRepository);
             pickieRepository = new PickieRepositoryRAM(logger, ingredientRepository);
         }
 

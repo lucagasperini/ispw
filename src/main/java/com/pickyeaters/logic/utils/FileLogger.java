@@ -7,8 +7,10 @@ import java.time.ZoneId;
 
 public class FileLogger implements Logger {
     private final String filePath;
+    private final Printer printer;
 
-    public FileLogger(String filePath) {
+    public FileLogger(Printer printer, String filePath) {
+        this.printer = printer;
         this.filePath = filePath;
         info("Starting Pickyeater...");
     }
@@ -36,7 +38,7 @@ public class FileLogger implements Logger {
             out.println("[" + java.time.LocalDateTime.now(ZoneId.systemDefault()) + "] [" + level + "] " + message);
         } catch (IOException e) {
             // If we fail to write the log file, at least print it to console for debugging
-            System.err.println("FATAL ERROR: Could not write to log file " + filePath + ". Error: " + e.getMessage());
+            printer.printError("FATAL ERROR: Could not write to log file " + filePath + ". Error: " + e.getMessage());
         }
     }
 
@@ -46,7 +48,7 @@ public class FileLogger implements Logger {
             t.printStackTrace(out); // Write stack trace directly to the output stream
             out.println("--- Stack Trace End ---\n");
         } catch (IOException e) {
-            System.err.println("FATAL ERROR: Could not write stack trace to log file " + filePath + ". Error: " + e.getMessage());
+            printer.printError("FATAL ERROR: Could not write stack trace to log file " + filePath + ". Error: " + e.getMessage());
         }
     }
 }

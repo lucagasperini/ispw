@@ -9,39 +9,22 @@ import java.util.*;
 public class PickieRepositoryRAM implements PickieRepository {
     private final Logger logger;
     private final Map<String, EatingPreference> eatingPreferenceMap;
-    private final IngredientRepository ingredientRepository;
 
     public PickieRepositoryRAM(Logger logger, IngredientRepository ingredientRepository) {
         this.logger = logger;
-        this.ingredientRepository = ingredientRepository;
         eatingPreferenceMap = new HashMap<>();
 
-        Allergen a1 = new Allergen("1", "Allergen 1");
-        Allergen a2 = new Allergen("2", "Allergen 2");
-        Allergen a3 = new Allergen("3", "Allergen 3");
-        Allergen a4 = new Allergen("4", "Allergen 4");
-
         List<Allergen> la1 = new ArrayList<>();
-        la1.add(a1);
-        la1.add(a2);
-        List<Allergen> la2 = new ArrayList<>();
-        la2.add(a3);
-        la2.add(a4);
-        List<Allergen> la4 = new ArrayList<>();
-        la4.add(a3);
-
-        Ingredient i2 = new Ingredient("2", "Ingredient 2", la2, false, false);
-        Ingredient i4 = new Ingredient("4", "Ingredient 4", la4, false, false);
+        la1.add(ingredientRepository.findAllergenByName("Allergen 1").orElseThrow());
+        la1.add(ingredientRepository.findAllergenByName("Allergen 2").orElseThrow());
 
         List<Ingredient> li1 = new ArrayList<>();
-        li1.add(i2);
+        li1.add(ingredientRepository.findIngredientByName("Ingredient 2").orElseThrow());
         List<Ingredient> li2 = new ArrayList<>();
-        li1.add(i4);
-
-        ExcludedGroup eg1 = new ExcludedGroup("1", "HALAL", li2);
+        li1.add(ingredientRepository.findIngredientByName("Ingredient 4").orElseThrow());
 
         List<ExcludedGroup> leg1 = new ArrayList<>();
-        leg1.add(eg1);
+        leg1.add(ingredientRepository.findExcludedGroupByName(ExcludedGroup.GROUP_NAME_HALAL).orElseThrow());
 
         EatingPreference ep1 = new EatingPreference(li1, leg1, la1);
 

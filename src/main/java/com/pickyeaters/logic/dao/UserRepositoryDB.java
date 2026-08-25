@@ -45,6 +45,7 @@ public class UserRepositoryDB implements UserRepository {
                     id, email, password, firstname, lastname, type
             ));
         } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
             throw new GenericRepositoryException(e.getMessage());
         } catch (NoSuchElementException e) {
             return Optional.empty();
@@ -75,6 +76,7 @@ public class UserRepositoryDB implements UserRepository {
                     id, email, password, firstname, lastname, type
             ));
         } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
             throw new GenericRepositoryException(e.getMessage());
         }  catch (NoSuchElementException e) {
             return Optional.empty();
@@ -93,6 +95,7 @@ public class UserRepositoryDB implements UserRepository {
             query.execute();
             query.close();
         } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
             throw new GenericRepositoryException(e.getMessage());
         }
     }

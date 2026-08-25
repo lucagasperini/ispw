@@ -149,17 +149,26 @@ $BODY$;
 
 -- ### RestaurantRepository ###
 
-CREATE OR REPLACE PROCEDURE get_restaurant_id_from_user(
+CREATE OR REPLACE PROCEDURE get_restaurant_by_owner_id(
     IN _user_id varchar,
-    OUT _fk_restaurant_id varchar)
+    OUT _restaurant_id varchar,
+    OUT _name varchar,
+    OUT _phone varchar,
+    OUT _address varchar,
+    OUT _city varchar)
 LANGUAGE 'plpgsql'
 AS $BODY$
 BEGIN
-    SELECT fk_restaurant::varchar INTO _fk_restaurant_id FROM "User" WHERE id = _user_id::UUID;
+
+SELECT fk_restaurant::varchar, name, phone, address, city
+INTO _restaurant_id, _name, _phone, _address, _city
+FROM "User" AS u JOIN "Restaurant" AS r ON fk_restaurant=r.id
+WHERE u.id=_user_id::uuid;
+
 END;
 $BODY$;
 
-CREATE OR REPLACE PROCEDURE get_restaurant_by_owner(
+CREATE OR REPLACE PROCEDURE get_restaurant_by_id(
     IN _id varchar,
     OUT _name varchar,
     OUT _phone varchar,

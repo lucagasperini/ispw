@@ -38,6 +38,7 @@ public class IngredientRepositoryDB implements IngredientRepository {
             List<Allergen> allergenList = findAllergenListByIngredientID(id);
             return Optional.of(new Ingredient(id, name, allergenList, false, false));
         } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
             throw new GenericRepositoryException(e.getMessage());
         } catch (NoSuchElementException e) {
             return Optional.empty();
@@ -58,6 +59,7 @@ public class IngredientRepositoryDB implements IngredientRepository {
 
             return Optional.of(new Allergen(id, name));
         } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
             throw new GenericRepositoryException(e.getMessage());
         } catch (NoSuchElementException e) {
             return Optional.empty();
@@ -91,8 +93,9 @@ public class IngredientRepositoryDB implements IngredientRepository {
             query.close();
 
             return allergenList;
-        } catch (DatabaseControllerException ex) {
-            throw new GenericRepositoryException(ex.getMessage());
+        } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
+            throw new GenericRepositoryException(e.getMessage());
         }
     }
 
@@ -125,8 +128,9 @@ public class IngredientRepositoryDB implements IngredientRepository {
             query.close();
 
             return ingredientList;
-        } catch (DatabaseControllerException ex) {
-            throw new GenericRepositoryException(ex.getMessage());
+        } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
+            throw new GenericRepositoryException(e.getMessage());
         }
     }
 
@@ -149,8 +153,9 @@ public class IngredientRepositoryDB implements IngredientRepository {
                     ingredientList
             ));
 
-        } catch (DatabaseControllerException ex) {
-            throw new GenericRepositoryException(ex.getMessage());
+        } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
+            throw new GenericRepositoryException(e.getMessage());
         } catch (NoSuchElementException e) {
             return Optional.empty();
         }
@@ -172,8 +177,9 @@ public class IngredientRepositoryDB implements IngredientRepository {
             query.close();
 
             return outList;
-        } catch (DatabaseControllerException ex) {
-            throw new GenericRepositoryException(ex.getMessage());
+        } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
+            throw new GenericRepositoryException(e.getMessage());
         }
     }
 
@@ -193,8 +199,9 @@ public class IngredientRepositoryDB implements IngredientRepository {
             query.close();
 
             return outList;
-        } catch (DatabaseControllerException ex) {
-            throw new GenericRepositoryException(ex.getMessage());
+        } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
+            throw new GenericRepositoryException(e.getMessage());
         }
     }
 
@@ -221,8 +228,9 @@ public class IngredientRepositoryDB implements IngredientRepository {
             query.close();
 
             return outList;
-        } catch (DatabaseControllerException ex) {
-            throw new GenericRepositoryException(ex.getMessage());
+        } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
+            throw new GenericRepositoryException(e.getMessage());
         }
     }
 
