@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<BorderPane prefHeight="550.0" prefWidth="1370.0" xmlns="http://javafx.com/javafx/25.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <bottom>
+      <Button fx:id="buttonSave" mnemonicParsing="false" onAction="#clickButtonSave" styleClass="bt-saveChanges" text="SAVECHANGES" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </Button>
+   </bottom>
+   <center>
+      <HBox alignment="CENTER_LEFT" prefHeight="478.0" prefWidth="1350.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox alignment="CENTER_LEFT" prefHeight="427.0" prefWidth="642.0">
+               <children>
+                  <AnchorPane prefHeight="427.0" prefWidth="666.0">
+                     <children>
+                        <VBox layoutY="-9.5" prefHeight="481.0" prefWidth="506.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Text fx:id="textIngredient" fill="#f4b183" strokeType="OUTSIDE" strokeWidth="0.0" text="INGREDIENT">
+                                 <font>
+                                    <Font name="Calibri Bold" size="26.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textIngredientSelect" strokeType="OUTSIDE" strokeWidth="0.0" text="INGREDIENT_SELECT" wrappingWidth="506.0">
+                                 <font>
+                                    <Font name="Calibri" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Text>
+                              <Text fx:id="textIngredientSelectExplanation" strokeType="OUTSIDE" strokeWidth="0.0" text="INGREDIENT_SELECTEXPLANATION" wrappingWidth="506.0">
+                                 <font>
+                                    <Font name="Calibri" size="18.0" />
+                                 </font>
+                              </Text>
+                              <TreeView fx:id="treeIngredient" prefHeight="354.0" prefWidth="540.0" showRoot="false" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="402.0" prefWidth="359.0">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="450.0" prefWidth="354.0">
+                     <children>
+                        <VBox layoutX="174.0" maxWidth="-Infinity" prefHeight="450.0" prefWidth="354.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Text fx:id="textAllergens" fill="#f4b183" strokeType="OUTSIDE" strokeWidth="0.0" text="ALLERGENS">
+                                 <font>
+                                    <Font name="Calibri Bold" size="26.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Text>
+                              <Text fx:id="textAllergensExplanation" strokeType="OUTSIDE" strokeWidth="0.0" text="ALLERGENS_EXPLANATION" wrappingWidth="347.0">
+                                 <font>
+                                    <Font name="Calibri" size="18.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="textAllergensSelectExplanation" strokeType="OUTSIDE" strokeWidth="0.0" text="ALLERGENS_SELECTEXPLANATION" wrappingWidth="349.0">
+                                 <font>
+                                    <Font name="Calibri" size="18.0" />
+                                 </font>
+                              </Text>
+                              <ListView fx:id="listViewAllergen" prefHeight="388.0" prefWidth="354.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" right="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="427.0" prefWidth="308.0">
+               <children>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="106.0" prefWidth="540.0">
+                     <children>
+                        <VBox layoutX="174.0" maxWidth="-Infinity" prefHeight="164.0" prefWidth="319.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Text fx:id="textCookingMethod" fill="#f4b183" strokeType="OUTSIDE" strokeWidth="0.0" text="COOKINGMETHOD" wrappingWidth="317.4267578125">
+                                 <font>
+                                    <Font name="Calibri Bold" size="26.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Text>
+                              <CheckBox fx:id="checkBoxCooked" mnemonicParsing="false" text="RESTAURATEUR_ADDINGREDIENT_COOKINGMETHOD_ISCOOKED">
+                                 <font>
+                                    <Font name="Calibri" size="16.0" />
+                                 </font>
+                              </CheckBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="124.0" prefWidth="7.0">
+                     <children>
+                        <VBox layoutX="174.0" maxWidth="-Infinity" prefHeight="124.0" prefWidth="318.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Text fx:id="textOptionality" fill="#f4b183" strokeType="OUTSIDE" strokeWidth="0.0" text="OPTIONALITY" wrappingWidth="316.99609375">
+                                 <font>
+                                    <Font name="Calibri Bold" size="26.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </Text>
+                              <CheckBox fx:id="checkBoxOptional" mnemonicParsing="false" text="RESTAURATEUR_ADDINGREDIENT_OPTIONALITY_QUESTION">
+                                 <font>
+                                    <Font name="Calibri" size="16.0" />
+                                 </font>
+                              </CheckBox>
+                           </children>
+                           <padding>
+                              <Insets top="30.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </center>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</BorderPane>

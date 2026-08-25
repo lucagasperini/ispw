@@ -1,0 +1,234 @@
+package com.pickyeaters.logic.dao;
+
+import com.pickyeaters.logic.controller.DatabaseController;
+import com.pickyeaters.logic.exception.DatabaseControllerException;
+import com.pickyeaters.logic.exception.GenericRepositoryException;
+import com.pickyeaters.logic.exception.NotImplementedException;
+import com.pickyeaters.logic.factory.DishFactory;
+import com.pickyeaters.logic.model.*;
+import com.pickyeaters.logic.utils.Logger;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
+
+public class MenuRepositoryDB implements MenuRepository {
+    private final Logger logger;
+    private final DatabaseController database;
+    private final DishFactory dishFactory;
+    private final IngredientRepository ingredientRepository;
+
+    public MenuRepositoryDB(Logger logger, DatabaseController database, IngredientRepository ingredientRepository, DishFactory dishFactory) {
+        this.logger = logger;
+        this.database = database;
+        this.ingredientRepository = ingredientRepository;
+        this.dishFactory = dishFactory;
+    }
+
+    private List<Ingredient> readIngredientListByDishID(String dishID) {
+        try {
+            List<Ingredient> ingredientList = new ArrayList<>();
+            DatabaseController.Query query = database.queryResultSet(
+                    "SELECT id, name, cooked, optional FROM \"Dish_Ingredient\" JOIN \"Ingredient\" AS i ON fk_ingredient=i.id WHERE fk_dish=?::uuid"
+            );
+            query.setString(dishID);
+
+            query.execute();
+
+            while (query.next()) {
+                try {
+                    String ingredientID = query.getString().orElseThrow();
+                    String ingredientName = query.getString().orElseThrow();
+                    boolean isCooked = query.getBoolean();
+                    boolean isOptional = query.getBoolean();
+
+                    List<Allergen> allergenList = ingredientRepository.findAllergenListByIngredientID(ingredientID);
+                    ingredientList.add(new Ingredient(
+                            ingredientID,
+                            ingredientName,
+                            allergenList,
+                            isCooked,
+                            isOptional
+                    ));
+                } catch (NoSuchElementException ignored) {
+                }
+            }
+            query.close();
+
+            return ingredientList;
+        } catch (DatabaseControllerException ex) {
+            throw new GenericRepositoryException(ex.getMessage());
+        }
+    }
+
+    public List<Dish> findMenuByRestaurantID(String restaurantID) {
+        List<Dish> dishList = new ArrayList<>();
+
+        DatabaseController.Query query = database.queryResultSet(
+                "SELECT id, name, description, type FROM \"Dish\" WHERE fk_restaurant = ?::uuid"
+        );
+        query.setString(restaurantID);
+
+        query.execute();
+
+        while(query.next()) {
+            try {
+                String dishID = query.getString().orElseThrow();
+                String dishName = query.getString().orElseThrow();
+                String dishDescription = query.getString().orElseThrow();
+                String dishType = query.getString().orElseThrow();
+
+                List<Ingredient> ingredientList = readIngredientListByDishID(dishID);
+
+                dishList.add(dishFactory.createDish(
+                        dishID,
+                        dishName,
+                        dishDescription,
+                        dishType,
+                        ingredientList
+                ));
+            } catch (NoSuchElementException ignored) {
+
+            }
+        }
+        query.close();
+
+
+        return dishList;
+    }
+
+    private void createDishIngredient(String dishID, Ingredient ingredient) {
+        DatabaseController.Query query = database.query(
+                "INSERT INTO \"Dish_Ingredient\" (fk_ingredient, fk_dish, cooked, optional) VALUES (?::uuid, ?::uuid, ?, ?)"
+        );
+        query.setString(ingredient.getID());
+        query.setString(dishID);
+        query.setBoolean(ingredient.isCooked());
+        query.setBoolean(ingredient.isOptional());
+        query.execute();
+        query.close();
+    }
+
+    private Optional<String> readDishID(String restaurantID, String dishName) {
+        DatabaseController.Query query = database.query(
+                "CALL get_dish_id_by_name(?,?,?)"
+        );
+        query.setString(restaurantID);
+        query.setString(dishName);
+        query.registerOutString();
+
+        query.execute();
+        Optional<String> dishID = query.getString();
+        query.close();
+        return dishID;
+    }
+
+    public void addDish(String restaurantID, Dish dish) {
+        try {
+            DatabaseController.Query query = database.query(
+                    "INSERT INTO \"Dish\" (name, description, type, fk_restaurant) VALUES (?, ?, ?, ?::uuid)"
+            );
+            query.setString(dish.getName());
+            query.setString(dish.getDescription());
+            query.setString(dish.getType());
+            query.setString(restaurantID);
+            query.execute();
+            query.close();
+
+            String dishID = readDishID(restaurantID, dish.getName()).orElseThrow();
+            for(Ingredient i : dish.getIngredientList()) {
+                createDishIngredient(dishID, i);
+            }
+        } catch (DatabaseControllerException ex) {
+            throw new GenericRepositoryException(ex.getMessage());
+        }  catch (NoSuchElementException e) {
+            throw new GenericRepositoryException("Cannot read dish id");
+        }
+    }
+
+    private void deleteDishIngredient(String dishID) {
+        DatabaseController.Query query = database.query(
+                "DELETE FROM \"Dish_Ingredient\" WHERE fk_dish = ?::uuid"
+        );
+
+        query.setString(dishID);
+        query.execute();
+        query.close();
+    }
+
+    public void removeDish(String restaurantID, String dishID) {
+        try {
+            deleteDishIngredient(dishID);
+            DatabaseController.Query query = database.query(
+                    "DELETE FROM \"Dish\" WHERE id = ?::uuid"
+            );
+
+            query.setString(dishID);
+            query.execute();
+            query.close();
+        } catch (DatabaseControllerException ex) {
+            throw new GenericRepositoryException(ex.getMessage());
+        }
+    }
+
+    public Optional<Dish> findDishByID(String restaurantID, String dishID) {
+        return findDishByID(dishID);
+    }
+
+    public Optional<Dish> findDishByID(String dishID) {
+        try {
+            DatabaseController.Query query = database.query(
+                    "CALL get_dish_by_id(?,?,?,?)"
+            );
+            query.setString(dishID);
+            query.registerOutString();
+            query.registerOutString();
+            query.registerOutString();
+
+            query.execute();
+            String dishName = query.getString().orElseThrow();
+            String dishDescription = query.getString().orElseThrow();
+            String dishType = query.getString().orElseThrow();
+
+            List<Ingredient> ingredientList = readIngredientListByDishID(dishID);
+
+            Dish dish = dishFactory.createDish(
+                    dishID,
+                    dishName,
+                    dishDescription,
+                    dishType,
+                    ingredientList
+            );
+
+            query.close();
+
+            return Optional.ofNullable(dish);
+        } catch (DatabaseControllerException ex) {
+            throw new GenericRepositoryException(ex.getMessage());
+        } catch (NoSuchElementException e) {
+            return Optional.empty();
+        }
+    }
+
+    public void editDish(String restaurantID, Dish dish) {
+        try {
+            DatabaseController.Query query = database.query(
+                    "UPDATE \"Dish\" SET name=?, description=?, type=? WHERE id=?::uuid"
+            );
+            query.setString(dish.getName());
+            query.setString(dish.getDescription());
+            query.setString(dish.getType());
+            query.setString(dish.getID());
+            query.execute();
+
+            deleteDishIngredient(dish.getID());
+            for(Ingredient i : dish.getIngredientList()) {
+                createDishIngredient(dish.getID(), i);
+            }
+
+        } catch (DatabaseControllerException ex) {
+            throw new GenericRepositoryException(ex.getMessage());
+        }
+    }
+}

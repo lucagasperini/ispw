@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<BorderPane prefHeight="550.0" prefWidth="1370.0" xmlns="http://javafx.com/javafx/25.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.pickyeaters.logic.gui.EatingPreferenceForm">
+   <center>
+      <HBox prefHeight="634.0" prefWidth="1118.0">
+         <children>
+            <VBox prefHeight="496.0" prefWidth="446.0">
+               <children>
+                  <Text fx:id="textTaste" fill="#f4b183" strokeType="OUTSIDE" strokeWidth="0.0" text="PICKY_PERSONALIZEEATINGPREFERENCES_TASTE" wrappingWidth="451.0" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri Bold" size="26.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="textTasteMyDislikedIngredients" fill="#843c0c" strokeType="OUTSIDE" strokeWidth="0.0" text="PICKY_PERSONALIZEEATINGPREFERENCES_TASTE_MYDISLIKEDINGREDIENTS" wrappingWidth="459.99981689453125" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri" size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Text>
+                  <Text fx:id="textTasteExplanation" strokeType="OUTSIDE" strokeWidth="0.0" text="PICKY_PERSONALIZEEATINGPREFERENCES_TASTE_EXPLANATION" wrappingWidth="450.66705322265625" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                  </Text>
+                  <ScrollPane hbarPolicy="NEVER" prefHeight="418.0" prefWidth="522.0" VBox.vgrow="ALWAYS">
+                     <content>
+                        <VBox fx:id="vboxIngredient" />
+                     </content>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </ScrollPane>
+               </children>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="496.0" prefWidth="473.0">
+               <children>
+                  <Text fx:id="textHealthNeeds" fill="#f4b183" strokeType="OUTSIDE" strokeWidth="0.0" text="PICKY_PERSONALIZEEATINGPREFERENCES_HEALTHNEEDS" wrappingWidth="466.6239929199219">
+                     <font>
+                        <Font name="Calibri Bold" size="26.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Text>
+                  <Text fx:id="textHealthAllergies" fill="#843c0c" strokeType="OUTSIDE" strokeWidth="0.0" text="PICKY_PERSONALIZEEATINGPREFERENCES_HEALTHNEEDS_ALLERGIES" wrappingWidth="463.1998596191406">
+                     <font>
+                        <Font name="Calibri" size="24.0" />
+                     </font>
+                  </Text>
+                  <ScrollPane minHeight="-Infinity" prefHeight="161.0" prefWidth="665.0" VBox.vgrow="ALWAYS">
+                     <content>
+                        <VBox fx:id="vboxAllergy" />
+                     </content>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </ScrollPane>
+               </children>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="496.0" prefWidth="404.0">
+               <children>
+                  <Text fx:id="textReligiousNeeds" fill="#f4b183" strokeType="OUTSIDE" strokeWidth="0.0" text="PICKY_PERSONALIZEEATINGPREFERENCES_RELIGIOUSNEEDS" wrappingWidth="366.4240417480469" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri Bold" size="26.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Text>
+                  <CheckBox fx:id="checkboxReligiousHalal" mnemonicParsing="false" prefHeight="22.0" prefWidth="686.0" text="PICKY_PERSONALIZEEATINGPREFERENCES_RELIGIOUSNEEDS_HALAL" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="3.0" />
+                     </VBox.margin>
+                  </CheckBox>
+                  <CheckBox fx:id="checkboxReligiousKosher" mnemonicParsing="false" prefHeight="22.0" prefWidth="686.0" text="PICKY_PERSONALIZEEATINGPREFERENCES_RELIGIOUSNEEDS_KOSHER" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="3.0" />
+                     </VBox.margin>
+                  </CheckBox>
+                  <Text fx:id="textHealthOthers" fill="#843c0c" strokeType="OUTSIDE" strokeWidth="0.0" text="PICKY_PERSONALIZEEATINGPREFERENCES_HEALTHNEEDS_OTHERS" wrappingWidth="300.8000793457031" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri" size="24.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Text>
+                  <CheckBox fx:id="checkboxHealthPregnant" mnemonicParsing="false" prefHeight="22.0" prefWidth="629.0" text="PICKY_PERSONALIZEEATINGPREFERENCES_HEALTHNEEDS_OTHERS_PREGNANT" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="3.0" />
+                     </VBox.margin>
+                  </CheckBox>
+                  <Text fx:id="textLifeStyleNeeds" fill="#f4b183" strokeType="OUTSIDE" strokeWidth="0.0" text="PICKY_PERSONALIZEEATINGPREFERENCES_LIFESTYLENEEDS" wrappingWidth="369.02410888671875">
+                     <font>
+                        <Font name="Calibri Bold" size="26.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Text>
+                  <CheckBox fx:id="checkboxLifestyleVegan" mnemonicParsing="false" text="PICKY_PERSONALIZEEATINGPREFERENCES_LIFESTYLENEEDS_VEGAN">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="3.0" />
+                     </VBox.margin>
+                  </CheckBox>
+                  <CheckBox fx:id="checkboxLifestyleVegetarian" mnemonicParsing="false" text="PICKY_PERSONALIZEEATINGPREFERENCES_LIFESTYLENEEDS_VEGETARIAN">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="3.0" />
+                     </VBox.margin>
+                  </CheckBox>
+                  <CheckBox fx:id="checkboxLifestylePescatarian" mnemonicParsing="false" text="PICKY_PERSONALIZEEATINGPREFERENCES_LIFESTYLENEEDS_PESCETARIAN">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="3.0" />
+                     </VBox.margin>
+                  </CheckBox>
+                  <CheckBox fx:id="checkboxLifestyleCarnivore" mnemonicParsing="false" text="PICKY_PERSONALIZEEATINGPREFERENCES_LIFESTYLENEEDS_CARNIVORE">
+                     <font>
+                        <Font name="Calibri" size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="3.0" />
+                     </VBox.margin>
+                  </CheckBox>
+               </children>
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </center>
+   <bottom>
+      <Button fx:id="buttonSave" mnemonicParsing="false" onAction="#clickSaveChanges" styleClass="bt-saveChanges" text="PICKY_PERSONALIZEEATINGPREFERENCES_SAVECHANGES" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets top="10.0" />
+         </BorderPane.margin>
+      </Button>
+   </bottom>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</BorderPane>
