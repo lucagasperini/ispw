@@ -31,12 +31,12 @@ jobs:
       run: |
           mv target/PickyEaters-1.0-SNAPSHOT.jar PickyEater.jar
     - name: Package
-      uses: papeloto/action-zip@v1
+      uses: vimtor/action-zip@5407800dfb2b1b37d48df912330cb22f4ab6f422 # v1.3
       with:
           files: PickyEater.jar
           dest: PickyEater.zip
     - name: Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@3d0d9888cb7fd7b750713d6e236d1fcb99157228 # v3.0.2
       with:
           files: PickyEater.zip
           tag_name: PickyEater-${{ github.sha }}
