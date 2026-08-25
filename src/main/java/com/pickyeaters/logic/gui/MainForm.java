@@ -41,6 +41,7 @@ public class MainForm {
     protected Text textSubtitle;
 
     private Runnable actionBackButton = null;
+    Random random = new Random();
 
     @FXML
     public void initialize() {
@@ -88,7 +89,6 @@ public class MainForm {
 
     public void showNavbar() {
         updateName();
-        Random random = new Random();
         textNavbarWelcome.setText(AppData.getInstance().i18n("NAVBAR_HELLO_" + random.nextInt(1,4)));
         menuItemNavbarProfile.setText(AppData.getInstance().i18n("NAVBAR_UPDATEPROFILE"));
         menuItemNavbarLogout.setText(AppData.getInstance().i18n("NAVBAR_LOGOFF"));
