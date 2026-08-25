@@ -53,17 +53,7 @@ public class MenuView extends VirtualView {
         List<String> ingredientList = new ArrayList<>();
         DishBean dish = dishMap.get(id);
         for(DishIngredientBean i: dish.getIngredientList()) {
-            StringBuilder sb = new StringBuilder();
-            sb.append(i.getName());
-            if(i.isCooked()) {
-                sb.append(",");
-                sb.append(i18n("PICKY_ADDDISLIKEDINGREDIENT_COOKINGMETHOD_COOKED"));
-            }
-            if(i.isOptional()) {
-                sb.append(",");
-                sb.append(i18n("PICKY_ADDDISLIKEDINGREDIENT_OPTIONAL"));
-            }
-            ingredientList.add(sb.toString());
+            ingredientList.add(i.getName());
         }
         return ingredientList;
     }

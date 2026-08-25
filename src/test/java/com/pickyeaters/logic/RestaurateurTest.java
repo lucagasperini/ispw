@@ -80,19 +80,19 @@ public class RestaurateurTest {
         ingredientList.addAll(menuView.showIngredientList("3"));
 
         Assertions.assertTrue(name.remove("R1 Dish name 1"));
-        Assertions.assertTrue(description.remove("Description 1"));
+        Assertions.assertTrue(description.remove("R1 Description 1"));
         Assertions.assertTrue(type.remove("First"));
         Assertions.assertTrue(ingredientList.remove("Ingredient 1"));
         Assertions.assertTrue(ingredientList.remove("Ingredient 2"));
 
         Assertions.assertTrue(name.remove("R1 Dish name 2"));
-        Assertions.assertTrue(description.remove("Description 2"));
+        Assertions.assertTrue(description.remove("R1 Description 2"));
         Assertions.assertTrue(type.remove("Second"));
         Assertions.assertTrue(ingredientList.remove("Ingredient 1"));
         Assertions.assertTrue(ingredientList.remove("Ingredient 3"));
 
         Assertions.assertTrue(name.remove("R1 Dish name 3"));
-        Assertions.assertTrue(description.remove("Description 3"));
+        Assertions.assertTrue(description.remove("R1 Description 3"));
         Assertions.assertTrue(type.remove("Drink"));
         Assertions.assertTrue(ingredientList.remove("Ingredient 2"));
 
@@ -147,7 +147,7 @@ public class RestaurateurTest {
         ShowDishView showDishView = app.displayShowDishView(idList.get(indexTest));
 
         Assertions.assertEquals("R1 Dish name 1", showDishView.showName());
-        Assertions.assertEquals("Description 1", showDishView.showDescription());
+        Assertions.assertEquals("R1 Description 1", showDishView.showDescription());
         Assertions.assertEquals("First", showDishView.showType());
         List<String> ingredientList = showDishView.showIngredientNameList();
         Assertions.assertTrue(ingredientList.contains("Ingredient 1"));
@@ -175,7 +175,7 @@ public class RestaurateurTest {
         ChangeDishView changeDishView = app.displayChangeDishView(idList.get(indexTest));
 
         Assertions.assertEquals("R1 Dish name 1", changeDishView.showName());
-        Assertions.assertEquals("Description 1", changeDishView.showDescription());
+        Assertions.assertEquals("R1 Description 1", changeDishView.showDescription());
         Assertions.assertEquals("First", changeDishView.showType());
         List<String> ingredientList = changeDishView.showIngredientNameList();
         Assertions.assertTrue(ingredientList.contains("Ingredient 1"));
