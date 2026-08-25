@@ -11,6 +11,7 @@ import com.pickyeaters.logic.exception.LoginControllerPermissionException;
 import com.pickyeaters.logic.exception.NotImplementedException;
 import com.pickyeaters.logic.model.Session;
 import com.pickyeaters.logic.model.User;
+import com.pickyeaters.logic.utils.LiteralMessage;
 import com.pickyeaters.logic.utils.Logger;
 
 import java.nio.charset.StandardCharsets;
@@ -102,11 +103,11 @@ public class LoginController  {
                 logger.info("Login: success for user: " + user.getEmail());
                 return Result.ok(reply);
             }
-            logger.warn("Login: No such user or password");
-            return Result.error("No such user or password");
+            logger.warn("Login:" + LiteralMessage.LOGIN_CONTROLLER_NO_SUCH_USER);
+            return Result.error(LiteralMessage.LOGIN_CONTROLLER_NO_SUCH_USER);
         } catch (NoSuchElementException e) {
-            logger.warn("Login: No such user or password");
-            return Result.error("No such user or password");
+            logger.warn("Login:" + LiteralMessage.LOGIN_CONTROLLER_NO_SUCH_USER);
+            return Result.error(LiteralMessage.LOGIN_CONTROLLER_NO_SUCH_USER);
         }
     }
 

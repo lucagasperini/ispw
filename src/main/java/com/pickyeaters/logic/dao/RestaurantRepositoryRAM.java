@@ -24,9 +24,9 @@ public class RestaurantRepositoryRAM implements RestaurantRepository {
         restaurantList.add(r2);
         restaurantList.add(r3);
 
-        Restaurateur u1 = new Restaurateur("1", "lucaR", "luca", "Luca", "Bianchi", r1);
-        Restaurateur u2 = new Restaurateur("4", "testR", "test", "Marco", "Rossi", r3);
-        Restaurateur u3 = new Restaurateur("5", "test", "test", "Giuseppe", "Verdi", r2);
+        Restaurateur u1 = new Restaurateur("1", "lucaR", "", "Luca", "Bianchi", r1);
+        Restaurateur u2 = new Restaurateur("4", "testR", "", "Marco", "Rossi", r3);
+        Restaurateur u3 = new Restaurateur("5", "test", "", "Giuseppe", "Verdi", r2);
 
         restaurateurList.add(u1);
         restaurateurList.add(u2);

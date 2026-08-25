@@ -9,6 +9,7 @@ import com.pickyeaters.logic.exception.LoginControllerException;
 import com.pickyeaters.logic.exception.LoginControllerPermissionException;
 import com.pickyeaters.logic.model.Pickie;
 import com.pickyeaters.logic.model.User;
+import com.pickyeaters.logic.utils.LiteralMessage;
 import com.pickyeaters.logic.utils.Logger;
 
 import java.util.NoSuchElementException;
@@ -34,7 +35,7 @@ public class UserController {
         } catch (LoginControllerException | LoginControllerPermissionException e) {
             return Result.error(e.getMessage());
         } catch (NoSuchElementException e) {
-            return Result.error("Can't find user for requested userID");
+            return Result.error(LiteralMessage.USER_CONTROLLER_CANT_FIND_USER_BY_USERID);
         }
     }
 
@@ -52,7 +53,7 @@ public class UserController {
         } catch (LoginControllerException | LoginControllerPermissionException e) {
             return Result.error(e.getMessage());
         } catch (NoSuchElementException e) {
-            return Result.error("Can't find user for requested userID");
+            return Result.error(LiteralMessage.USER_CONTROLLER_CANT_FIND_USER_BY_USERID);
         }
     }
 }

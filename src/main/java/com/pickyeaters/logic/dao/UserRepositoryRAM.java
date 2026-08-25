@@ -15,11 +15,13 @@ public class UserRepositoryRAM implements UserRepository {
 
     public UserRepositoryRAM(Logger logger) {
         this.logger = logger;
-        userList.add(new Restaurateur("1", "lucaR", "d70f47790f689414789eeff231703429c7f88a10210775906460edbf38589d90", "Luca", "Bianchi"));
-        userList.add(new Pickie("2", "lucaP", "d70f47790f689414789eeff231703429c7f88a10210775906460edbf38589d90", "Luca", "Rossi"));
-        userList.add(new Pickie("3", "testP", "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08", "Marco", "Bianchi"));
-        userList.add(new Restaurateur("4", "testR", "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08", "Marco", "Rossi"));
-        userList.add(new Restaurateur("5", "test", "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08", "Giuseppe", "Verdi"));
+        String passwordLuca = "d70f47790f689414789eeff231703429c7f88a10210775906460edbf38589d90";
+
+        userList.add(new Restaurateur("1", "lucaR", passwordLuca, "Luca", "Bianchi"));
+        userList.add(new Pickie("2", "lucaP", passwordLuca, "Luca", "Rossi"));
+        userList.add(new Pickie("3", "testP", passwordLuca, "Marco", "Bianchi"));
+        userList.add(new Restaurateur("4", "testR", passwordLuca, "Marco", "Rossi"));
+        userList.add(new Restaurateur("5", "test", passwordLuca, "Giuseppe", "Verdi"));
     }
 
     public Optional<User> getUserByEmail(String email) {

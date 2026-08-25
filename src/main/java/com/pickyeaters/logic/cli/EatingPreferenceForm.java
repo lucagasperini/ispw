@@ -1,5 +1,6 @@
 package com.pickyeaters.logic.cli;
 
+import com.pickyeaters.logic.utils.LiteralKey;
 import com.pickyeaters.logic.view.Application;
 import com.pickyeaters.logic.view.eatingpreference.EditEatingPreferenceView;
 
@@ -53,9 +54,9 @@ public class EatingPreferenceForm extends VirtualForm {
     }
 
     private void showEatingPreference() {
-        printFieldList("FIELD_EATINGPREFERENCE_DISLIKEINGREDIENT", view.showExcludedIngredientList());
-        printFieldList("FIELD_EATINGPREFERENCE_ALLERGEN", view.showAllergenList());
-        printFieldList("FIELD_EATINGPREFERENCE_EXCLUDEDGROUP", view.showExcludedGroupList());
+        printFieldList(LiteralKey.FIELD_EATINGPREFERENCE_DISLIKEINGREDIENT, view.showExcludedIngredientList());
+        printFieldList(LiteralKey.FIELD_EATINGPREFERENCE_ALLERGEN, view.showAllergenList());
+        printFieldList(LiteralKey.FIELD_EATINGPREFERENCE_EXCLUDEDGROUP, view.showExcludedGroupList());
     }
 
     private class DislikeIngredientListForm extends VirtualListManagerForm {
@@ -68,17 +69,17 @@ public class EatingPreferenceForm extends VirtualForm {
 
         @Override
         protected void showList() {
-            printFieldList("FIELD_EATINGPREFERENCE_DISLIKEINGREDIENT", view.showExcludedIngredientList());
+            printFieldList(LiteralKey.FIELD_EATINGPREFERENCE_DISLIKEINGREDIENT, view.showExcludedIngredientList());
         }
 
         @Override
         protected void addItem() {
-            view.addDislikeIngredient(askField("ASK_ADD"));
+            view.addDislikeIngredient(askField(LiteralKey.ASK_ADD));
         }
 
         @Override
         protected void removeItem() {
-            view.removeDislikeIngredient(askField("ASK_REMOVE"));
+            view.removeDislikeIngredient(askField(LiteralKey.ASK_REMOVE));
         }
     }
 
@@ -92,17 +93,17 @@ public class EatingPreferenceForm extends VirtualForm {
 
         @Override
         protected void showList() {
-            printFieldList("FIELD_EATINGPREFERENCE_ALLERGEN", view.showAllergenList());
+            printFieldList(LiteralKey.FIELD_EATINGPREFERENCE_ALLERGEN, view.showAllergenList());
         }
 
         @Override
         protected void addItem() {
-            view.addAllergen(askField("ASK_ADD"));
+            view.addAllergen(askField(LiteralKey.ASK_ADD));
         }
 
         @Override
         protected void removeItem() {
-            view.removeAllergen(askField("ASK_REMOVE"));
+            view.removeAllergen(askField(LiteralKey.ASK_REMOVE));
         }
     }
 
@@ -116,17 +117,17 @@ public class EatingPreferenceForm extends VirtualForm {
 
         @Override
         protected void showList() {
-            printFieldList("FIELD_EATINGPREFERENCE_EXCLUDEDGROUP", view.showExcludedGroupList());
+            printFieldList(LiteralKey.FIELD_EATINGPREFERENCE_EXCLUDEDGROUP, view.showExcludedGroupList());
         }
 
         @Override
         protected void addItem() {
-            view.addExcludedGroup(askField("ASK_ADD"));
+            view.addExcludedGroup(askField(LiteralKey.ASK_ADD));
         }
 
         @Override
         protected void removeItem() {
-            view.removeExcludedGroup(askField("ASK_REMOVE"));
+            view.removeExcludedGroup(askField(LiteralKey.ASK_REMOVE));
         }
     }
 

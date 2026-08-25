@@ -1,6 +1,7 @@
 package com.pickyeaters.logic.cli;
 
 import com.pickyeaters.logic.exception.GenericViewException;
+import com.pickyeaters.logic.utils.LiteralKey;
 import com.pickyeaters.logic.view.*;
 import com.pickyeaters.logic.view.dish.AddDishView;
 import com.pickyeaters.logic.view.dish.ChangeDishView;
@@ -57,11 +58,11 @@ public class MenuDetailsForm extends VirtualForm {
         List<String> idList = view.showDishID();
 
         for(String i : idList) {
-            printField("RESTAURATEUR_MANAGEMENUDETAILS_NAME", view.showName(i));
-            printField("RESTAURATEUR_MANAGEMENUDETAILS_DESCRIPTION",view.showDescription(i));
-            printField("RESTAURATEUR_MANAGEMENUDETAILS_CATEGORY",view.showType(i));
+            printField(LiteralKey.RESTAURATEUR_MANAGEMENUDETAILS_NAME, view.showName(i));
+            printField(LiteralKey.RESTAURATEUR_MANAGEMENUDETAILS_DESCRIPTION,view.showDescription(i));
+            printField(LiteralKey.RESTAURATEUR_MANAGEMENUDETAILS_CATEGORY,view.showType(i));
             for(String str : view.showIngredientList(i)) {
-                printField("RESTAURATEUR_MANAGEMENUDETAILS_INGREDIENTS", str);
+                printField(LiteralKey.RESTAURATEUR_MANAGEMENUDETAILS_INGREDIENTS, str);
             }
             print("##################################");
         }
@@ -73,34 +74,34 @@ public class MenuDetailsForm extends VirtualForm {
         for (int i = 1; i <= idList.size(); i++) {
             print(i + ") " + menuView.showName(idList.get(i - 1)));
         }
-        int formID = askFieldInteger("FIELD_DISH_ID") - 1;
+        int formID = askFieldInteger(LiteralKey.FIELD_DISH_ID) - 1;
         ChangeDishView view = app.displayChangeDishView(idList.get(formID));
 
-        view.insertName(askField("FIELD_DISH_NAME", view.showName()));
-        view.insertDescription(askField("FIELD_DISH_DESCRIPTION", view.showDescription()));
-        view.selectType(askField("FIELD_DISH_TYPE", view.showType()));
+        view.insertName(askField(LiteralKey.FIELD_DISH_NAME, view.showName()));
+        view.insertDescription(askField(LiteralKey.FIELD_DISH_DESCRIPTION, view.showDescription()));
+        view.selectType(askField(LiteralKey.FIELD_DISH_TYPE, view.showType()));
 
-        if(askFieldBoolean("RESTAURATEUR_EDITDISH_ADDINGREDIENT")) {
+        if(askFieldBoolean(LiteralKey.RESTAURATEUR_EDITDISH_ADDINGREDIENT)) {
             ChangeViewIngredientListForm form = new ChangeViewIngredientListForm(app, view);
             form.show();
         }
-        if (askFieldBoolean("SAVECHANGES")) {
+        if (askFieldBoolean(LiteralKey.SAVECHANGES)) {
             view.submit();
         }
     }
 
     private void addDish() {
         AddDishView view = app.displayAddDishView();
-        view.insertName(askField("FIELD_DISH_NAME"));
-        view.insertDescription(askField("FIELD_DISH_DESCRIPTION"));
-        view.selectType(askField("FIELD_DISH_TYPE"));
+        view.insertName(askField(LiteralKey.FIELD_DISH_NAME));
+        view.insertDescription(askField(LiteralKey.FIELD_DISH_DESCRIPTION));
+        view.selectType(askField(LiteralKey.FIELD_DISH_TYPE));
 
-        if(askFieldBoolean("RESTAURATEUR_EDITDISH_ADDINGREDIENT")) {
+        if(askFieldBoolean(LiteralKey.RESTAURATEUR_EDITDISH_ADDINGREDIENT)) {
             AddViewIngredientListForm form = new AddViewIngredientListForm(app, view);
             form.show();
         }
 
-        if(askFieldBoolean("SAVECHANGES")) {
+        if(askFieldBoolean(LiteralKey.SAVECHANGES)) {
             view.submit();
         }
     }
@@ -112,7 +113,7 @@ public class MenuDetailsForm extends VirtualForm {
             for (int i = 1; i <= idList.size(); i++) {
                 print(i + ") " + view.showName(idList.get(i - 1)));
             }
-            int formID = askFieldInteger("FIELD_DISH_ID") - 1;
+            int formID = askFieldInteger(LiteralKey.FIELD_DISH_ID) - 1;
             view.submitRemoveDish(idList.get(formID));
         }  catch (GenericViewException e) {
             showError(e);
@@ -125,16 +126,16 @@ public class MenuDetailsForm extends VirtualForm {
         for (int i = 1; i <= idList.size(); i++) {
             print(i + ") " + view.showName(idList.get(i - 1)));
         }
-        int formID = askFieldInteger("FIELD_DISH_ID") - 1;
+        int formID = askFieldInteger(LiteralKey.FIELD_DISH_ID) - 1;
         ShowDishView showDishView = app.displayShowDishView(idList.get(formID));
-        printField("RESTAURATEUR_MANAGEMENUDETAILS_NAME", showDishView.showName());
-        printField("RESTAURATEUR_MANAGEMENUDETAILS_DESCRIPTION", showDishView.showDescription());
-        printField("RESTAURATEUR_MANAGEMENUDETAILS_CATEGORY", showDishView.showType());
+        printField(LiteralKey.RESTAURATEUR_MANAGEMENUDETAILS_NAME, showDishView.showName());
+        printField(LiteralKey.RESTAURATEUR_MANAGEMENUDETAILS_DESCRIPTION, showDishView.showDescription());
+        printField(LiteralKey.RESTAURATEUR_MANAGEMENUDETAILS_CATEGORY, showDishView.showType());
         for (String str : showDishView.showIngredientNameList()) {
-            printField("RESTAURATEUR_MANAGEMENUDETAILS_INGREDIENTS", str);
+            printField(LiteralKey.RESTAURATEUR_MANAGEMENUDETAILS_INGREDIENTS, str);
         }
         for (String str : showDishView.showAllergenList()) {
-            printField("RESTAURATEUR_EDITDISH_ALLERGENS", str);
+            printField(LiteralKey.RESTAURATEUR_EDITDISH_ALLERGENS, str);
         }
     }
 
@@ -149,17 +150,17 @@ public class MenuDetailsForm extends VirtualForm {
 
         @Override
         protected void showList() {
-            printFieldList("FIELD_DISH_INGREDIENT", view.showIngredientNameList());
+            printFieldList(LiteralKey.FIELD_DISH_INGREDIENT, view.showIngredientNameList());
         }
 
         @Override
         protected void addItem() {
-            view.addIngredient(askField("ASK_ADD"));
+            view.addIngredient(askField(LiteralKey.ASK_ADD));
         }
 
         @Override
         protected void removeItem() {
-            view.removeIngredient(askField("ASK_REMOVE"));
+            view.removeIngredient(askField(LiteralKey.ASK_REMOVE));
         }
     }
 
@@ -173,17 +174,17 @@ public class MenuDetailsForm extends VirtualForm {
 
         @Override
         protected void showList() {
-            printFieldList("FIELD_DISH_INGREDIENT", view.showIngredientNameList());
+            printFieldList(LiteralKey.FIELD_DISH_INGREDIENT, view.showIngredientNameList());
         }
 
         @Override
         protected void addItem() {
-            view.addIngredient(askField("ASK_ADD"));
+            view.addIngredient(askField(LiteralKey.ASK_ADD));
         }
 
         @Override
         protected void removeItem() {
-            view.removeIngredient(askField("ASK_REMOVE"));
+            view.removeIngredient(askField(LiteralKey.ASK_REMOVE));
         }
     }
 }

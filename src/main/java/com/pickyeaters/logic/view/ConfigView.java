@@ -20,12 +20,11 @@ public class ConfigView extends VirtualView {
     private final DatabaseController databaseController;
 
     public void loadConfigByFile(String file) {
-        try {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = reader.readLine()) != null) {
                 // Skip comments or empty lines
-                if (line == null || line.trim().isEmpty() || line.trim().startsWith("#")) {
+                if (line.trim().isEmpty() || line.trim().startsWith("#")) {
                     continue;
                 }
 

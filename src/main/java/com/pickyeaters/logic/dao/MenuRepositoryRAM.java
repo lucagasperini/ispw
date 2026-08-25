@@ -2,6 +2,7 @@ package com.pickyeaters.logic.dao;
 
 import com.pickyeaters.logic.exception.GenericRepositoryException;
 import com.pickyeaters.logic.model.*;
+import com.pickyeaters.logic.utils.LiteralMessage;
 import com.pickyeaters.logic.utils.Logger;
 
 import java.util.*;
@@ -32,19 +33,11 @@ public class MenuRepositoryRAM implements MenuRepository {
         la4.add(a3);
         List<Allergen> la5 = new ArrayList<>();
 
-        /*
         Ingredient i1 = new Ingredient("1", "Ingredient 1", la1, false, false);
         Ingredient i2 = new Ingredient("2", "Ingredient 2", la2, true, true);
         Ingredient i3 = new Ingredient("3", "Ingredient 3", la3, false, false);
         Ingredient i4 = new Ingredient("4", "Ingredient 4", la4, true, false);
         Ingredient i5 = new Ingredient("5", "Ingredient 5", la5, false, true);
-        */
-
-        Ingredient i1 = new Ingredient("1", "Ingredient 1", la1, false, false);
-        Ingredient i2 = new Ingredient("2", "Ingredient 2", la2, false, false);
-        Ingredient i3 = new Ingredient("3", "Ingredient 3", la3, false, false);
-        Ingredient i4 = new Ingredient("4", "Ingredient 4", la4, false, false);
-        Ingredient i5 = new Ingredient("5", "Ingredient 5", la5, false, false);
 
         ingredientList.add(i1);
         ingredientList.add(i2);
@@ -77,21 +70,21 @@ public class MenuRepositoryRAM implements MenuRepository {
         li9.add(i5);
 
         List<Dish> r1 = new ArrayList<>();
-        r1.add(new DishFirst("1", "R1 Dish name 1", "Description 1", li1));
-        r1.add(new DishSecond("2", "R1 Dish name 2", "Description 2", li2));
-        r1.add(new DishDrink("3", "R1 Dish name 3", "Description 3", li3));
+        r1.add(new DishFirst("1", "R1 Dish name 1", "R1 Description 1", li1));
+        r1.add(new DishSecond("2", "R1 Dish name 2", "R1 Description 2", li2));
+        r1.add(new DishDrink("3", "R1 Dish name 3", "R1 Description 3", li3));
         map.put("1", r1);
 
         List<Dish> r2 = new ArrayList<>();
-        r2.add(new DishFirst("4", "R2 Dish name 1", "Description 1", li4));
-        r2.add(new DishSecond("5", "R2 Dish name 2", "Description 2", li5));
-        r2.add(new DishDrink("6", "R2 Dish name 3", "Description 3", li6));
+        r2.add(new DishFirst("4", "R2 Dish name 1", "R2 Description 1", li4));
+        r2.add(new DishSecond("5", "R2 Dish name 2", "R2 Description 2", li5));
+        r2.add(new DishDrink("6", "R2 Dish name 3", "R3 Description 3", li6));
         map.put("2", r2);
 
         List<Dish> r3 = new ArrayList<>();
-        r3.add(new DishFirst("7", "R3 Dish name 1", "Description 1", li7));
-        r3.add(new DishSecond("8", "R3 Dish name 2", "Description 2", li8));
-        r3.add(new DishDrink("9", "R3 Dish name 3", "Description 3", li9));
+        r3.add(new DishFirst("7", "R3 Dish name 1", "R3 Description 1", li7));
+        r3.add(new DishSecond("8", "R3 Dish name 2", "R3 Description 2", li8));
+        r3.add(new DishDrink("9", "R3 Dish name 3", "R3 Description 3", li9));
         map.put("3", r3);
     }
 
@@ -115,7 +108,7 @@ public class MenuRepositoryRAM implements MenuRepository {
             }
         }
 
-        throw new GenericRepositoryException("Cannot remove selected dish from restaurant");
+        throw new GenericRepositoryException(LiteralMessage.MENU_REPOSITORY_CANT_REMOVE_DISH);
     }
 
     public Optional<Dish> findDishByID(String restaurantID, String dishID) {
@@ -124,7 +117,7 @@ public class MenuRepositoryRAM implements MenuRepository {
                 return Optional.of(i);
             }
         }
-        throw new GenericRepositoryException("Cannot find selected dish from restaurant");
+        throw new GenericRepositoryException(LiteralMessage.MENU_REPOSITORY_CANT_REMOVE_DISH);
     }
 
     public Optional<Dish> findDishByID(String dishID) {
@@ -135,7 +128,7 @@ public class MenuRepositoryRAM implements MenuRepository {
                 }
             }
         }
-        throw new GenericRepositoryException("Cannot find selected dish from restaurant");
+        throw new GenericRepositoryException(LiteralMessage.MENU_REPOSITORY_CANT_REMOVE_DISH);
     }
 
 

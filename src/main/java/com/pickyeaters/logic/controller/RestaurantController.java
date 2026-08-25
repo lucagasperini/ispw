@@ -10,6 +10,7 @@ import com.pickyeaters.logic.dao.RestaurantRepository;
 import com.pickyeaters.logic.exception.GenericRepositoryException;
 import com.pickyeaters.logic.exception.NotImplementedException;
 import com.pickyeaters.logic.model.Restaurant;
+import com.pickyeaters.logic.utils.LiteralMessage;
 import com.pickyeaters.logic.utils.Logger;
 
 import java.util.Optional;
@@ -32,7 +33,7 @@ public class RestaurantController {
             String userID = loginController.requestUserID(request);
             Optional<Restaurant> restaurant = repository.findRestaurantByOwner(userID);
             if(restaurant.isEmpty()) {
-                return Result.error("No restaurant found!");
+                return Result.error(LiteralMessage.RESTAURANT_CONTROLLER_NO_RESTAURANT);
             } else {
                 return Result.ok(buildReplyShowRestaurant(restaurant.orElseThrow()));
             }
@@ -63,7 +64,7 @@ public class RestaurantController {
             repository.editRestaurantByOwner(userID, restaurant);
             return Result.ok(new EditRestaurantReply());
         } catch (GenericRepositoryException e) {
-            return Result.error("No restaurant found!");
+            return Result.error(LiteralMessage.RESTAURANT_CONTROLLER_NO_RESTAURANT);
         }
     }
 }

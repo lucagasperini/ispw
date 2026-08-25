@@ -10,6 +10,7 @@ import com.pickyeaters.logic.model.Allergen;
 import com.pickyeaters.logic.model.Dish;
 import com.pickyeaters.logic.model.Ingredient;
 import com.pickyeaters.logic.model.Restaurant;
+import com.pickyeaters.logic.utils.LiteralMessage;
 import com.pickyeaters.logic.utils.Logger;
 
 import java.util.*;
@@ -38,7 +39,7 @@ public class MenuController {
             String userID = loginController.requestUserID(request);
             loginController.checkUserPermission(request, LoginController.PERMISSION_CHANGE_DISH);
             if(request.getDish().getIngredientList().isEmpty()) {
-                return Result.error("The dish must contain at least one ingredient");
+                return Result.error(LiteralMessage.MENU_CONTROLLER_DISH_MUST_HAVE_ONE_INGREDIENT);
             }
             Restaurant restaurant = restaurantRepository.findRestaurantByOwner(userID).orElseThrow();
             List<Ingredient> ingredientList = new ArrayList<>();
@@ -48,7 +49,7 @@ public class MenuController {
                     ingredientList.add(ingredientRepository.findIngredientByName(ingredient.getName()).orElseThrow());
                 }
             } catch (NoSuchElementException e) {
-                return Result.error("Can't find ingredient");
+                return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_INGREDIENT);
             }
 
             Dish dish = factory.createDish(
@@ -64,7 +65,7 @@ public class MenuController {
         } catch (LoginControllerException | GenericFactoryException | LoginControllerPermissionException e) {
             return Result.error(e.getMessage());
         } catch (NoSuchElementException e) {
-            return Result.error("Can't find restaurant for requested userID");
+            return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_RESTAURANT_BY_USERID);
         }
 
     }
@@ -75,7 +76,7 @@ public class MenuController {
             loginController.checkUserPermission(request, LoginController.PERMISSION_ADD_DISH);
 
             if(request.getDish().getIngredientList().isEmpty()) {
-                return Result.error("The dish must contain at least one ingredient");
+                return Result.error(LiteralMessage.MENU_CONTROLLER_DISH_MUST_HAVE_ONE_INGREDIENT);
             }
 
             Restaurant restaurant = restaurantRepository.findRestaurantByOwner(userID).orElseThrow();
@@ -86,7 +87,7 @@ public class MenuController {
                     ingredientList.add(ingredientRepository.findIngredientByName(ingredient.getName()).orElseThrow());
                 }
             } catch (NoSuchElementException e) {
-                return Result.error("Can't find ingredient");
+                return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_INGREDIENT);
             }
 
             Dish dish = factory.createDish(
@@ -102,7 +103,7 @@ public class MenuController {
         } catch (LoginControllerException | GenericFactoryException | LoginControllerPermissionException e) {
             return Result.error(e.getMessage());
         } catch (NoSuchElementException e) {
-            return Result.error("Can't find restaurant for requested userID");
+            return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_RESTAURANT_BY_USERID);
         }
 
 
@@ -127,7 +128,7 @@ public class MenuController {
             DishBean dishBean = new DishBean(dish.getName(), dish.getDescription(), dish.getType(), ingredientList);
             return Result.ok(new ShowDishReply(dishBean, List.copyOf(allergenMap.values())));
         } catch (NoSuchElementException e) {
-            return Result.error("Can't find restaurant for requested userID");
+            return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_RESTAURANT_BY_USERID);
         }  catch (LoginControllerException | GenericRepositoryException e) {
             return Result.error(e.getMessage());
         }
@@ -141,7 +142,7 @@ public class MenuController {
             menuRepository.removeDish(restaurant.getID(), request.getID());
             return Result.ok(new RemoveDishReply());
         }  catch (NoSuchElementException e) {
-            return Result.error("Can't find restaurant for requested userID");
+            return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_RESTAURANT_BY_USERID);
         } catch (LoginControllerException | GenericRepositoryException | LoginControllerPermissionException e) {
             return Result.error(e.getMessage());
         }
@@ -164,7 +165,7 @@ public class MenuController {
         } catch (LoginControllerException | LoginControllerPermissionException e) {
             return Result.error(e.getMessage());
         } catch (NoSuchElementException e) {
-            return Result.error("Cannot find menu for restaurantID");
+            return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_MENU_BY_RESTAURANTID);
         }
     }
 
@@ -175,7 +176,7 @@ public class MenuController {
         } catch (LoginControllerException | LoginControllerPermissionException e) {
             return Result.error(e.getMessage());
         } catch (NoSuchElementException e) {
-            return Result.error("Cannot find menu for restaurantID");
+            return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_MENU_BY_RESTAURANTID);
         }
     }
     public Result<ShowAllergenIngredientReply> showAllergenIngredient(ShowAllergenIngredientRequest request) {
@@ -192,7 +193,7 @@ public class MenuController {
         } catch (LoginControllerException | LoginControllerPermissionException e) {
             return Result.error(e.getMessage());
         } catch (NoSuchElementException e) {
-            return Result.error("Cannot find ingredient");
+            return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_INGREDIENT);
         }
     }
 }

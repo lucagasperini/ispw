@@ -1,5 +1,6 @@
 package com.pickyeaters.logic.cli;
 
+import com.pickyeaters.logic.utils.LiteralKey;
 import com.pickyeaters.logic.view.Application;
 import com.pickyeaters.logic.view.FindRestaurantView;
 import com.pickyeaters.logic.view.MenuView;
@@ -78,7 +79,7 @@ public class FindRestaurantForm extends VirtualForm {
     }
 
     private void search() {
-        view.insertCity(askField("RESTAURATEUR_MANAGERESTAURANTDETAILS_RESTAURANT_CITY"));
+        view.insertCity(askField(LiteralKey.RESTAURATEUR_MANAGERESTAURANTDETAILS_RESTAURANT_CITY));
         view.startSearch();
         List<String> idList = view.showRestaurantID();
         for(int i = 1; i <= idList.size(); i++) {
@@ -94,10 +95,10 @@ public class FindRestaurantForm extends VirtualForm {
         }
         int vid = askFieldInteger("ID") - 1;
 
-        printField("RESTAURATEUR_MANAGERESTAURANTDETAILS_RESTAURANT_NAME", view.showRestaurantName(idList.get(vid)));
-        printField("RESTAURATEUR_MANAGERESTAURANTDETAILS_RESTAURANT_ADDRESS", view.showRestaurantAddress(idList.get(vid)));
-        printField("RESTAURATEUR_MANAGERESTAURANTDETAILS_RESTAURANT_PHONE", view.showRestaurantPhone(idList.get(vid)));
-        printField("RESTAURATEUR_MANAGERESTAURANTDETAILS_RESTAURANT_CITY", view.showRestaurantCity(idList.get(vid)));
+        printField(LiteralKey.RESTAURATEUR_MANAGERESTAURANTDETAILS_RESTAURANT_NAME, view.showRestaurantName(idList.get(vid)));
+        printField(LiteralKey.RESTAURATEUR_MANAGERESTAURANTDETAILS_RESTAURANT_ADDRESS, view.showRestaurantAddress(idList.get(vid)));
+        printField(LiteralKey.RESTAURATEUR_MANAGERESTAURANTDETAILS_RESTAURANT_PHONE, view.showRestaurantPhone(idList.get(vid)));
+        printField(LiteralKey.RESTAURATEUR_MANAGERESTAURANTDETAILS_RESTAURANT_CITY, view.showRestaurantCity(idList.get(vid)));
     }
 
     private void showMenu() {
@@ -109,11 +110,11 @@ public class FindRestaurantForm extends VirtualForm {
 
         MenuView menuView = app.displayMenuView(idList.get(vid));
         for(String i : menuView.showDishID()) {
-            printField("RESTAURATEUR_MANAGEMENUDETAILS_NAME", menuView.showName(i));
-            printField("RESTAURATEUR_MANAGEMENUDETAILS_DESCRIPTION",menuView.showDescription(i));
-            printField("RESTAURATEUR_MANAGEMENUDETAILS_CATEGORY",menuView.showType(i));
+            printField(LiteralKey.RESTAURATEUR_MANAGEMENUDETAILS_NAME, menuView.showName(i));
+            printField(LiteralKey.RESTAURATEUR_MANAGEMENUDETAILS_DESCRIPTION,menuView.showDescription(i));
+            printField(LiteralKey.RESTAURATEUR_MANAGEMENUDETAILS_CATEGORY,menuView.showType(i));
             for(String str : menuView.showIngredientList(i)) {
-                printField("RESTAURATEUR_MANAGEMENUDETAILS_INGREDIENTS", str);
+                printField(LiteralKey.RESTAURATEUR_MANAGEMENUDETAILS_INGREDIENTS, str);
             }
             print("##################################");
         }

@@ -1,6 +1,7 @@
 package com.pickyeaters.logic.cli;
 
 import com.pickyeaters.logic.exception.GenericViewException;
+import com.pickyeaters.logic.utils.LiteralKey;
 import com.pickyeaters.logic.view.Application;
 import com.pickyeaters.logic.view.VirtualView;
 
@@ -23,9 +24,9 @@ public abstract class VirtualForm  {
         String header;
         String content;
         if(key.isEmpty()) {
-            title = i18n( "DEFAULT_ALERT_ERROR_TITLE");
-            header = i18n("DEFAULT_ALERT_ERROR_HEADER");
-            content = i18n("DEFAULT_ALERT_ERROR_CONTENT");
+            title = i18n(LiteralKey.DEFAULT_ALERT_ERROR_TITLE);
+            header = i18n(LiteralKey.DEFAULT_ALERT_ERROR_HEADER);
+            content = i18n(LiteralKey.DEFAULT_ALERT_ERROR_CONTENT);
          } else {
             title = i18n(key + "_ALERT_ERROR_TITLE");
             header = i18n(key + "_ALERT_ERROR_HEADER");

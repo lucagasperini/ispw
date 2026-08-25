@@ -138,6 +138,8 @@ public class SystemParameterBean {
             case "provider":
                 this.setProvider(value);
                 break;
+            default:
+                break;
         }
     }
 
