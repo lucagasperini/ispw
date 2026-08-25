@@ -19,16 +19,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Remove some code smell">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/Printer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/AddDishReply.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/AddDishReply.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/ChangeDishReply.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/ChangeDishReply.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/MainCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/MainCLI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/EditEatingPreferenceReply.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/EditEatingPreferenceReply.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/EditRestaurantReply.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/EditRestaurantReply.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/EditUserReply.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/EditUserReply.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/RemoveDishReply.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/RemoveDishReply.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/VirtualForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/VirtualForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepositoryRAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepositoryRAM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/AddIngredientForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/AddIngredientForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/DishItemWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/DishItemWidget.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/MenuView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/VirtualView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/VirtualView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/Application.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

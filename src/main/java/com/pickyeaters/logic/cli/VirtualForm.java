@@ -57,7 +57,7 @@ public abstract class VirtualForm  {
     }
 
     public void print(String text) {
-        System.out.println(text);
+        printer.print(text);
     }
 
     public String i18n(String key) {
@@ -65,7 +65,7 @@ public abstract class VirtualForm  {
     }
 
     public void printField(String key, String value) {
-        System.out.println(i18n(key) + ": " + value);
+        printer.println(i18n(key) + ": " + value);
     }
 
     public void printFieldList(List<String> value) {
@@ -148,7 +148,7 @@ public abstract class VirtualForm  {
                     return;
                 }
                 case "q", "quit" -> System.exit(0);
-                case "h", "help" -> System.out.println("""
+                case "h", "help" -> printer.println("""
                                 [back, b]
                                 [quit, q]
                                 """ +

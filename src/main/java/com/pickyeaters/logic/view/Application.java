@@ -35,13 +35,25 @@ public class Application {
     private PickieController pickieController;
     private UserController userController;
 
+    @SuppressWarnings("java:S1450")
     private IngredientRepository ingredientRepository;
+
+    @SuppressWarnings("java:S1450")
     private MenuRepository menuRepository;
+
+    @SuppressWarnings("java:S1450")
     private RestaurantRepository restaurantRepository;
+
+    @SuppressWarnings("java:S1450")
     private UserRepository userRepository;
+
+    @SuppressWarnings("java:S1450")
     private PickieRepository pickieRepository;
 
+    @SuppressWarnings("java:S1450")
     private DishFactory dishFactory;
+
+    @SuppressWarnings("java:S1450")
     private UserFactory userFactory;
 
     public Application(String[] args) {
