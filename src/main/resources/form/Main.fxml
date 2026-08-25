@@ -7,7 +7,6 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -79,8 +78,6 @@
                                                 </ImageView>
                                                 <MenuButton fx:id="menuNavbar" alignment="CENTER" mnemonicParsing="false" opacity="0.0" prefHeight="31.0" prefWidth="35.0">
                                                   <items>
-                                                    <MenuItem fx:id="menuItemNavbarProfile" mnemonicParsing="false" onAction="#clickMenuItemNavbarProfile" text="...UPDATEPROFILE" />
-                                                      <SeparatorMenuItem mnemonicParsing="false" />
                                                       <MenuItem fx:id="menuItemNavbarLogout" mnemonicParsing="false" onAction="#clickMenuItemNavbarLogout" text="...LOGOFF" />
                                                   </items>
                                                    <cursor>

@@ -13,6 +13,7 @@ public class AddDishForm extends DishForm {
     }
 
     @FXML
+    @Override
     public void initialize() {
         super.initialize();
 

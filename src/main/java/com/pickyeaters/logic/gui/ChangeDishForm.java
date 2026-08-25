@@ -14,6 +14,7 @@ public class ChangeDishForm extends DishForm {
     }
 
     @FXML
+    @Override
     public void initialize() {
         super.initialize();
 

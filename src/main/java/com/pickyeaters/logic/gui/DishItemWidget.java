@@ -21,8 +21,6 @@ public class DishItemWidget {
     private Button buttonDeleteDish;
     @FXML
     private ListView<String> listviewIngredient;
-    @FXML
-    private CheckBox checkBoxActive;
 
     private String dishID;
 
@@ -36,15 +34,6 @@ public class DishItemWidget {
         for(String i : view.showIngredientNameList()) {
             listviewIngredient.getItems().add(i);
         }
-    }
-
-    @FXML
-    private void clickCheckBoxActive(ActionEvent actionEvent) {
-        /*
-        Map<String, String> arg = new HashMap<>();
-        arg.put("activeDish", textName.getText());
-        toParent(arg);
-         */
     }
 
     @FXML

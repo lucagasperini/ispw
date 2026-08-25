@@ -25,8 +25,6 @@ public class MainForm {
     @FXML
     private Text textNavbarWelcome;
     @FXML
-    private MenuItem menuItemNavbarProfile;
-    @FXML
     private MenuItem menuItemNavbarLogout;
     @FXML
     private Button buttonBack;
@@ -69,7 +67,6 @@ public class MainForm {
         mainLayout.setTop(null);
     }
     public void showHeader() {
-        //mainLayout.setTop(nodeHeader);
         buttonBack.setVisible(true);
         textTitle.setVisible(true);
         textSubtitle.setVisible(true);
@@ -85,7 +82,6 @@ public class MainForm {
     public void showNavbar() {
         updateName();
         textNavbarWelcome.setText(AppData.getInstance().i18n("NAVBAR_HELLO_" + random.nextInt(1,4)));
-        menuItemNavbarProfile.setText(AppData.getInstance().i18n("NAVBAR_UPDATEPROFILE"));
         menuItemNavbarLogout.setText(AppData.getInstance().i18n("NAVBAR_LOGOFF"));
     }
 
@@ -109,10 +105,6 @@ public class MainForm {
     @FXML
     protected void clickImageLogo() {
         Navigator.navigateHome();
-    }
-
-    @FXML
-    private void clickMenuItemNavbarProfile(ActionEvent event) {
     }
 
     @FXML

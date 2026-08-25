@@ -2,6 +2,8 @@ package com.pickyeaters.logic.gui;
 
 import com.pickyeaters.logic.exception.GenericViewException;
 import com.pickyeaters.logic.exception.NotImplementedException;
+import com.pickyeaters.logic.utils.LiteralKey;
+import com.pickyeaters.logic.utils.LiteralMessage;
 import com.pickyeaters.logic.view.LoginView;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -50,7 +52,7 @@ public class Navigator {
         T controller = loader.getController();
         return new LoadedForm<>(node, controller);
         } catch (IOException ex) {
-            showError("FXML ERROR", "FXML ERROR", ex.getMessage());
+            showError(LiteralMessage.FXML_ERROR, LiteralMessage.FXML_ERROR, ex.getMessage());
             throw new RuntimeException("Cannot load FXML: " + fxml + " Ex: " + ex.getMessage());
         }
     }
@@ -61,7 +63,7 @@ public class Navigator {
             loader.setController(controller);
             return loader.load();
         } catch (IOException ex) {
-            showError("FXML ERROR", "FXML ERROR", ex.getMessage());
+            showError(LiteralMessage.FXML_ERROR, LiteralMessage.FXML_ERROR, ex.getMessage());
             throw new RuntimeException("Cannot load FXML: " + fxml + " Ex: " + ex.getMessage());
         }
     }
@@ -162,14 +164,14 @@ public class Navigator {
         String title;
 
         if(message.isEmpty()) {
-            content = AppData.getInstance().i18n("DEFAULT_ALERT_ERROR_CONTENT");
+            content = AppData.getInstance().i18n(LiteralKey.DEFAULT_ALERT_ERROR_CONTENT);
         } else {
             content = message;
         }
 
         if(key.isEmpty()) {
-            title = AppData.getInstance().i18n("DEFAULT_ALERT_ERROR_TITLE");
-            header = AppData.getInstance().i18n("DEFAULT_ALERT_ERROR_HEADER");
+            title = AppData.getInstance().i18n(LiteralKey.DEFAULT_ALERT_ERROR_TITLE);
+            header = AppData.getInstance().i18n(LiteralKey.DEFAULT_ALERT_ERROR_HEADER);
         } else {
             title = AppData.getInstance().i18n(key + "_ALERT_ERROR_TITLE");
             header = AppData.getInstance().i18n(key + "_ALERT_ERROR_HEADER");

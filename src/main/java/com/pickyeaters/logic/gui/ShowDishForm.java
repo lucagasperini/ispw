@@ -1,5 +1,6 @@
 package com.pickyeaters.logic.gui;
 
+import com.pickyeaters.logic.exception.NotImplementedException;
 import com.pickyeaters.logic.view.dish.ShowDishView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +16,7 @@ public class ShowDishForm extends DishForm {
     }
 
     @FXML
+    @Override
     public void initialize() {
         super.initialize();
 
@@ -52,14 +54,17 @@ public class ShowDishForm extends DishForm {
 
     @FXML
     protected void clickAddIngredient(ActionEvent event) {
+        throw new NotImplementedException();
     }
 
     @FXML
     protected void clickSaveChanges(ActionEvent event) {
+        throw new NotImplementedException();
     }
 
 
     @Override
     public void onViewChanged() {
+        throw new NotImplementedException();
     }
 }

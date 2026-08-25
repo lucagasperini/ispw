@@ -5,7 +5,7 @@ import com.pickyeaters.logic.view.Application;
 import java.util.Map;
 
 public abstract class VirtualListManagerForm extends VirtualForm {
-    public VirtualListManagerForm(Application app, String name) {
+    protected VirtualListManagerForm(Application app, String name) {
         super(app, name);
     }
 

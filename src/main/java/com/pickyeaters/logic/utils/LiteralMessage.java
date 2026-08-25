@@ -13,4 +13,6 @@ public class LiteralMessage {
     public static final String USER_CONTROLLER_CANT_FIND_USER_BY_USERID = "Can't find user for requested userID";
 
     public static final String MENU_REPOSITORY_CANT_REMOVE_DISH = "Cannot remove selected dish from restaurant";
+
+    public static final String FXML_ERROR = "FXML ERROR";
 }

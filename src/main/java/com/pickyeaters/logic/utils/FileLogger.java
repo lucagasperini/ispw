@@ -3,6 +3,7 @@ package com.pickyeaters.logic.utils;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.ZoneId;
 
 public class FileLogger implements Logger {
     private final String filePath;
@@ -32,7 +33,7 @@ public class FileLogger implements Logger {
 
     private void writeToFile(String level, String message) {
         try (PrintWriter out = new PrintWriter(new FileWriter(filePath, true))) {
-            out.println("[" + java.time.LocalDateTime.now() + "] [" + level + "] " + message);
+            out.println("[" + java.time.LocalDateTime.now(ZoneId.systemDefault()) + "] [" + level + "] " + message);
         } catch (IOException e) {
             // If we fail to write the log file, at least print it to console for debugging
             System.err.println("FATAL ERROR: Could not write to log file " + filePath + ". Error: " + e.getMessage());

@@ -111,35 +111,23 @@ public class PickieController {
                 FindRestaurantBean bean = request.getFindRestaurant();
                 List<Dish> menu = menuRepository.findMenuByRestaurantID(restaurant.getID());
                 for(Dish dish : menu) {
-                    if(dish.isTypeAppetizer() && bean.isNeedApperizer()) {
-                        if(eatingPreference.checkDish(dish)) {
+                    if(dish.isTypeAppetizer() && bean.isNeedApperizer() && eatingPreference.checkDish(dish)) {
                             bean.toggleNeedAppetizer();
-                        }
                     }
-                    if(dish.isTypeDrink() && bean.isNeedDrink()) {
-                        if(eatingPreference.checkDish(dish)) {
+                    if(dish.isTypeDrink() && bean.isNeedDrink() && eatingPreference.checkDish(dish)) {
                             bean.toggleNeedDrink();
-                        }
                     }
-                    if(dish.isTypeDessert() && bean.isNeedDessert()) {
-                        if(eatingPreference.checkDish(dish)) {
+                    if(dish.isTypeDessert() && bean.isNeedDessert() && eatingPreference.checkDish(dish)) {
                             bean.toggleNeedDessert();
-                        }
                     }
-                    if(dish.isTypeContour() && bean.isNeedContour()) {
-                        if(eatingPreference.checkDish(dish)) {
+                    if(dish.isTypeContour() && bean.isNeedContour() && eatingPreference.checkDish(dish)) {
                             bean.toggleNeedContour();
-                        }
                     }
-                    if(dish.isTypeFirst() && bean.isNeedFirst()) {
-                        if(eatingPreference.checkDish(dish)) {
+                    if(dish.isTypeFirst() && bean.isNeedFirst() && eatingPreference.checkDish(dish)) {
                             bean.toggleNeedFirst();
-                        }
                     }
-                    if(dish.isTypeSecond() && bean.isNeedSecond()) {
-                        if(eatingPreference.checkDish(dish)) {
+                    if(dish.isTypeSecond() && bean.isNeedSecond() && eatingPreference.checkDish(dish)) {
                             bean.toggleNeedSecond();
-                        }
                     }
                 }
                 if(!bean.isNeedFirst() && !bean.isNeedSecond() && !bean.isNeedContour() && !bean.isNeedDessert()

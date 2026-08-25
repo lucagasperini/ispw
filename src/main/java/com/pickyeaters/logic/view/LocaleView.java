@@ -24,7 +24,7 @@ public class LocaleView extends VirtualView {
             throw new LocaleViewException("");
         }
 
-        localeBundle = ResourceBundle.getBundle(BUNDLE_NAME, new Locale(lang));
+        VirtualView.localeBundle = ResourceBundle.getBundle(BUNDLE_NAME, new Locale(lang));
     }
 
 
