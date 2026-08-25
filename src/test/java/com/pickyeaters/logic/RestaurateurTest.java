@@ -15,7 +15,7 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RestaurateurTest {
+class RestaurateurTest {
     private Application app;
     @BeforeEach
     void setUp() {

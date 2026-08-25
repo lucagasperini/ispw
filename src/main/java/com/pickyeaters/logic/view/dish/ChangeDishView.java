@@ -30,7 +30,7 @@ public class ChangeDishView extends EditableDishView {
     public void submit() throws GenericViewException {
         try {
             ChangeDishRequest request = new ChangeDishRequest(baseRequest, id, dish);
-            ChangeDishReply reply = controller.changeDish(request).getValue();
+            controller.changeDish(request).getValue();
         } catch (ResultErrorException e) {
             throw new GenericViewException(e.getMessage(), "FAILED_SAVE");
         }

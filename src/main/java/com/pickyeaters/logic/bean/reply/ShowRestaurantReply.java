@@ -3,9 +3,9 @@ package com.pickyeaters.logic.bean.reply;
 import com.pickyeaters.logic.bean.RestaurantBean;
 
 public class ShowRestaurantReply {
-    final private String id;
+    private final String id;
 
-    final RestaurantBean restaurant;
+    private final RestaurantBean restaurant;
 
     public ShowRestaurantReply(String id, RestaurantBean restaurant) {
         this.id = id;

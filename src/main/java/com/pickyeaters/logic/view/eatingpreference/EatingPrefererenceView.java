@@ -14,11 +14,11 @@ import com.pickyeaters.logic.view.VirtualView;
 
 import java.util.List;
 
-class EatingPrefererenceView extends VirtualView {
+abstract class EatingPrefererenceView extends VirtualView {
     protected final PickieController pickieController;
     protected final EatingPreferenceBean eatingPreference;
     protected final MenuController menuController;
-    public EatingPrefererenceView(Request baseRequest, PickieController pickieController, MenuController menuController) {
+    protected EatingPrefererenceView(Request baseRequest, PickieController pickieController, MenuController menuController) {
         super(baseRequest);
         this.pickieController = pickieController;
         this.menuController = menuController;

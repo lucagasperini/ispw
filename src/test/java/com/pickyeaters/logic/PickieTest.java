@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-public class PickieTest {
+class PickieTest {
     private Application app;
     @BeforeEach
     void setUp() {

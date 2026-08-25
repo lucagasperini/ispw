@@ -16,7 +16,7 @@ abstract class EditableDishView extends ReadableDishView {
 
     protected List<String> allIngredientList;
     protected List<String> allTypeList;
-    public EditableDishView(Request baseRequest, MenuController menuController) throws GenericViewException {
+    protected EditableDishView(Request baseRequest, MenuController menuController) throws GenericViewException {
         super(baseRequest, menuController);
 
         allTypeList = new ArrayList<>();

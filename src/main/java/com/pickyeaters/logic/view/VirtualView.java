@@ -12,7 +12,7 @@ public abstract class VirtualView implements ViewSubject {
     protected final List<ViewObserver> viewObserverList = new ArrayList<>();
     protected final Request baseRequest;
 
-    public VirtualView(Request request) {
+    protected VirtualView(Request request) {
         baseRequest = request;
     }
 

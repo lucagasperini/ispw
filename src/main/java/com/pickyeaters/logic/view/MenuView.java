@@ -78,7 +78,7 @@ public class MenuView extends VirtualView {
     public void submitRemoveDish(String dishID) {
         try {
             RemoveDishRequest request = new RemoveDishRequest(baseRequest, dishID);
-            RemoveDishReply reply = controller.removeDish(request).getValue();
+            controller.removeDish(request).getValue();
             notifyAllObserver();
         } catch (ResultErrorException e) {
             throw new GenericViewException(e.getMessage(), "FAILED_SAVE");

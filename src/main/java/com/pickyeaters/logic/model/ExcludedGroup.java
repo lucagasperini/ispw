@@ -3,7 +3,7 @@ package com.pickyeaters.logic.model;
 import java.util.List;
 
 public class ExcludedGroup {
-    private String ID;
+    private String id;
     private String name;
     private List<Ingredient> ingredientList;
 
@@ -14,7 +14,7 @@ public class ExcludedGroup {
     }
 
     public String getID() {
-        return ID;
+        return id;
     }
 
     public String getName() {
@@ -25,8 +25,8 @@ public class ExcludedGroup {
         return ingredientList;
     }
 
-    public void setID(String ID) {
-        this.ID = ID;
+    public void setID(String id) {
+        this.id = id;
     }
 
     public void setName(String name) {

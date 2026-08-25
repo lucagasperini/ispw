@@ -4,8 +4,8 @@ import com.pickyeaters.logic.exception.ResultErrorException;
 
 public class Result<T> {
 
-    static private final int STATUS_GENERIC_OK = 0;
-    static private final int STATUS_GENERIC_ERROR = 1;
+    private static final int STATUS_GENERIC_OK = 0;
+    private static final int STATUS_GENERIC_ERROR = 1;
 
     private final int status;
     private final T value;

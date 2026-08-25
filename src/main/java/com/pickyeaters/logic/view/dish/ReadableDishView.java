@@ -19,7 +19,7 @@ abstract class ReadableDishView extends VirtualView {
     protected DishBean dish;
     protected List<DishAllergenBean> allergenList = new ArrayList<>();
 
-    public ReadableDishView(Request baseRequest, MenuController menuController) {
+    protected ReadableDishView(Request baseRequest, MenuController menuController) {
         super(baseRequest);
 
         this.controller = menuController;

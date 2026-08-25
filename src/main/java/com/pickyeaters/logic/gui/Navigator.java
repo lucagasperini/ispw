@@ -53,7 +53,7 @@ public class Navigator {
         return new LoadedForm<>(node, controller);
         } catch (IOException ex) {
             showError(LiteralMessage.FXML_ERROR, LiteralMessage.FXML_ERROR, ex.getMessage());
-            throw new RuntimeException("Cannot load FXML: " + fxml + " Ex: " + ex.getMessage());
+            return null;
         }
     }
 
@@ -64,7 +64,7 @@ public class Navigator {
             return loader.load();
         } catch (IOException ex) {
             showError(LiteralMessage.FXML_ERROR, LiteralMessage.FXML_ERROR, ex.getMessage());
-            throw new RuntimeException("Cannot load FXML: " + fxml + " Ex: " + ex.getMessage());
+            return null;
         }
     }
 
@@ -80,9 +80,9 @@ public class Navigator {
         try {
             fxmlHistory.pop();
         } catch (NoSuchElementException e) {
-            throw new RuntimeException("Cannot load a parent fxml for root");
+            showErrorMessage("Cannot load a parent fxml for root");
+            return null;
         }
-
         LoadedForm<T> loaderForm = loadNode(fxmlHistory.getFirst());
         stage.setScene(new Scene((Parent) loaderForm.getNode()));
         return loaderForm.getController();
@@ -116,7 +116,8 @@ public class Navigator {
         try {
             fxmlContentHistory.pop();
         } catch (NoSuchElementException e) {
-            throw new RuntimeException("Cannot load a parent fxml for root");
+            showErrorMessage("Cannot load a content fxml for root");
+            return null;
         }
         return mainForm.loadContent(fxmlContentHistory.getFirst());
     }
@@ -125,7 +126,7 @@ public class Navigator {
         try {
             fxmlContentHistory.pop();
         } catch (NoSuchElementException e) {
-            throw new RuntimeException("Cannot load a parent fxml for root");
+            showErrorMessage("Cannot load a parent content fxml for root");
         }
         mainForm.loadContent(fxmlContentHistory.getFirst(), controller);
     }
@@ -185,5 +186,9 @@ public class Navigator {
 
     public static void showError(GenericViewException ex) {
         showError(ex.getMessage(), ex.getKey());
+    }
+
+    public static void showErrorMessage(String message) {
+        showError(message, "");
     }
 }

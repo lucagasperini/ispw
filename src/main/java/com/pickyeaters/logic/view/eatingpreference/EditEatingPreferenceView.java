@@ -46,7 +46,7 @@ public class EditEatingPreferenceView extends EatingPrefererenceView {
     public void submit() {
         try {
             EditEatingPreferenceRequest request = new EditEatingPreferenceRequest(baseRequest, eatingPreference);
-            EditEatingPreferenceReply reply = pickieController.editEatingPreference(request).getValue();
+            pickieController.editEatingPreference(request).getValue();
         } catch (ResultErrorException e) {
             throw new GenericViewException(e.getMessage(), "FAILED_SAVE");
         }

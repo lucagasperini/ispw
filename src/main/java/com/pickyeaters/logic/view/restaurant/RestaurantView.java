@@ -11,7 +11,7 @@ abstract class RestaurantView extends VirtualView {
     protected final RestaurantController controller;
     protected RestaurantBean restaurant;
 
-    public RestaurantView(Request baseRequest, RestaurantController restaurantController, String restaurantID) {
+    protected RestaurantView(Request baseRequest, RestaurantController restaurantController, String restaurantID) {
         super(baseRequest);
         controller = restaurantController;
 

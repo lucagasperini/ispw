@@ -36,7 +36,7 @@ public class EditRestaurantView extends RestaurantView {
     public void submit() throws GenericViewException {
         try {
             EditRestaurantRequest request = new EditRestaurantRequest(baseRequest, restaurant);
-            EditRestaurantReply reply = controller.editRestaurant(request).getValue();
+            controller.editRestaurant(request).getValue();
         } catch (ResultErrorException e) {
             throw new GenericViewException(e.getMessage(), "FAILED_SAVE");
         }
