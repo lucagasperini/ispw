@@ -3,7 +3,6 @@ package com.pickyeaters.logic.cli;
 import com.pickyeaters.logic.view.Application;
 import com.pickyeaters.logic.view.FindRestaurantView;
 import com.pickyeaters.logic.view.MenuView;
-import com.pickyeaters.logic.view.restaurant.ShowRestaurantView;
 
 import java.util.List;
 import java.util.Map;

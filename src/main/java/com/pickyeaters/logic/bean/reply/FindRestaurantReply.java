@@ -1,8 +1,6 @@
 package com.pickyeaters.logic.bean.reply;
 
 import com.pickyeaters.logic.bean.RestaurantBean;
-
-import java.util.List;
 import java.util.Map;
 
 public class FindRestaurantReply {

@@ -1,17 +1,10 @@
 package com.pickyeaters.logic.factory;
 
-import com.pickyeaters.logic.bean.DishBean;
-import com.pickyeaters.logic.bean.request.AddDishRequest;
-import com.pickyeaters.logic.bean.DishIngredientBean;
-import com.pickyeaters.logic.dao.IngredientRepository;
-import com.pickyeaters.logic.dao.MenuRepository;
 import com.pickyeaters.logic.exception.GenericFactoryException;
 import com.pickyeaters.logic.model.*;
 import com.pickyeaters.logic.utils.Logger;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 
 public class DishFactory {
     private final Logger logger;

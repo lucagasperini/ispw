@@ -2,8 +2,6 @@ package com.pickyeaters.logic.bean.reply;
 
 import com.pickyeaters.logic.bean.DishAllergenBean;
 import com.pickyeaters.logic.bean.DishBean;
-import com.pickyeaters.logic.bean.DishIngredientBean;
-import com.pickyeaters.logic.bean.request.Request;
 
 import java.util.List;
 

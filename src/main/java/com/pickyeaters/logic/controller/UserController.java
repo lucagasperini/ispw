@@ -5,11 +5,9 @@ import com.pickyeaters.logic.bean.reply.*;
 import com.pickyeaters.logic.bean.request.EditUserRequest;
 import com.pickyeaters.logic.bean.request.ShowUserRequest;
 import com.pickyeaters.logic.dao.UserRepository;
-import com.pickyeaters.logic.exception.GenericFactoryException;
 import com.pickyeaters.logic.exception.LoginControllerException;
 import com.pickyeaters.logic.exception.LoginControllerPermissionException;
 import com.pickyeaters.logic.model.Pickie;
-import com.pickyeaters.logic.model.Restaurant;
 import com.pickyeaters.logic.model.User;
 import com.pickyeaters.logic.utils.Logger;
 

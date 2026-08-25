@@ -2,7 +2,6 @@ package com.pickyeaters.logic.bean;
 
 import com.pickyeaters.logic.model.Dish;
 import com.pickyeaters.logic.model.Ingredient;
-
 import java.util.ArrayList;
 import java.util.List;
 

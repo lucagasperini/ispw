@@ -1,9 +1,6 @@
 package com.pickyeaters.logic.model;
 
-import com.pickyeaters.logic.controller.LoginController;
 import com.pickyeaters.logic.exception.NotImplementedException;
-
-import java.util.Date;
 
 public abstract class User {
     private String id;

@@ -1,6 +1,5 @@
 package com.pickyeaters.logic.dao;
 
-import com.pickyeaters.logic.model.EatingPreference;
 import com.pickyeaters.logic.model.Restaurant;
 
 import java.util.List;

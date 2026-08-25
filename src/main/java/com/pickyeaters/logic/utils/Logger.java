@@ -1,4 +1,3 @@
-
 package com.pickyeaters.logic.utils;
 
 public interface Logger {

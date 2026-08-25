@@ -3,12 +3,10 @@ package com.pickyeaters.logic.view.dish;
 import com.pickyeaters.logic.bean.DishAllergenBean;
 import com.pickyeaters.logic.bean.DishIngredientBean;
 import com.pickyeaters.logic.bean.request.AllIngredientRequest;
-import com.pickyeaters.logic.bean.request.EditUserRequest;
 import com.pickyeaters.logic.bean.request.Request;
 import com.pickyeaters.logic.bean.request.ShowAllergenIngredientRequest;
 import com.pickyeaters.logic.controller.MenuController;
 import com.pickyeaters.logic.exception.GenericViewException;
-import com.pickyeaters.logic.exception.NotImplementedException;
 import com.pickyeaters.logic.exception.ResultErrorException;
 
 import java.util.ArrayList;

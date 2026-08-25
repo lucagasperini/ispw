@@ -3,7 +3,6 @@ package com.pickyeaters.logic.gui;
 import com.pickyeaters.logic.view.dish.AddDishView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.text.Text;
 
 public class AddDishForm extends DishForm {
 

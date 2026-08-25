@@ -1,9 +1,7 @@
 package com.pickyeaters.logic.gui;
 
 import com.pickyeaters.logic.view.MenuView;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
 
 import java.util.List;

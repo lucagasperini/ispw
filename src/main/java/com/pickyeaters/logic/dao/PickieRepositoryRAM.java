@@ -1,7 +1,6 @@
 package com.pickyeaters.logic.dao;
 
 import com.pickyeaters.logic.exception.GenericRepositoryException;
-import com.pickyeaters.logic.exception.NotImplementedException;
 import com.pickyeaters.logic.model.*;
 import com.pickyeaters.logic.utils.Logger;
 

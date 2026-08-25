@@ -1,11 +1,7 @@
 package com.pickyeaters.logic.gui;
 
-import com.pickyeaters.logic.exception.NotImplementedException;
 import com.pickyeaters.logic.model.Dish;
 import com.pickyeaters.logic.view.ViewObserver;
-import com.pickyeaters.logic.view.dish.AddDishView;
-import com.pickyeaters.logic.view.dish.ChangeDishView;
-import com.pickyeaters.logic.view.dish.ShowDishView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;

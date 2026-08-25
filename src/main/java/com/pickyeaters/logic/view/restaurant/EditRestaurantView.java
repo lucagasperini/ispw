@@ -1,6 +1,5 @@
 package com.pickyeaters.logic.view.restaurant;
 
-import com.pickyeaters.logic.bean.reply.EditEatingPreferenceReply;
 import com.pickyeaters.logic.bean.reply.EditRestaurantReply;
 import com.pickyeaters.logic.bean.request.EditRestaurantRequest;
 import com.pickyeaters.logic.bean.request.Request;

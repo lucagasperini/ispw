@@ -3,9 +3,7 @@ package com.pickyeaters.logic.bean;
 import com.pickyeaters.logic.controller.LoginController;
 
 public class AuthBean {
-    //TODO: Check email format
     private String email;
-    //TODO: Hash password
     private String password;
 
     public String getEmail() {

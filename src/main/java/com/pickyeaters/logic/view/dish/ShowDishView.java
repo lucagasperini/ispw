@@ -7,8 +7,6 @@ import com.pickyeaters.logic.controller.MenuController;
 import com.pickyeaters.logic.exception.GenericViewException;
 import com.pickyeaters.logic.exception.ResultErrorException;
 
-import java.util.List;
-
 public class ShowDishView extends ReadableDishView {
 
     public ShowDishView(Request baseRequest, MenuController menuController, String dishID) {

@@ -12,8 +12,6 @@ import com.pickyeaters.logic.controller.MenuController;
 import com.pickyeaters.logic.controller.RestaurantController;
 import com.pickyeaters.logic.exception.GenericViewException;
 import com.pickyeaters.logic.exception.ResultErrorException;
-import com.pickyeaters.logic.view.dish.ChangeDishView;
-import com.pickyeaters.logic.view.dish.ShowDishView;
 
 import java.util.ArrayList;
 import java.util.List;

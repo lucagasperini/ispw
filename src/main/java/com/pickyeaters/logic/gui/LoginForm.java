@@ -1,9 +1,6 @@
 package com.pickyeaters.logic.gui;
 
-import com.pickyeaters.logic.cli.PickieMainForm;
-import com.pickyeaters.logic.cli.RestaurateurMainForm;
 import com.pickyeaters.logic.exception.LoginViewException;
-import com.pickyeaters.logic.exception.NotImplementedException;
 import com.pickyeaters.logic.view.LoginView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

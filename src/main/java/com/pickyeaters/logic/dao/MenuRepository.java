@@ -1,8 +1,6 @@
 package com.pickyeaters.logic.dao;
 
 import com.pickyeaters.logic.model.Dish;
-import com.pickyeaters.logic.model.Ingredient;
-import com.pickyeaters.logic.model.Restaurateur;
 
 import java.util.List;
 import java.util.Optional;

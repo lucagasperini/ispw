@@ -2,7 +2,6 @@ package com.pickyeaters.logic.cli;
 
 import com.pickyeaters.logic.view.Application;
 import com.pickyeaters.logic.view.eatingpreference.EditEatingPreferenceView;
-import com.pickyeaters.logic.view.eatingpreference.ShowEatingPreferenceView;
 
 import java.util.Map;
 

@@ -7,8 +7,6 @@ import com.pickyeaters.logic.bean.reply.ShowRestaurantReply;
 import com.pickyeaters.logic.bean.request.EditRestaurantRequest;
 import com.pickyeaters.logic.bean.request.ShowRestaurantRequest;
 import com.pickyeaters.logic.dao.RestaurantRepository;
-import com.pickyeaters.logic.dao.RestaurantRepositoryDB;
-import com.pickyeaters.logic.dao.RestaurantRepositoryRAM;
 import com.pickyeaters.logic.exception.GenericRepositoryException;
 import com.pickyeaters.logic.exception.NotImplementedException;
 import com.pickyeaters.logic.model.Restaurant;

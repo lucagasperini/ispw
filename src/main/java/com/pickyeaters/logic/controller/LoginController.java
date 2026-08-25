@@ -6,8 +6,6 @@ import com.pickyeaters.logic.bean.reply.Result;
 import com.pickyeaters.logic.bean.request.LoginRequest;
 import com.pickyeaters.logic.bean.request.Request;
 import com.pickyeaters.logic.dao.UserRepository;
-import com.pickyeaters.logic.dao.UserRepositoryDB;
-import com.pickyeaters.logic.dao.UserRepositoryRAM;
 import com.pickyeaters.logic.exception.LoginControllerException;
 import com.pickyeaters.logic.exception.LoginControllerPermissionException;
 import com.pickyeaters.logic.exception.NotImplementedException;

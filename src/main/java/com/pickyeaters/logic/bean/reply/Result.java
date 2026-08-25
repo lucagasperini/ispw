@@ -1,6 +1,5 @@
 package com.pickyeaters.logic.bean.reply;
 
-import com.pickyeaters.logic.exception.BeanInvalidValueException;
 import com.pickyeaters.logic.exception.ResultErrorException;
 
 public class Result<T> {

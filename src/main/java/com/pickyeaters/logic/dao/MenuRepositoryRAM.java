@@ -1,7 +1,6 @@
 package com.pickyeaters.logic.dao;
 
 import com.pickyeaters.logic.exception.GenericRepositoryException;
-import com.pickyeaters.logic.exception.NotImplementedException;
 import com.pickyeaters.logic.model.*;
 import com.pickyeaters.logic.utils.Logger;
 
@@ -9,7 +8,6 @@ import java.util.*;
 
 public class MenuRepositoryRAM implements MenuRepository {
     private final Logger logger;
-    // Map<RestaurantID, Menu>
     private Map<String, List<Dish>> map = new HashMap<>();
     private List<Ingredient> ingredientList = new ArrayList<>();
     private int nextDishID = 100;

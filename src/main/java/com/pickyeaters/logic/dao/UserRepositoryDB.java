@@ -3,14 +3,10 @@ package com.pickyeaters.logic.dao;
 import com.pickyeaters.logic.controller.DatabaseController;
 import com.pickyeaters.logic.exception.DatabaseControllerException;
 import com.pickyeaters.logic.exception.GenericRepositoryException;
-import com.pickyeaters.logic.exception.NotImplementedException;
 import com.pickyeaters.logic.factory.UserFactory;
-import com.pickyeaters.logic.model.Allergen;
-import com.pickyeaters.logic.model.Ingredient;
 import com.pickyeaters.logic.model.User;
 import com.pickyeaters.logic.utils.Logger;
 
-import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
 

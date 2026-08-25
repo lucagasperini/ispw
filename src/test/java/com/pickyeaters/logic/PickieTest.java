@@ -5,7 +5,6 @@ import com.pickyeaters.logic.view.FindRestaurantView;
 import com.pickyeaters.logic.view.LoginView;
 import com.pickyeaters.logic.view.eatingpreference.EditEatingPreferenceView;
 import com.pickyeaters.logic.view.eatingpreference.ShowEatingPreferenceView;
-import com.pickyeaters.logic.view.restaurant.ShowRestaurantView;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

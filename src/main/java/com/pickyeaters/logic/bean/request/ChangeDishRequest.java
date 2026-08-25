@@ -1,9 +1,6 @@
 package com.pickyeaters.logic.bean.request;
 
 import com.pickyeaters.logic.bean.DishBean;
-import com.pickyeaters.logic.bean.DishIngredientBean;
-
-import java.util.List;
 
 public class ChangeDishRequest extends Request {
     private final String id;

@@ -1,7 +1,6 @@
 package com.pickyeaters.logic.bean.reply;
 
 import com.pickyeaters.logic.bean.DishAllergenBean;
-
 import java.util.List;
 
 public class ShowAllergenIngredientReply {

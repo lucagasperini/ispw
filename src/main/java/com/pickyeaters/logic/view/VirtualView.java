@@ -1,7 +1,6 @@
 package com.pickyeaters.logic.view;
 
 import com.pickyeaters.logic.bean.request.Request;
-import com.pickyeaters.logic.exception.GenericViewException;
 
 import java.util.ArrayList;
 import java.util.List;

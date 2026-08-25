@@ -4,7 +4,6 @@ import com.pickyeaters.logic.exception.GenericViewException;
 import com.pickyeaters.logic.view.dish.ChangeDishView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.text.Text;
 
 public class ChangeDishForm extends DishForm {
 

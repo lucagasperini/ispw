@@ -9,8 +9,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 
-import java.util.function.Consumer;
-
 public class IngredientItemWidget {
 
     @FXML

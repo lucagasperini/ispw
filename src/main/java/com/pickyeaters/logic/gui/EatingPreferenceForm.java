@@ -1,7 +1,6 @@
 package com.pickyeaters.logic.gui;
 
 import com.pickyeaters.logic.view.eatingpreference.EditEatingPreferenceView;
-import com.pickyeaters.logic.view.eatingpreference.ShowEatingPreferenceView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;

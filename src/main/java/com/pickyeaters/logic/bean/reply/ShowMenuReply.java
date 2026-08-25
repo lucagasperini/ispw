@@ -1,9 +1,6 @@
 package com.pickyeaters.logic.bean.reply;
 
-
 import com.pickyeaters.logic.bean.DishBean;
-
-import java.util.List;
 import java.util.Map;
 
 public class ShowMenuReply {

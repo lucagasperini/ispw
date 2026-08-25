@@ -3,7 +3,6 @@ package com.pickyeaters.logic.dao;
 import com.pickyeaters.logic.controller.DatabaseController;
 import com.pickyeaters.logic.exception.DatabaseControllerException;
 import com.pickyeaters.logic.exception.GenericRepositoryException;
-import com.pickyeaters.logic.exception.NotImplementedException;
 import com.pickyeaters.logic.model.Allergen;
 import com.pickyeaters.logic.model.ExcludedGroup;
 import com.pickyeaters.logic.model.Ingredient;

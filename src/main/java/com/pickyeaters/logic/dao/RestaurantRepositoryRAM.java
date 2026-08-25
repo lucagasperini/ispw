@@ -1,11 +1,8 @@
 package com.pickyeaters.logic.dao;
 
 import com.pickyeaters.logic.exception.GenericRepositoryException;
-import com.pickyeaters.logic.exception.NotImplementedException;
-import com.pickyeaters.logic.model.Pickie;
 import com.pickyeaters.logic.model.Restaurant;
 import com.pickyeaters.logic.model.Restaurateur;
-import com.pickyeaters.logic.model.User;
 import com.pickyeaters.logic.utils.Logger;
 
 import java.util.ArrayList;
