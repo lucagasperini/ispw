@@ -44,7 +44,6 @@ public class Result<T> {
         return !isOK();
     }
 
-    // TODO: Check status is an error!
     public String showError() {
         return this.errorMessage;
     }
