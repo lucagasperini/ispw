@@ -43,7 +43,7 @@ public class PickieRepositoryDB implements PickieRepository {
                         false
                 ));
             } catch (NoSuchElementException ignored) {
-
+                logger.warn("readDislikeIngredientList: Skip invalid element on database ");
             }
         }
         query.close();
@@ -66,7 +66,7 @@ public class PickieRepositoryDB implements PickieRepository {
                         query.getString().orElseThrow()
                 ));
             } catch (NoSuchElementException ignored) {
-
+                logger.warn("readAllergenListUser: Skip invalid element on database ");
             }
         }
         query.close();
@@ -95,7 +95,7 @@ public class PickieRepositoryDB implements PickieRepository {
                         ingredientList
                 ));
             } catch (NoSuchElementException ignored){
-
+                logger.warn("readExcludedGroupListUser: Skip invalid element on database ");
             }
         }
         query.close();

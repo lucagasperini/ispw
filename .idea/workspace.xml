@@ -18,8 +18,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Update idea workspace">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/Result.java" afterDir="false" />
+    <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Removed old todo">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/utils/VoidLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/utils/VoidLogger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -474,7 +477,8 @@
     <MESSAGE value="Add PickieController.allCity and relative comboBox on gui" />
     <MESSAGE value="Aggiunti dati di prova al setup del database" />
     <MESSAGE value="Update idea workspace" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update idea workspace" />
+    <MESSAGE value="Removed old todo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed old todo" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

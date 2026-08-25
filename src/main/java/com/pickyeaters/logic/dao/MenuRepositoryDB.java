@@ -51,6 +51,7 @@ public class MenuRepositoryDB implements MenuRepository {
                             isOptional
                     ));
                 } catch (NoSuchElementException ignored) {
+                    logger.warn("readIngredientListByDishID: Skip invalid element on database ");
                 }
             }
             query.close();
@@ -88,7 +89,7 @@ public class MenuRepositoryDB implements MenuRepository {
                         ingredientList
                 ));
             } catch (NoSuchElementException ignored) {
-
+                logger.warn("findMenuByRestaurantID: Skip invalid element on database ");
             }
         }
         query.close();

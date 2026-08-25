@@ -106,7 +106,7 @@ public class RestaurantRepositoryDB implements RestaurantRepository{
                             city
                     ));
                 } catch (NoSuchElementException ignored) {
-
+                    logger.warn("findRestaurantByCity: Skip invalid element on database ");
                 }
             }
             query.close();
@@ -130,7 +130,7 @@ public class RestaurantRepositoryDB implements RestaurantRepository{
                 try {
                     cityList.add(query.getString().orElseThrow());
                 } catch (NoSuchElementException ignored) {
-
+                    logger.warn("allCity: Skip invalid element on database ");
                 }
             }
             query.close();

@@ -85,7 +85,7 @@ public class IngredientRepositoryDB implements IngredientRepository {
                             query.getString().orElseThrow()
                     ));
                 } catch (NoSuchElementException ignored) {
-
+                    logger.warn("findAllergenListByIngredientID: Skip invalid element on database ");
                 }
             }
             query.close();
@@ -119,6 +119,7 @@ public class IngredientRepositoryDB implements IngredientRepository {
                             false
                     ));
                 } catch (NoSuchElementException ignored) {
+                    logger.warn("findIngredientListByExcludedGroupID: Skip invalid element on database ");
                 }
             }
             query.close();
@@ -165,7 +166,7 @@ public class IngredientRepositoryDB implements IngredientRepository {
                 try {
                     outList.add(query.getString().orElseThrow());
                 } catch (NoSuchElementException ignored) {
-
+                    logger.warn("allIngredientName: Skip invalid element on database ");
                 }
             }
             query.close();
@@ -186,7 +187,7 @@ public class IngredientRepositoryDB implements IngredientRepository {
                 try {
                     outList.add(query.getString().orElseThrow());
                 } catch (NoSuchElementException ignored) {
-
+                    logger.warn("allAllergenName: Skip invalid element on database ");
                 }
             }
             query.close();
@@ -214,7 +215,7 @@ public class IngredientRepositoryDB implements IngredientRepository {
                             query.getString().orElseThrow()
                     ));
                 } catch (NoSuchElementException ignored) {
-
+                    logger.warn("findAllergenByIngredient: Skip invalid element on database ");
                 }
             }
             query.close();
