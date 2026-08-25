@@ -1,7 +1,6 @@
 package com.pickyeaters.logic.view;
 
 import com.pickyeaters.logic.bean.*;
-import com.pickyeaters.logic.bean.reply.RemoveDishReply;
 import com.pickyeaters.logic.bean.reply.ShowMenuReply;
 import com.pickyeaters.logic.bean.reply.ShowRestaurantReply;
 import com.pickyeaters.logic.bean.request.RemoveDishRequest;

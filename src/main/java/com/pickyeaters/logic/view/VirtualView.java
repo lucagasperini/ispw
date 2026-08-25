@@ -16,9 +16,9 @@ public abstract class VirtualView implements ViewSubject {
         baseRequest = request;
     }
 
-    static protected ResourceBundle localeBundle = null;
+    protected static ResourceBundle localeBundle = null;
 
-    static public String i18n(String key) {
+    public static String i18n(String key) {
         try {
             if(localeBundle == null) {
                 return "#" + key + "#";
