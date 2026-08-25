@@ -1,0 +1,41 @@
+# This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
+# For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
+
+name: Maven Package
+
+on:
+  push:
+    branches:
+    - main
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 19
+      uses: actions/setup-java@v3
+      with:
+        java-version: '19'
+        distribution: 'temurin'
+        settings-path: ${{ github.workspace }} # location for the settings.xml file
+
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml -DskipTests
+    - name: Prepare files
+      run: |
+          mv target/PickyEaters-1.0-SNAPSHOT.jar PickyEater.jar
+    - name: Package
+      uses: papeloto/action-zip@v1
+      with:
+          files: PickyEater.jar
+          dest: PickyEater.zip
+    - name: Release
+      uses: softprops/action-gh-release@v1
+      with:
+          files: PickyEater.zip
+          tag_name: PickyEater-${{ github.sha }}
