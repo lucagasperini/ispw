@@ -33,8 +33,10 @@ public class UserController {
             User user = repository.getUserByID(userID).orElseThrow();
             return Result.ok(new ShowUserReply(new UserBean(user)));
         } catch (LoginControllerException | LoginControllerPermissionException e) {
+            logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
         } catch (NoSuchElementException e) {
+            logger.error(LiteralMessage.USER_CONTROLLER_CANT_FIND_USER_BY_USERID, e);
             return Result.error(LiteralMessage.USER_CONTROLLER_CANT_FIND_USER_BY_USERID);
         }
     }
@@ -51,8 +53,10 @@ public class UserController {
             repository.editUser(user);
             return Result.ok(new EditUserReply());
         } catch (LoginControllerException | LoginControllerPermissionException e) {
+            logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
         } catch (NoSuchElementException e) {
+            logger.error(LiteralMessage.USER_CONTROLLER_CANT_FIND_USER_BY_USERID, e);
             return Result.error(LiteralMessage.USER_CONTROLLER_CANT_FIND_USER_BY_USERID);
         }
     }

@@ -107,8 +107,9 @@ public class MenuRepositoryRAM implements MenuRepository {
                 return;
             }
         }
-
-        throw new GenericRepositoryException(LiteralMessage.MENU_REPOSITORY_CANT_REMOVE_DISH);
+        GenericRepositoryException e = new GenericRepositoryException(LiteralMessage.MENU_REPOSITORY_CANT_REMOVE_DISH);
+        logger.error(e.getMessage(), e);
+        throw e;
     }
 
     public Optional<Dish> findDishByID(String restaurantID, String dishID) {
@@ -117,7 +118,9 @@ public class MenuRepositoryRAM implements MenuRepository {
                 return Optional.of(i);
             }
         }
-        throw new GenericRepositoryException(LiteralMessage.MENU_REPOSITORY_CANT_REMOVE_DISH);
+        GenericRepositoryException e = new GenericRepositoryException(LiteralMessage.MENU_REPOSITORY_CANT_FIND_DISH);
+        logger.error(e.getMessage(), e);
+        throw e;
     }
 
     public Optional<Dish> findDishByID(String dishID) {
@@ -128,7 +131,9 @@ public class MenuRepositoryRAM implements MenuRepository {
                 }
             }
         }
-        throw new GenericRepositoryException(LiteralMessage.MENU_REPOSITORY_CANT_REMOVE_DISH);
+        GenericRepositoryException e = new GenericRepositoryException(LiteralMessage.MENU_REPOSITORY_CANT_FIND_DISH);
+        logger.error(e.getMessage(), e);
+        throw e;
     }
 
 

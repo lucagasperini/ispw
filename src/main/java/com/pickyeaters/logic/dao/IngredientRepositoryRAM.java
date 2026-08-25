@@ -97,7 +97,9 @@ public class IngredientRepositoryRAM implements IngredientRepository {
                 return i.getAllergenList();
             }
         }
-        throw new GenericRepositoryException("Cannot find ingredient");
+        GenericRepositoryException e = new GenericRepositoryException("Cannot find ingredient: " + ingredientID);
+        logger.error(e.getMessage(), e);
+        throw e;
     }
 
     @Override
@@ -107,7 +109,9 @@ public class IngredientRepositoryRAM implements IngredientRepository {
                 return i.getIngredientList();
             }
         }
-        throw new GenericRepositoryException("Cannot find Excluded Group: " + egID);
+        GenericRepositoryException e = new GenericRepositoryException("Cannot find Excluded Group: " + egID);
+        logger.error(e.getMessage(), e);
+        throw e;
     }
 
 

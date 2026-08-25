@@ -1,5 +1,6 @@
 package com.pickyeaters.logic.dao;
 
+import com.pickyeaters.logic.exception.GenericRepositoryException;
 import com.pickyeaters.logic.model.Pickie;
 import com.pickyeaters.logic.model.Restaurateur;
 import com.pickyeaters.logic.model.User;
@@ -50,5 +51,8 @@ public class UserRepositoryRAM implements UserRepository {
                 i.setFirstname(user.getFirstname());
             }
         }
+        GenericRepositoryException e = new GenericRepositoryException("Cant edit user");
+        logger.error(e.getMessage(), e);
+        throw e;
     }
 }

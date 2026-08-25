@@ -19,7 +19,11 @@ public class UserFactory {
             case "REST" -> new Restaurateur(id, email, password, firstname, lastname);
             case "PICKIE" -> new Pickie(id, email, password, firstname, lastname);
             case "ADMIN" -> new Admin(id, email, password, firstname, lastname);
-            default -> throw new NotImplementedException();
+            default -> {
+                NotImplementedException e = new NotImplementedException("createUser: user type is invalid: " + type);
+                logger.error(e.getMessage(), e);
+                throw e;
+            }
         };
     }
 }

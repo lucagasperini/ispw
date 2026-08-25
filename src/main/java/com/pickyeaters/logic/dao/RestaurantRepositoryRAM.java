@@ -54,7 +54,9 @@ public class RestaurantRepositoryRAM implements RestaurantRepository {
                 return;
             }
         }
-        throw new GenericRepositoryException("Cannot find selected restaurant");
+        GenericRepositoryException e = new GenericRepositoryException("Cannot find selected restaurant");
+        logger.error(e.getMessage(), e);
+        throw e;
     }
 
     public List<Restaurant> findRestaurantByCity(String city) {

@@ -12,7 +12,10 @@ public class LiteralMessage {
     public static final String MENU_CONTROLLER_DISH_MUST_HAVE_ONE_INGREDIENT = "The dish must contain at least one ingredient";
     public static final String USER_CONTROLLER_CANT_FIND_USER_BY_USERID = "Can't find user for requested userID";
 
+    public static final String PICKIE_CONTROLLER_CITY_EMPTY = "Invalid request: city is empty.";
+
     public static final String MENU_REPOSITORY_CANT_REMOVE_DISH = "Cannot remove selected dish from restaurant";
+    public static final String MENU_REPOSITORY_CANT_FIND_DISH = "Cannot remove selected dish from restaurant";
 
     public static final String FXML_ERROR = "FXML ERROR";
 }

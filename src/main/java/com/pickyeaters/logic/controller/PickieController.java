@@ -11,6 +11,7 @@ import com.pickyeaters.logic.dao.PickieRepository;
 import com.pickyeaters.logic.dao.RestaurantRepository;
 import com.pickyeaters.logic.exception.*;
 import com.pickyeaters.logic.model.*;
+import com.pickyeaters.logic.utils.LiteralMessage;
 import com.pickyeaters.logic.utils.Logger;
 
 import java.util.*;
@@ -59,6 +60,7 @@ public class PickieController {
             EatingPreferenceBean bean = new EatingPreferenceBean(dislikeIngredientList,allergenList,excludedGroupList);
             return Result.ok(new ShowEatingPreferenceReply(bean));
         } catch (LoginControllerException | LoginControllerPermissionException e) {
+            logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
         }
     }
@@ -88,8 +90,10 @@ public class PickieController {
             pickieRepository.editEatingPreference(userID, eatingPreference);
             return Result.ok(new EditEatingPreferenceReply());
         } catch (LoginControllerException | LoginControllerPermissionException | GenericRepositoryException e ) {
+            logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
         } catch (NoSuchElementException e) {
+            logger.error(e.getMessage(), e);
             return Result.error("Ingredient, allergen or excluded group is invalid: " + e.getMessage());
         }
     }
@@ -100,7 +104,8 @@ public class PickieController {
             loginController.checkUserPermission(request, LoginController.PERMISSION_FIND_RESTAURANT);
 
             if(request.getFindRestaurant().getCity().isEmpty()) {
-                return Result.error("Invalid request: city is empty.");
+                logger.warn(LiteralMessage.PICKIE_CONTROLLER_CITY_EMPTY);
+                return Result.error(LiteralMessage.PICKIE_CONTROLLER_CITY_EMPTY);
             }
 
             Map<String, RestaurantBean> outMap = new HashMap<>();
@@ -140,6 +145,7 @@ public class PickieController {
             }
             return Result.ok(new FindRestaurantReply(outMap));
         } catch (LoginControllerException | LoginControllerPermissionException | GenericRepositoryException e) {
+            logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
         }
     }
@@ -149,6 +155,7 @@ public class PickieController {
             loginController.checkUserPermission(request, LoginController.PERMISSION_ALLALLERGEN);
             return Result.ok(new AllAllergenReply(ingredientRepository.allAllergenName()));
         } catch (LoginControllerException | LoginControllerPermissionException e) {
+            logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
         }
     }
@@ -158,6 +165,7 @@ public class PickieController {
             loginController.checkUserPermission(request, LoginController.PERMISSION_ALLCITY);
             return Result.ok(new AllCityReply(restaurantRepository.allCity()));
         } catch (LoginControllerException | LoginControllerPermissionException e) {
+            logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
         }
     }

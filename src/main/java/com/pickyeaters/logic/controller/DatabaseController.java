@@ -32,7 +32,9 @@ public class DatabaseController {
     private void connect(String url, String user, String password) throws DatabaseControllerException {
         try {
             conn = new DatabaseConnection(DriverManager.getConnection(url, user, password));
+            logger.info("Connection complete to: " + url);
         } catch (SQLException ex) {
+            logger.error("Error connection database", ex);
             throw new DatabaseControllerException("Cannot connect to database: " + url);
         }
     }

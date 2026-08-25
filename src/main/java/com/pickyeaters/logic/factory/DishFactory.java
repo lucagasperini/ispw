@@ -28,7 +28,9 @@ public class DishFactory {
             case Dish.TYPE_DRINK:
                 return new DishDrink(id, name, description, ingredientList);
             default:
-                throw new GenericFactoryException("Cannot find dish type: " + type);
+                GenericFactoryException e = new GenericFactoryException("Cannot find dish type: " + type);
+                logger.error(e.getMessage(), e);
+                throw e;
         }
     }
 }

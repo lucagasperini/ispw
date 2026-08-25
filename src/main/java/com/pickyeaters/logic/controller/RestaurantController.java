@@ -33,13 +33,15 @@ public class RestaurantController {
             String userID = loginController.requestUserID(request);
             Optional<Restaurant> restaurant = repository.findRestaurantByOwner(userID);
             if(restaurant.isEmpty()) {
+                logger.warn(LiteralMessage.RESTAURANT_CONTROLLER_NO_RESTAURANT);
                 return Result.error(LiteralMessage.RESTAURANT_CONTROLLER_NO_RESTAURANT);
             } else {
                 return Result.ok(buildReplyShowRestaurant(restaurant.orElseThrow()));
             }
         }
-
-        throw new NotImplementedException();
+        NotImplementedException e = new NotImplementedException();
+        logger.error(e.getMessage(), e);
+        throw e;
     }
 
     private ShowRestaurantReply buildReplyShowRestaurant(Restaurant restaurant) {
@@ -64,6 +66,7 @@ public class RestaurantController {
             repository.editRestaurantByOwner(userID, restaurant);
             return Result.ok(new EditRestaurantReply());
         } catch (GenericRepositoryException e) {
+            logger.error(LiteralMessage.RESTAURANT_CONTROLLER_NO_RESTAURANT, e);
             return Result.error(LiteralMessage.RESTAURANT_CONTROLLER_NO_RESTAURANT);
         }
     }

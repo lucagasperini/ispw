@@ -49,6 +49,7 @@ public class MenuController {
                     ingredientList.add(ingredientRepository.findIngredientByName(ingredient.getName()).orElseThrow());
                 }
             } catch (NoSuchElementException e) {
+                logger.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_INGREDIENT, e);
                 return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_INGREDIENT);
             }
 
@@ -63,8 +64,10 @@ public class MenuController {
             menuRepository.editDish(restaurant.getID(), dish);
             return Result.ok(new ChangeDishReply());
         } catch (LoginControllerException | GenericFactoryException | LoginControllerPermissionException e) {
+            logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
         } catch (NoSuchElementException e) {
+            logger.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_RESTAURANT_BY_USERID, e);
             return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_RESTAURANT_BY_USERID);
         }
 
@@ -76,6 +79,7 @@ public class MenuController {
             loginController.checkUserPermission(request, LoginController.PERMISSION_ADD_DISH);
 
             if(request.getDish().getIngredientList().isEmpty()) {
+                logger.warn(LiteralMessage.MENU_CONTROLLER_DISH_MUST_HAVE_ONE_INGREDIENT);
                 return Result.error(LiteralMessage.MENU_CONTROLLER_DISH_MUST_HAVE_ONE_INGREDIENT);
             }
 
@@ -87,6 +91,7 @@ public class MenuController {
                     ingredientList.add(ingredientRepository.findIngredientByName(ingredient.getName()).orElseThrow());
                 }
             } catch (NoSuchElementException e) {
+                logger.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_INGREDIENT, e);
                 return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_INGREDIENT);
             }
 
@@ -101,8 +106,10 @@ public class MenuController {
             menuRepository.addDish(restaurant.getID(), dish);
             return Result.ok(new AddDishReply());
         } catch (LoginControllerException | GenericFactoryException | LoginControllerPermissionException e) {
+            logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
         } catch (NoSuchElementException e) {
+            logger.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_RESTAURANT_BY_USERID, e);
             return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_RESTAURANT_BY_USERID);
         }
 
@@ -128,8 +135,10 @@ public class MenuController {
             DishBean dishBean = new DishBean(dish.getName(), dish.getDescription(), dish.getType(), ingredientList);
             return Result.ok(new ShowDishReply(dishBean, List.copyOf(allergenMap.values())));
         } catch (NoSuchElementException e) {
+            logger.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_RESTAURANT_BY_USERID, e);
             return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_RESTAURANT_BY_USERID);
         }  catch (LoginControllerException | GenericRepositoryException e) {
+            logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
         }
     }
@@ -142,8 +151,10 @@ public class MenuController {
             menuRepository.removeDish(restaurant.getID(), request.getID());
             return Result.ok(new RemoveDishReply());
         }  catch (NoSuchElementException e) {
+            logger.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_RESTAURANT_BY_USERID, e);
             return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_RESTAURANT_BY_USERID);
         } catch (LoginControllerException | GenericRepositoryException | LoginControllerPermissionException e) {
+            logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
         }
 
@@ -163,8 +174,10 @@ public class MenuController {
 
         return Result.ok(new ShowMenuReply(dishMap));
         } catch (LoginControllerException | LoginControllerPermissionException e) {
+            logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
         } catch (NoSuchElementException e) {
+            logger.error(LiteralMessage.MENU_CONTROLLER_CANT_MENU_BY_RESTAURANTID, e);
             return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_MENU_BY_RESTAURANTID);
         }
     }
@@ -174,8 +187,10 @@ public class MenuController {
             loginController.checkUserPermission(request, LoginController.PERMISSION_ALLINGREDIENT);
             return Result.ok(new AllIngredientReply(ingredientRepository.allIngredientName()));
         } catch (LoginControllerException | LoginControllerPermissionException e) {
+            logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
         } catch (NoSuchElementException e) {
+            logger.error(LiteralMessage.MENU_CONTROLLER_CANT_MENU_BY_RESTAURANTID, e);
             return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_MENU_BY_RESTAURANTID);
         }
     }
@@ -191,8 +206,10 @@ public class MenuController {
 
             return Result.ok(new ShowAllergenIngredientReply(outList));
         } catch (LoginControllerException | LoginControllerPermissionException e) {
+            logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
         } catch (NoSuchElementException e) {
+            logger.error(e.getMessage(), e);
             return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_INGREDIENT);
         }
     }

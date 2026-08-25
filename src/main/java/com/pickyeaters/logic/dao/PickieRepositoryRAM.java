@@ -58,6 +58,7 @@ public class PickieRepositoryRAM implements PickieRepository {
         try {
             eatingPreferenceMap.replace(userID, eatingPreference);
         } catch (NullPointerException ex) {
+            logger.error(ex.getMessage(), ex);
             throw new GenericRepositoryException("userID not found");
         }
     }
