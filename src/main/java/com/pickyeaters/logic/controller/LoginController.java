@@ -48,6 +48,7 @@ public class LoginController  {
 
     private final List<Session> sessionList = new ArrayList<>();
     private final UserRepository repository;
+    private final SecureRandom secureRandom = new SecureRandom();
 
     public LoginController(Logger logger, UserRepository userRepository) {
         this.logger = logger;
@@ -71,7 +72,6 @@ public class LoginController  {
     }
 
     private String generateToken() {
-        SecureRandom secureRandom = new SecureRandom();
         byte[] b = new byte[32];
         secureRandom.nextBytes(b);
 
