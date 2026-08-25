@@ -23,6 +23,36 @@ public class UserRepositoryDB implements UserRepository {
 
     public Optional<User> getUserByEmail(String email) {
         try {
+            return readUserByEmail(email);
+        } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
+            throw new GenericRepositoryException(e.getMessage());
+        }
+    }
+
+    public Optional<User> getUserByID(String id) {
+        try {
+            return readUserByID(id);
+        } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
+            throw new GenericRepositoryException(e.getMessage());
+        }
+    }
+
+    public void editUser(User user) {
+        try {
+            updateUser(user);
+        } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
+            throw new GenericRepositoryException(e.getMessage());
+        }
+    }
+
+
+    ///////////////////////////////////////////////// PRIVATE METHOD ////////////////////////////////////////////////////////////////
+
+    private Optional<User> readUserByEmail(String email) throws DatabaseControllerException {
+        try {
             DatabaseController.Query query = database.query("CALL userinfo(?, ?, ?, ?, ?, ?)");
             query.setString(email);
             query.registerOutString();
@@ -44,15 +74,12 @@ public class UserRepositoryDB implements UserRepository {
             return Optional.of(userFactory.createUser(
                     id, email, password, firstname, lastname, type
             ));
-        } catch (DatabaseControllerException e) {
-            logger.error(e.getMessage(), e);
-            throw new GenericRepositoryException(e.getMessage());
         } catch (NoSuchElementException e) {
             return Optional.empty();
         }
     }
 
-    public Optional<User> getUserByID(String id) {
+    private Optional<User> readUserByID(String id) throws DatabaseControllerException {
         try {
             DatabaseController.Query query = database.query(
                     "CALL get_user_by_id(?,?,?,?,?,?)"
@@ -75,28 +102,22 @@ public class UserRepositoryDB implements UserRepository {
             return Optional.of(userFactory.createUser(
                     id, email, password, firstname, lastname, type
             ));
-        } catch (DatabaseControllerException e) {
-            logger.error(e.getMessage(), e);
-            throw new GenericRepositoryException(e.getMessage());
-        }  catch (NoSuchElementException e) {
+        } catch (NoSuchElementException e) {
             return Optional.empty();
         }
     }
 
-    public void editUser(User user) {
-        try {
-            DatabaseController.Query query = database.query(
-                    "UPDATE \"User\" SET email=?,firstname=?, lastname=? WHERE id=?::uuid"
-            );
-            query.setString(user.getEmail());
-            query.setString(user.getFirstname());
-            query.setString(user.getLastname());
-            query.setString(user.getID());
-            query.execute();
-            query.close();
-        } catch (DatabaseControllerException e) {
-            logger.error(e.getMessage(), e);
-            throw new GenericRepositoryException(e.getMessage());
-        }
+    private void updateUser(User user) throws DatabaseControllerException {
+        DatabaseController.Query query = database.query(
+                "UPDATE \"User\" SET email=?,firstname=?, lastname=? WHERE id=?::uuid"
+        );
+        query.setString(user.getEmail());
+        query.setString(user.getFirstname());
+        query.setString(user.getLastname());
+        query.setString(user.getID());
+        query.execute();
+        query.close();
     }
+
+
 }

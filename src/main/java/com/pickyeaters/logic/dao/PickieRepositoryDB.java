@@ -22,7 +22,52 @@ public class PickieRepositoryDB implements PickieRepository {
         this.ingredientRepository = ingredientRepository;
     }
 
-    List<Ingredient> readDislikeIngredientList(String userID) {
+    public Optional<EatingPreference> findEatingPreference(String userID) {
+        try {
+            List<Ingredient> ingredientList = readDislikeIngredientList(userID);
+            List<Allergen> allergenList = readAllergenListUser(userID);
+            List<ExcludedGroup> excludedGroupList = readExcludedGroupListUser(userID);
+
+            return Optional.of(new EatingPreference(
+                    ingredientList,
+                    excludedGroupList,
+                    allergenList
+            ));
+
+        } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
+            throw new GenericRepositoryException(e.getMessage());
+        }
+    }
+
+
+    public void editEatingPreference(String userID, EatingPreference eatingPreference) {
+        try {
+            deleteAllUserAllergen(userID);
+            deleteAllUserDislikeIngredient(userID);
+            deleteAllUserExcludedGroup(userID);
+
+            for(Allergen i : eatingPreference.getAllergenList()) {
+                createAllergenListUser(userID, i);
+            }
+
+            for(Ingredient i : eatingPreference.getIngredientList()) {
+                createDislikeIngredient(userID, i);
+            }
+
+            for(ExcludedGroup i : eatingPreference.getGroupList()) {
+                createExcludedGroupListUser(userID, i);
+            }
+
+        } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
+            throw new GenericRepositoryException(e.getMessage());
+        }
+    }
+
+    ///////////////////////////////////////////////// PRIVATE METHOD ////////////////////////////////////////////////////////////////
+
+    List<Ingredient> readDislikeIngredientList(String userID) throws DatabaseControllerException {
         List<Ingredient> ingredientList = new ArrayList<>();
         DatabaseController.Query query = database.queryResultSet(
                 "SELECT id, name FROM \"User_ExcludedIngredient\" JOIN \"Ingredient\" AS i ON fk_ingredient=i.id WHERE fk_user = ?::uuid"
@@ -51,7 +96,7 @@ public class PickieRepositoryDB implements PickieRepository {
         return ingredientList;
     }
 
-    List<Allergen> readAllergenListUser(String userID) {
+    List<Allergen> readAllergenListUser(String userID) throws DatabaseControllerException {
         List<Allergen> allergenList = new ArrayList<>();
         DatabaseController.Query query = database.queryResultSet(
                 "SELECT id, name FROM \"User_Allergen\" JOIN \"Allergen\" AS a ON fk_allergen=a.id WHERE fk_user = ?::uuid"
@@ -75,7 +120,7 @@ public class PickieRepositoryDB implements PickieRepository {
     }
 
 
-    List<ExcludedGroup> readExcludedGroupListUser(String userID) {
+    List<ExcludedGroup> readExcludedGroupListUser(String userID) throws DatabaseControllerException{
         List<ExcludedGroup> excludedGroupList = new ArrayList<>();
         DatabaseController.Query query = database.queryResultSet(
                 "SELECT id, name FROM \"User_ExcludedGroup\" JOIN \"ExcludedGroup\" AS a ON fk_excluded_group=a.id WHERE fk_user = ?::uuid;"
@@ -103,26 +148,7 @@ public class PickieRepositoryDB implements PickieRepository {
         return excludedGroupList;
     }
 
-    public Optional<EatingPreference> findEatingPreference(String userID) {
-        try {
-            List<Ingredient> ingredientList = readDislikeIngredientList(userID);
-            List<Allergen> allergenList = readAllergenListUser(userID);
-            List<ExcludedGroup> excludedGroupList = readExcludedGroupListUser(userID);
-
-            return Optional.of(new EatingPreference(
-                    ingredientList,
-                    excludedGroupList,
-                    allergenList
-            ));
-
-        } catch (DatabaseControllerException e) {
-            logger.error(e.getMessage(), e);
-            throw new GenericRepositoryException(e.getMessage());
-        }
-    }
-
-
-    private void createDislikeIngredient(String userID, Ingredient ingredient) {
+    private void createDislikeIngredient(String userID, Ingredient ingredient) throws DatabaseControllerException {
         DatabaseController.Query query = database.query(
                 "INSERT INTO \"User_ExcludedIngredient\" (fk_user, fk_ingredient) VALUES (?::uuid, ?::uuid)"
         );
@@ -132,7 +158,7 @@ public class PickieRepositoryDB implements PickieRepository {
         query.close();
     }
 
-    private void createAllergenListUser(String userID, Allergen allergen) {
+    private void createAllergenListUser(String userID, Allergen allergen) throws DatabaseControllerException {
         DatabaseController.Query query = database.query(
                 "INSERT INTO \"User_Allergen\" (fk_user, fk_allergen) VALUES (?::uuid, ?::uuid)"
         );
@@ -143,7 +169,7 @@ public class PickieRepositoryDB implements PickieRepository {
     }
 
 
-    private void createExcludedGroupListUser(String userID, ExcludedGroup excludedGroup) {
+    private void createExcludedGroupListUser(String userID, ExcludedGroup excludedGroup) throws DatabaseControllerException {
         DatabaseController.Query query = database.query(
                 "INSERT INTO \"User_ExcludedGroup\" (fk_user, fk_excluded_group) VALUES (?::uuid, ?::uuid)"
         );
@@ -153,7 +179,7 @@ public class PickieRepositoryDB implements PickieRepository {
         query.close();
     }
 
-    private void deleteAllUserDislikeIngredient(String userID) {
+    private void deleteAllUserDislikeIngredient(String userID) throws DatabaseControllerException {
         DatabaseController.Query query = database.query(
                 "DELETE FROM \"User_ExcludedIngredient\" WHERE fk_user = ?::uuid"
         );
@@ -162,7 +188,7 @@ public class PickieRepositoryDB implements PickieRepository {
         query.close();
     }
 
-    private void deleteAllUserAllergen(String userID) {
+    private void deleteAllUserAllergen(String userID) throws DatabaseControllerException {
         DatabaseController.Query query = database.query(
                 "DELETE FROM \"User_Allergen\" WHERE fk_user = ?::uuid"
         );
@@ -171,7 +197,7 @@ public class PickieRepositoryDB implements PickieRepository {
         query.close();
     }
 
-    private void deleteAllUserExcludedGroup(String userID) {
+    private void deleteAllUserExcludedGroup(String userID) throws DatabaseControllerException {
         DatabaseController.Query query = database.query(
                 "DELETE FROM \"User_ExcludedGroup\" WHERE fk_user = ?::uuid"
         );
@@ -180,27 +206,4 @@ public class PickieRepositoryDB implements PickieRepository {
         query.close();
     }
 
-    public void editEatingPreference(String userID, EatingPreference eatingPreference) {
-        try {
-            deleteAllUserAllergen(userID);
-            deleteAllUserDislikeIngredient(userID);
-            deleteAllUserExcludedGroup(userID);
-
-            for(Allergen i : eatingPreference.getAllergenList()) {
-                createAllergenListUser(userID, i);
-            }
-
-            for(Ingredient i : eatingPreference.getIngredientList()) {
-                createDislikeIngredient(userID, i);
-            }
-
-            for(ExcludedGroup i : eatingPreference.getGroupList()) {
-                createExcludedGroupListUser(userID, i);
-            }
-
-        } catch (DatabaseControllerException e) {
-            logger.error(e.getMessage(), e);
-            throw new GenericRepositoryException(e.getMessage());
-        }
-    }
 }
