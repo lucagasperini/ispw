@@ -73,9 +73,9 @@ public class AddIngredientForm {
 
             allIngredient = changeDishView.showAllIngredient();
         } else {
-            Navigator.getMainForm().setActionBackButton(() -> {
-                Navigator.navigateContentParent(new AddDishForm(addDishView));
-            });
+            Navigator.getMainForm().setActionBackButton(
+                    () -> Navigator.navigateContentParent(new AddDishForm(addDishView))
+            );
 
             treeIngredient.getSelectionModel().selectedItemProperty().addListener(
                     (observable, oldValue, newValue) -> {

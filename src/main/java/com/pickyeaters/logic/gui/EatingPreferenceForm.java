@@ -113,33 +113,33 @@ public class EatingPreferenceForm {
         buttonSave.setText(AppData.getInstance().i18n(buttonSave.getText()));
 
         checkboxHealthPregnant.setSelected(view.isPregnant());
-        checkboxHealthPregnant.selectedProperty().addListener((a,b,c)-> {
-            view.togglePregnant();
-        });
+        checkboxHealthPregnant.selectedProperty().addListener(
+                (a,b,c)-> view.togglePregnant()
+        );
         checkboxLifestyleCarnivore.setSelected(view.isCarnivore());
-        checkboxLifestyleCarnivore.selectedProperty().addListener((a,b,c)-> {
-            view.toggleCarnivore();
-        });
+        checkboxLifestyleCarnivore.selectedProperty().addListener(
+                (a,b,c)-> view.toggleCarnivore()
+        );
         checkboxLifestylePescatarian.setSelected(view.isPescatarian());
-        checkboxLifestylePescatarian.selectedProperty().addListener((a,b,c)-> {
-            view.togglePescatarian();
-        });
+        checkboxLifestylePescatarian.selectedProperty().addListener(
+                (a,b,c)-> view.togglePescatarian()
+        );
         checkboxLifestyleVegetarian.setSelected(view.isVegetarian());
-        checkboxLifestyleVegetarian.selectedProperty().addListener((a,b,c)-> {
-            view.toggleVegetarian();
-        });
+        checkboxLifestyleVegetarian.selectedProperty().addListener(
+                (a,b,c)-> view.toggleVegetarian()
+        );
         checkboxReligiousHalal.setSelected(view.isHalal());
-        checkboxReligiousHalal.selectedProperty().addListener((a,b,c)-> {
-            view.toggleHalal();
-        });
+        checkboxReligiousHalal.selectedProperty().addListener(
+                (a,b,c)-> view.toggleHalal()
+        );
         checkboxReligiousKosher.setSelected(view.isKosher());
-        checkboxReligiousKosher.selectedProperty().addListener((a,b,c)-> {
-            view.toggleKosher();
-        });
+        checkboxReligiousKosher.selectedProperty().addListener(
+                (a,b,c)-> view.toggleKosher()
+        );
         checkboxLifestyleVegan.setSelected(view.isVegan());
-        checkboxLifestyleVegan.selectedProperty().addListener((a,b,c)-> {
-            view.toggleVegan();
-        });
+        checkboxLifestyleVegan.selectedProperty().addListener(
+                (a,b,c)-> view.toggleVegan()
+        );
 
         List<String> allIngredientList = view.showAllIngredient();
         List<String> dislikeIngredientList = view.showExcludedIngredientList();

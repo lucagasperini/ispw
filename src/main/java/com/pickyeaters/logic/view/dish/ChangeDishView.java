@@ -1,6 +1,5 @@
 package com.pickyeaters.logic.view.dish;
 
-import com.pickyeaters.logic.bean.reply.ChangeDishReply;
 import com.pickyeaters.logic.bean.reply.ShowDishReply;
 import com.pickyeaters.logic.bean.request.ChangeDishRequest;
 import com.pickyeaters.logic.bean.request.Request;

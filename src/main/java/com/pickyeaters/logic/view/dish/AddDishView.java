@@ -1,7 +1,6 @@
 package com.pickyeaters.logic.view.dish;
 
 import com.pickyeaters.logic.bean.DishBean;
-import com.pickyeaters.logic.bean.reply.AddDishReply;
 import com.pickyeaters.logic.bean.request.AddDishRequest;
 import com.pickyeaters.logic.bean.request.Request;
 import com.pickyeaters.logic.controller.MenuController;

@@ -24,17 +24,17 @@ public class ChangeDishForm extends DishForm {
 
         onViewChanged();
 
-        inputName.textProperty().addListener((observable, oldValue, newValue ) -> {
-            changeDishView.insertName(newValue);
-        });
+        inputName.textProperty().addListener(
+                (observable, oldValue, newValue ) -> changeDishView.insertName(newValue)
+        );
 
-        inputDescription.textProperty().addListener((observable, oldValue, newValue ) -> {
-            changeDishView.insertDescription(newValue);
-        });
+        inputDescription.textProperty().addListener(
+                (observable, oldValue, newValue ) -> changeDishView.insertDescription(newValue)
+        );
 
-        comboBoxCategory.valueProperty().addListener((observable, oldValue, newValue ) -> {
-            changeDishView.selectType(getCurrentComboBoxItem());
-        });
+        comboBoxCategory.valueProperty().addListener(
+                (observable, oldValue, newValue ) -> changeDishView.selectType(getCurrentComboBoxItem())
+        );
 
         changeDishView.addObserver(this);
 

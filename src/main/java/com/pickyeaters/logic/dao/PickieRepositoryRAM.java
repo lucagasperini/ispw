@@ -34,11 +34,8 @@ public class PickieRepositoryRAM implements PickieRepository {
         la4.add(a3);
         List<Allergen> la5 = new ArrayList<>();
 
-        Ingredient i1 = new Ingredient("1", "Ingredient 1", la1, false, false);
         Ingredient i2 = new Ingredient("2", "Ingredient 2", la2, false, false);
-        Ingredient i3 = new Ingredient("3", "Ingredient 3", la3, false, false);
         Ingredient i4 = new Ingredient("4", "Ingredient 4", la4, false, false);
-        Ingredient i5 = new Ingredient("5", "Ingredient 5", la5, false, false);
 
         List<Ingredient> li1 = new ArrayList<>();
         li1.add(i2);

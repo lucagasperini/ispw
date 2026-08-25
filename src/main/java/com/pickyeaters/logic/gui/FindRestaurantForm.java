@@ -88,24 +88,24 @@ public class FindRestaurantForm {
         columnName.setText(AppData.getInstance().i18n(columnName.getText()));
         columnPhone.setText(AppData.getInstance().i18n(columnPhone.getText()));
 
-        checkboxAppetizer.selectedProperty().addListener((a,b,c)-> {
-            view.toggleNeedAppetizer();
-        });
-        checkboxDrink.selectedProperty().addListener((a,b,c)-> {
-            view.toggleNeedDrink();
-        });
-        checkboxFirst.selectedProperty().addListener((a,b,c)-> {
-            view.toggleNeedFirst();
-        });
-        checkboxContour.selectedProperty().addListener((a,b,c)-> {
-            view.toggleNeedContour();
-        });
-        checkboxSecond.selectedProperty().addListener((a,b,c)-> {
-            view.toggleNeedSecond();
-        });
-        checkboxDessert.selectedProperty().addListener((a,b,c)-> {
-            view.toggleNeedDessert();
-        });
+        checkboxAppetizer.selectedProperty().addListener(
+                (a,b,c)-> view.toggleNeedAppetizer()
+        );
+        checkboxDrink.selectedProperty().addListener(
+                (a,b,c)-> view.toggleNeedDrink()
+        );
+        checkboxFirst.selectedProperty().addListener(
+                (a,b,c)-> view.toggleNeedFirst()
+        );
+        checkboxContour.selectedProperty().addListener(
+                (a,b,c)-> view.toggleNeedContour()
+        );
+        checkboxSecond.selectedProperty().addListener(
+                (a,b,c)-> view.toggleNeedSecond()
+        );
+        checkboxDessert.selectedProperty().addListener(
+                (a,b,c)-> view.toggleNeedDessert()
+        );
 
         columnName.setCellValueFactory(
                 data -> new SimpleStringProperty(data.getValue().name)

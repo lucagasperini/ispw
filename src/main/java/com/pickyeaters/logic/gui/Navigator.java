@@ -24,6 +24,8 @@ public class Navigator {
     private static final Deque<String> fxmlContentHistory = new LinkedList<>();
     private static final Deque<String> fxmlHistory = new LinkedList<>();
 
+    private Navigator() {}
+
     public static void init (Stage privaryStage) {
         stage = privaryStage;
     }
