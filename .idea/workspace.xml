@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b79208fc-e92a-439b-97d8-6ad7a5507a53" name="Changes" comment="Fix old password record on RAM version">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/AuthBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/AuthBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/DishBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/DishBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/FindRestaurantBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/FindRestaurantBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/FindRestaurantReply.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/FindRestaurantReply.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/ShowAllergenIngredientReply.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/ShowAllergenIngredientReply.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/ShowDishReply.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/ShowDishReply.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/ShowMenuReply.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/ShowMenuReply.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/request/AddDishRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/request/AddDishRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/request/ChangeDishRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/request/ChangeDishRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/EatingPreferenceForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/EatingPreferenceForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/FindRestaurantForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/FindRestaurantForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/MenuDetailsForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/MenuDetailsForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/RestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/RestaurantController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryRAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryRAM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryRAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryRAM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepositoryDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepositoryRAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepositoryRAM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepositoryDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepositoryRAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepositoryRAM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/UserRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/UserRepositoryDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/factory/DishFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/factory/DishFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/AddDishForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/AddDishForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/AddIngredientForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/AddIngredientForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/ChangeDishForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/ChangeDishForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/DishForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/DishForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/EatingPreferenceForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/EatingPreferenceForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/FindRestaurantForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/FindRestaurantForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/IngredientItemWidget.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/IngredientItemWidget.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/LoginForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/LoginForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/MainForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/MainForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/MainGUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/MainGUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/MenuDetailsForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/MenuDetailsForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/Navigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/Navigator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/ShowDishForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/ShowDishForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/ShowMenuDetailsForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/ShowMenuDetailsForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Dish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Dish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/ExcludedGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/ExcludedGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/utils/FileLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/utils/FileLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/utils/Logger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/utils/Logger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/FindRestaurantView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/FindRestaurantView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/MenuView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/MenuView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/VirtualView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/VirtualView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/dish/ChangeDishView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/dish/ChangeDishView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/dish/EditableDishView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/dish/EditableDishView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/dish/ShowDishView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/dish/ShowDishView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/restaurant/EditRestaurantView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/restaurant/EditRestaurantView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/pickyeaters/logic/PickieTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pickyeaters/logic/PickieTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/pickyeaters/logic/RestaurateurTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pickyeaters/logic/RestaurateurTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6,
+  "fromUser": false
+}]]></component>
+  <component name="ProjectId" id="3IO3pPV1Oh3rlk2E6RtScvV0CS6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "JUnit.PickieTest.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/luca/Desktop/ispw"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-63390994e64e-intellij.indexing.shared.core-IU-262.8665.337" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.8665.337" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b79208fc-e92a-439b-97d8-6ad7a5507a53" name="Changes" comment="" />
+      <created>1787621970595</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1787621970595</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fix old password record on RAM version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix old password record on RAM version" />
+  </component>
+</project>
