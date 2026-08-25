@@ -18,27 +18,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Remove some code smell">
+    <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Remove some code smell and bug fix on Restaurant/Restaurateur structure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/MainCLI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/MainCLI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/utils/Printer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/VirtualForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/cli/VirtualForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/RestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/RestaurantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryRAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryRAM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/PickieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/PickieController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryRAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryRAM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepositoryDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepositoryRAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepositoryRAM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepositoryDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepositoryRAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepositoryRAM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/UserRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/UserRepositoryDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/ExcludedGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/ExcludedGroup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Restaurateur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Restaurateur.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/utils/FileLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/utils/FileLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/setup.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +191,7 @@
       <command value="mvn javafx:run" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.MainGUI DB">
+  <component name="RunManager" selected="JUnit.PickieTest">
     <configuration name="MainCLI DB" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.pickyeaters.logic.cli.MainCLI" />
       <module name="PickyEaters" />
@@ -451,8 +435,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.RestaurateurTest" />
         <item itemvalue="JUnit.PickieTest" />
+        <item itemvalue="JUnit.RestaurateurTest" />
         <item itemvalue="Application.MainGUI" />
       </list>
     </recent_temporary>
@@ -497,7 +481,8 @@
     <MESSAGE value="Removed old todo" />
     <MESSAGE value="Fix test" />
     <MESSAGE value="Remove some code smell" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remove some code smell" />
+    <MESSAGE value="Remove some code smell and bug fix on Restaurant/Restaurateur structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove some code smell and bug fix on Restaurant/Restaurateur structure" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

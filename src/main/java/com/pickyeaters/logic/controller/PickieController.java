@@ -98,6 +98,46 @@ public class PickieController {
         }
     }
 
+    private Map<String, RestaurantBean> getRestaurantUserCompatible(String userID, FindRestaurantBean findRestaurantBean) {
+        Map<String, RestaurantBean> outMap = new HashMap<>();
+        EatingPreference eatingPreference = pickieRepository.findEatingPreference(userID).orElseThrow();
+        List<Restaurant> restaurantList = restaurantRepository.findRestaurantByCity(findRestaurantBean.getCity());
+
+        for(Restaurant restaurant : restaurantList) {
+            FindRestaurantBean bean = new FindRestaurantBean(findRestaurantBean);
+            List<Dish> menu = menuRepository.findMenuByRestaurantID(restaurant.getID());
+            for(Dish dish : menu) {
+                if(dish.isTypeAppetizer() && bean.isNeedApperizer() && eatingPreference.checkDish(dish)) {
+                    bean.toggleNeedAppetizer();
+                }
+                if(dish.isTypeDrink() && bean.isNeedDrink() && eatingPreference.checkDish(dish)) {
+                    bean.toggleNeedDrink();
+                }
+                if(dish.isTypeDessert() && bean.isNeedDessert() && eatingPreference.checkDish(dish)) {
+                    bean.toggleNeedDessert();
+                }
+                if(dish.isTypeContour() && bean.isNeedContour() && eatingPreference.checkDish(dish)) {
+                    bean.toggleNeedContour();
+                }
+                if(dish.isTypeFirst() && bean.isNeedFirst() && eatingPreference.checkDish(dish)) {
+                    bean.toggleNeedFirst();
+                }
+                if(dish.isTypeSecond() && bean.isNeedSecond() && eatingPreference.checkDish(dish)) {
+                    bean.toggleNeedSecond();
+                }
+            }
+            if(!bean.isNeedFirst() && !bean.isNeedSecond() && !bean.isNeedContour() && !bean.isNeedDessert()
+                    && !bean.isNeedDrink() && !bean.isNeedApperizer() && !menu.isEmpty()) {
+
+                outMap.put(restaurant.getID(), new RestaurantBean(restaurant.getName(), restaurant.getAddress(),
+                        restaurant.getPhone(), restaurant.getCity()
+                ));
+            }
+        }
+
+        return outMap;
+    }
+
     public Result<FindRestaurantReply> findRestaurant(FindRestaurantRequest request) {
         try {
             String userID = loginController.requestUserID(request);
@@ -108,42 +148,7 @@ public class PickieController {
                 return Result.error(LiteralMessage.PICKIE_CONTROLLER_CITY_EMPTY);
             }
 
-            Map<String, RestaurantBean> outMap = new HashMap<>();
-            EatingPreference eatingPreference = pickieRepository.findEatingPreference(userID).orElseThrow();
-            List<Restaurant> restaurantList = restaurantRepository.findRestaurantByCity(request.getFindRestaurant().getCity());
-
-            for(Restaurant restaurant : restaurantList) {
-                FindRestaurantBean bean = request.getFindRestaurant();
-                List<Dish> menu = menuRepository.findMenuByRestaurantID(restaurant.getID());
-                for(Dish dish : menu) {
-                    if(dish.isTypeAppetizer() && bean.isNeedApperizer() && eatingPreference.checkDish(dish)) {
-                            bean.toggleNeedAppetizer();
-                    }
-                    if(dish.isTypeDrink() && bean.isNeedDrink() && eatingPreference.checkDish(dish)) {
-                            bean.toggleNeedDrink();
-                    }
-                    if(dish.isTypeDessert() && bean.isNeedDessert() && eatingPreference.checkDish(dish)) {
-                            bean.toggleNeedDessert();
-                    }
-                    if(dish.isTypeContour() && bean.isNeedContour() && eatingPreference.checkDish(dish)) {
-                            bean.toggleNeedContour();
-                    }
-                    if(dish.isTypeFirst() && bean.isNeedFirst() && eatingPreference.checkDish(dish)) {
-                            bean.toggleNeedFirst();
-                    }
-                    if(dish.isTypeSecond() && bean.isNeedSecond() && eatingPreference.checkDish(dish)) {
-                            bean.toggleNeedSecond();
-                    }
-                }
-                if(!bean.isNeedFirst() && !bean.isNeedSecond() && !bean.isNeedContour() && !bean.isNeedDessert()
-                        && !bean.isNeedDrink() && !bean.isNeedApperizer() && !menu.isEmpty()) {
-
-                    outMap.put(restaurant.getID(), new RestaurantBean(restaurant.getName(), restaurant.getAddress(),
-                                    restaurant.getPhone(), restaurant.getCity()
-                    ));
-                }
-            }
-            return Result.ok(new FindRestaurantReply(outMap));
+            return Result.ok(new FindRestaurantReply(getRestaurantUserCompatible(userID, request.getFindRestaurant())));
         } catch (LoginControllerException | LoginControllerPermissionException | GenericRepositoryException e) {
             logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());

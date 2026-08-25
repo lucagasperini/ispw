@@ -15,29 +15,35 @@ public class MenuRepositoryRAM implements MenuRepository {
     public MenuRepositoryRAM(Logger logger, IngredientRepository ingredientRepository) {
         this.logger = logger;
 
+        String i1 = "Ingredient 1";
+        String i2 = "Ingredient 2";
+        String i3 = "Ingredient 3";
+        String i4 = "Ingredient 4";
+        String i5 = "Ingredient 5";
+
         List<Ingredient> li1 = new ArrayList<>();
-        li1.add(ingredientRepository.findIngredientByName("Ingredient 1").orElseThrow());
-        li1.add(ingredientRepository.findIngredientByName("Ingredient 2").orElseThrow());
+        li1.add(ingredientRepository.findIngredientByName(i1).orElseThrow());
+        li1.add(ingredientRepository.findIngredientByName(i2).orElseThrow());
         List<Ingredient> li2 = new ArrayList<>();
-        li2.add(ingredientRepository.findIngredientByName("Ingredient 1").orElseThrow());
-        li2.add(ingredientRepository.findIngredientByName("Ingredient 3").orElseThrow());
+        li2.add(ingredientRepository.findIngredientByName(i1).orElseThrow());
+        li2.add(ingredientRepository.findIngredientByName(i3).orElseThrow());
         List<Ingredient> li3 = new ArrayList<>();
-        li3.add(ingredientRepository.findIngredientByName("Ingredient 2").orElseThrow());
+        li3.add(ingredientRepository.findIngredientByName(i2).orElseThrow());
         List<Ingredient> li4 = new ArrayList<>();
-        li4.add(ingredientRepository.findIngredientByName("Ingredient 5").orElseThrow());
+        li4.add(ingredientRepository.findIngredientByName(i5).orElseThrow());
         List<Ingredient> li5 = new ArrayList<>();
-        li5.add(ingredientRepository.findIngredientByName("Ingredient 2").orElseThrow());
-        li5.add(ingredientRepository.findIngredientByName("Ingredient 3").orElseThrow());
-        li5.add(ingredientRepository.findIngredientByName("Ingredient 4").orElseThrow());
+        li5.add(ingredientRepository.findIngredientByName(i2).orElseThrow());
+        li5.add(ingredientRepository.findIngredientByName(i3).orElseThrow());
+        li5.add(ingredientRepository.findIngredientByName(i4).orElseThrow());
         List<Ingredient> li6 = new ArrayList<>();
-        li6.add(ingredientRepository.findIngredientByName("Ingredient 5").orElseThrow());
+        li6.add(ingredientRepository.findIngredientByName(i5).orElseThrow());
         List<Ingredient> li7 = new ArrayList<>();
-        li7.add(ingredientRepository.findIngredientByName("Ingredient 1").orElseThrow());
-        li7.add(ingredientRepository.findIngredientByName("Ingredient 2").orElseThrow());
+        li7.add(ingredientRepository.findIngredientByName(i1).orElseThrow());
+        li7.add(ingredientRepository.findIngredientByName(i2).orElseThrow());
         List<Ingredient> li8 = new ArrayList<>();
-        li8.add(ingredientRepository.findIngredientByName("Ingredient 3").orElseThrow());
+        li8.add(ingredientRepository.findIngredientByName(i3).orElseThrow());
         List<Ingredient> li9 = new ArrayList<>();
-        li9.add(ingredientRepository.findIngredientByName("Ingredient 5").orElseThrow());
+        li9.add(ingredientRepository.findIngredientByName(i5).orElseThrow());
 
         List<Dish> r1 = new ArrayList<>();
         r1.add(new DishFirst("1", "R1 Dish name 1", "R1 Description 1", li1));

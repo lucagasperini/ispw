@@ -13,6 +13,13 @@ public class MainCLI {
     public static void main(String[] args) {
         // Application will construct base system
         app = new Application(args);
+        doSystemConfiguration();
+        doLogin();
+        doMainForm();
+        quit();
+    }
+
+    private static void doSystemConfiguration() {
 
         // Recursive error handling
         boolean passedCheck = false;
@@ -37,7 +44,9 @@ public class MainCLI {
                 // Database error handling, if requested with parameters
             }
         }
+    }
 
+    private static void doLogin() {
         LoginView loginView = app.displayLoginView();
 
         boolean isAuth = false;
@@ -50,6 +59,10 @@ public class MainCLI {
                 app.getPrinter().println(e.getMessage());
             }
         }
+    }
+
+    private static void doMainForm() {
+        LoginView loginView = app.displayLoginView();
 
         if(loginView.isLoggedRestaurateur()) {
             RestaurateurMainForm mainForm = new RestaurateurMainForm(app);
@@ -62,8 +75,6 @@ public class MainCLI {
         } else {
             throw new NotImplementedException();
         }
-
-        quit();
     }
 
     private static void quit() {
