@@ -71,7 +71,6 @@ public class IngredientRepositoryRAM implements IngredientRepository {
         excludedGroupList.add(new ExcludedGroup("7", ExcludedGroup.GROUP_NAME_VEGAN, li2));
     }
 
-    @Override
     public Optional<Ingredient> findIngredient(DishIngredientBean ingredientBean) {
         return findIngredient(ingredientBean.getName());
     }
@@ -85,7 +84,6 @@ public class IngredientRepositoryRAM implements IngredientRepository {
         return Optional.empty();
     }
 
-    @Override
     public List<Ingredient> findIngredientList(List<DishIngredientBean> ingredientBeanList) {
         List<Ingredient> outList = new ArrayList<>();
         for(DishIngredientBean ingredientBean : ingredientBeanList) {
@@ -112,7 +110,6 @@ public class IngredientRepositoryRAM implements IngredientRepository {
         return findExcludedGroupByName(excludedGroup.getName()).orElseThrow().getIngredientList();
     }
 
-    @Override
     public List<Allergen> findAllergenListByIngredientID(String ingredientID) {
         for(Ingredient i : ingredientList) {
             if(i.getID().equals(ingredientID)) {
@@ -124,7 +121,6 @@ public class IngredientRepositoryRAM implements IngredientRepository {
         throw e;
     }
 
-    @Override
     public List<Ingredient> findIngredientListByExcludedGroupID(String egID) {
         for(ExcludedGroup i : excludedGroupList) {
             if(i.getID().equals(egID)) {

@@ -9,14 +9,18 @@ import java.util.ResourceBundle;
 
 public abstract class VirtualView implements ViewSubject {
 
-    protected final List<ViewObserver> viewObserverList = new ArrayList<>();
+    private final List<ViewObserver> viewObserverList = new ArrayList<>();
     protected final Request baseRequest;
 
     protected VirtualView(Request request) {
         baseRequest = request;
     }
 
-    protected static ResourceBundle localeBundle = null;
+    private static ResourceBundle localeBundle = null;
+
+    protected static void setLocaleBundle(ResourceBundle bundle) {
+        localeBundle = bundle;
+    }
 
     public static String i18n(String key) {
         try {

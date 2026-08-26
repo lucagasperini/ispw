@@ -65,7 +65,7 @@ public class PickieRepositoryDB implements PickieRepository {
         }
     }
 
-    ///////////////////////////////////////////////// PRIVATE METHOD ////////////////////////////////////////////////////////////////
+    //----------------------- PRIVATE METHOD SECTION -----------------------//
 
     List<Ingredient> readDislikeIngredientList(String userID) throws DatabaseControllerException {
         List<Ingredient> ingredientList = new ArrayList<>();

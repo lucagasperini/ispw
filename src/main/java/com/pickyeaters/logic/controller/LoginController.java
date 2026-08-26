@@ -65,7 +65,6 @@ public class LoginController  {
             }
             return hex.toString();
         } catch (NoSuchAlgorithmException e) {
-            // TODO: generate message error too
             return password;
         }
     }

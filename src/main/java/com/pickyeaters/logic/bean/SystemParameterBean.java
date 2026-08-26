@@ -17,7 +17,6 @@ public class SystemParameterBean {
     private String localeLang = "";
     private String databaseName = "";
     private String databaseHost = "";
-    // TODO: Check database port format
     private String databasePort = "";
     private String databasePassword = "";
     private String databaseUser = "";

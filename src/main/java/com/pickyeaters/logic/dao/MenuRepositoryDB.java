@@ -70,7 +70,8 @@ public class MenuRepositoryDB implements MenuRepository {
             throw new GenericRepositoryException(e.getMessage());
         }
     }
-    ///////////////////////////////////////////////// PRIVATE METHOD ////////////////////////////////////////////////////////////////
+
+    //----------------------- PRIVATE METHOD SECTION -----------------------//
 
     private List<Ingredient> readSetIngredientByDishID(String dishID) throws DatabaseControllerException {
         List<Ingredient> ingredientList = new ArrayList<>();

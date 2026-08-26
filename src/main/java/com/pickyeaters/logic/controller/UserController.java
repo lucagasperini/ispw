@@ -45,7 +45,7 @@ public class UserController {
         try {
             String userID = loginController.requestUserID(request);
             loginController.checkUserPermission(request, LoginController.PERMISSION_CHANGE_DISH);
-            // TODO: This is a workaround, we cant create an instance of User, so I create a Pickie
+            // This is a workaround, we cant create an instance of User, so I create a Pickie
             User user = new Pickie(
                     userID, request.getUser().getEmail(), "",
                     request.getUser().getFirstname(), request.getUser().getLastname()

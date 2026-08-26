@@ -16,7 +16,7 @@ public interface IngredientRepository {
     List<Ingredient> findIngredientListByExcludedGroup(ExcludedGroup excludedGroup);
     List<Allergen> findAllergenListByIngredientID(String ingredientID);
     List<Ingredient> findIngredientListByExcludedGroupID(String egID);
-    //TODO: Is not out of scope?
+    // Is out of scope?
     Optional<ExcludedGroup> findExcludedGroupByName(String excludedGroupName);
     List<String> allIngredientName();
     List<String> allAllergenName();

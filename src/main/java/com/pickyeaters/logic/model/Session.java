@@ -20,7 +20,6 @@ public class Session {
         if( isRestaurateur() ) {
             return Optional.ofNullable((Restaurateur) this.user);
         } else {
-            // TODO: Throw error?
             return Optional.empty();
         }
     }
@@ -29,7 +28,6 @@ public class Session {
         if( isPickie() ) {
             return Optional.ofNullable((Pickie) this.user);
         } else {
-            // TODO: Throw error?
             return Optional.empty();
         }
     }
@@ -38,7 +36,6 @@ public class Session {
         if( isAdmin() ) {
             return Optional.ofNullable((Admin) this.user);
         } else {
-            // TODO: Throw error?
             return Optional.empty();
         }
     }

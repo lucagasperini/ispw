@@ -60,7 +60,7 @@ public class RestaurantRepositoryDB implements RestaurantRepository{
         }
     }
 
-    ///////////////////////////////////////////////// PRIVATE METHOD ////////////////////////////////////////////////////////////////
+    //----------------------- PRIVATE METHOD SECTION -----------------------//
 
 
     public Optional<Restaurant> readRestaurantByOwner(String userID) throws DatabaseControllerException {

@@ -49,7 +49,7 @@ public class UserRepositoryDB implements UserRepository {
     }
 
 
-    ///////////////////////////////////////////////// PRIVATE METHOD ////////////////////////////////////////////////////////////////
+    //----------------------- PRIVATE METHOD SECTION -----------------------//
 
     private Optional<User> readUserByEmail(String email) throws DatabaseControllerException {
         try {

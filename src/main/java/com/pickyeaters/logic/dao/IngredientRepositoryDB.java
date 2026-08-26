@@ -122,7 +122,7 @@ public class IngredientRepositoryDB implements IngredientRepository {
         }
     }
 
-    ///////////////////////////////////////////////// PRIVATE METHOD ////////////////////////////////////////////////////////////////
+    //----------------------- PRIVATE METHOD SECTION -----------------------//
 
     private Optional<Ingredient> readIngredientByName(String ingredientName) throws DatabaseControllerException {
         try {
