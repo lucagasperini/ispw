@@ -1,7 +1,5 @@
 package com.pickyeaters.logic.model;
 
-import com.pickyeaters.logic.exception.NotImplementedException;
-
 import java.io.Serializable;
 
 public abstract class User implements Serializable {

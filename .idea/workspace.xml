@@ -18,28 +18,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Cleaning last code smell">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryFS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryFS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepositoryFS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepositoryFS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/UserRepositoryFS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/pickyeaters/logic/LoginFSTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/SystemParameterBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/SystemParameterBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/AddDishReply.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/ChangeDishReply.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/EditEatingPreferenceReply.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/EditRestaurantReply.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/EditUserReply.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/RemoveDishReply.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/MenuController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/PickieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/PickieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/RestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/RestaurantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/UserController.java" afterDir="false" />
+    <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Add FileSystem DAO and removing skipped code smell">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/ConfigView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/ConfigView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/pickyeaters/logic/LoginFSTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pickyeaters/logic/LoginFSTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -536,7 +517,8 @@
     <MESSAGE value="Refactor all RepositoryDB" />
     <MESSAGE value="Refactor some Repository&#10;Commenting and improving in readibility findRestaurant&#10;Removing code smell" />
     <MESSAGE value="Cleaning last code smell" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cleaning last code smell" />
+    <MESSAGE value="Add FileSystem DAO and removing skipped code smell" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add FileSystem DAO and removing skipped code smell" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -557,7 +539,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/com/pickyeaters/logic/LoginFSTest.java</url>
-          <line>49</line>
+          <line>44</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>

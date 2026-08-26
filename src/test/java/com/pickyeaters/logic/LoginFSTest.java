@@ -2,10 +2,7 @@ package com.pickyeaters.logic;
 
 import com.pickyeaters.logic.model.Pickie;
 import com.pickyeaters.logic.view.Application;
-import com.pickyeaters.logic.view.FindRestaurantView;
 import com.pickyeaters.logic.view.LoginView;
-import com.pickyeaters.logic.view.eatingpreference.EditEatingPreferenceView;
-import com.pickyeaters.logic.view.eatingpreference.ShowEatingPreferenceView;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,8 +13,6 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.List;
-import java.util.concurrent.ExecutionException;
 
 class LoginFSTest {
     private Application app;
@@ -48,5 +43,6 @@ class LoginFSTest {
         loginView.insertEmail("lucaP");
         loginView.insertPassword("luca");
         app.login();
+        Assertions.assertTrue(loginView.isLoggedPickie());
     }
 }
