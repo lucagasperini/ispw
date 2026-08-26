@@ -13,7 +13,7 @@
    <children>
       <VBox prefHeight="80.0" prefWidth="276.0">
          <children>
-            <Text fx:id="textName" strokeType="OUTSIDE" strokeWidth="0.0" text="DishName">
+            <Text fx:id="textName" strokeType="OUTSIDE" strokeWidth="0.0" text="DishName" wrappingWidth="270.0">
                <font>
                   <Font name="Calibri" size="20.0" />
                </font>

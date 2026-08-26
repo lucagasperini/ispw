@@ -18,10 +18,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Bugfix on readSetAllergenList&#10;Graphical bugfix, now text will be rendered correctly">
+    <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Removed old code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/factory/UserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/factory/UserFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/DishBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/DishBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/factory/DishFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/factory/DishFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/AddDishForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/AddDishForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/form/DishItemWidget.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/form/DishItemWidget.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -467,9 +470,9 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.LoginFSTest" />
-        <item itemvalue="JUnit.RestaurateurTest" />
         <item itemvalue="JUnit.PickieTest" />
+        <item itemvalue="JUnit.RestaurateurTest" />
+        <item itemvalue="JUnit.LoginFSTest" />
         <item itemvalue="Application.MainGUI" />
       </list>
     </recent_temporary>
@@ -520,7 +523,8 @@
     <MESSAGE value="Add FileSystem DAO and removing skipped code smell" />
     <MESSAGE value="Cleaning last code smell" />
     <MESSAGE value="Bugfix on readSetAllergenList&#10;Graphical bugfix, now text will be rendered correctly" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bugfix on readSetAllergenList&#10;Graphical bugfix, now text will be rendered correctly" />
+    <MESSAGE value="Removed old code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed old code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

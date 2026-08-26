@@ -1,5 +1,6 @@
 package com.pickyeaters.logic.gui;
 
+import com.pickyeaters.logic.exception.GenericViewException;
 import com.pickyeaters.logic.view.dish.AddDishView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -52,8 +53,12 @@ public class AddDishForm extends DishForm {
 
     @FXML
     protected void clickSaveChanges(ActionEvent event) {
-        addDishView.submit();
-        Navigator.navigateContentParent();
+        try {
+            addDishView.submit();
+            Navigator.navigateContentParent();
+        } catch (GenericViewException e) {
+            Navigator.showError(e);
+        }
     }
 
     @Override

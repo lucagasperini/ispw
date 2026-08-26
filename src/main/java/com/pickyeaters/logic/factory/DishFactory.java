@@ -14,6 +14,12 @@ public class DishFactory {
     }
 
     public Dish createDish(String id, String name, String description, String type, List<Ingredient> ingredientList) {
+        if(name.isEmpty()) {
+            GenericFactoryException e = new GenericFactoryException("Dish must have a name");
+            logger.error(e.getMessage(), e);
+            throw e;
+        }
+
         switch (type) {
             case Dish.TYPE_APPETIZER:
                 return new DishAppetizer(id, name, description, ingredientList);

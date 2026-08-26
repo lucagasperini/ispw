@@ -1,5 +1,6 @@
 package com.pickyeaters.logic.bean;
 
+import com.pickyeaters.logic.exception.BeanInvalidValueException;
 import com.pickyeaters.logic.model.Dish;
 import com.pickyeaters.logic.model.Ingredient;
 import java.util.ArrayList;
@@ -19,10 +20,10 @@ public class DishBean {
     }
 
     public DishBean(String name, String description, String type, List<DishIngredientBean> ingredientList) {
-        this.name = name;
-        this.description = description;
-        this.type = type;
-        this.ingredientList = ingredientList;
+        setName(name);
+        setDescription(description);
+        setType(type);
+        setIngredientList(ingredientList);
     }
 
     public DishBean(Dish dish) {
@@ -52,6 +53,9 @@ public class DishBean {
     }
 
     public void setName(String name) {
+        if(name.isEmpty()) {
+            throw new BeanInvalidValueException("Dish must have a name");
+        }
         this.name = name;
     }
 
@@ -60,6 +64,9 @@ public class DishBean {
     }
 
     public void setType(String type) {
+        if(type.isEmpty()) {
+            throw new BeanInvalidValueException("Dish must have a type");
+        }
         this.type = type;
     }
 

@@ -136,14 +136,13 @@ public class MenuController {
         try {
             loginController.checkUserPermission(request, LoginController.PERMISSION_SHOW_MENU);
 
+            List<Dish> menu = menuRepository.findMenuByRestaurantID(request.getRestaurantID());
+            Map<String, DishBean> dishMap = new HashMap<>();
+            for (Dish d : menu) {
+                dishMap.put(d.getID(), new DishBean(d));
+            }
 
-        List<Dish> menu = menuRepository.findMenuByRestaurantID(request.getRestaurantID());
-        Map<String, DishBean> dishMap = new HashMap<>();
-        for(Dish d: menu) {
-            dishMap.put(d.getID(), new DishBean(d));
-        }
-
-        return Result.ok(new ShowMenuReply(dishMap));
+            return Result.ok(new ShowMenuReply(dishMap));
         } catch (LoginControllerException | LoginControllerPermissionException e) {
             logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
