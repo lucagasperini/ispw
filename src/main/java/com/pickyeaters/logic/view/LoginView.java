@@ -56,9 +56,4 @@ public class LoginView extends VirtualView {
         return loginReply.getUserType().equals(LoginController.USER_TYPE_PICKIE);
     }
 
-    public boolean isLoggedAdmin() {
-        throwIfUserNotLogged();
-        return loginReply.getUserType().equals(LoginController.USER_TYPE_ADMIN);
-    }
-
 }

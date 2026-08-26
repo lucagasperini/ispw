@@ -1,7 +1,6 @@
 package com.pickyeaters.logic.factory;
 
 import com.pickyeaters.logic.exception.NotImplementedException;
-import com.pickyeaters.logic.model.Admin;
 import com.pickyeaters.logic.model.Pickie;
 import com.pickyeaters.logic.model.Restaurateur;
 import com.pickyeaters.logic.model.User;
@@ -18,7 +17,6 @@ public class UserFactory {
         return switch (type) {
             case "REST" -> new Restaurateur(id, email, password, firstname, lastname);
             case "PICKIE" -> new Pickie(id, email, password, firstname, lastname);
-            case "ADMIN" -> new Admin(id, email, password, firstname, lastname);
             default -> {
                 NotImplementedException e = new NotImplementedException("createUser: user type is invalid: " + type);
                 logger.error(e.getMessage(), e);

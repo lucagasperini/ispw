@@ -32,25 +32,12 @@ public class Session {
         }
     }
 
-    public Optional<Admin> getAdmin() {
-        if( isAdmin() ) {
-            return Optional.ofNullable((Admin) this.user);
-        } else {
-            return Optional.empty();
-        }
-    }
-
     public boolean isRestaurateur() {
         return this.user instanceof Restaurateur;
     }
 
-
     public boolean isPickie() {
         return this.user instanceof Pickie;
-    }
-
-    public boolean isAdmin() {
-        return this.user instanceof Admin;
     }
 
     public String getUserID() {

@@ -18,9 +18,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Add FileSystem DAO and removing skipped code smell">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/pickyeaters/logic/LoginFSTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pickyeaters/logic/LoginFSTest.java" afterDir="false" />
+    <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Bugfix on readSetAllergenList&#10;Graphical bugfix, now text will be rendered correctly">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/factory/UserFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/factory/UserFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Admin.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +125,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
-    "Application.MainCLI DB.executor": "Debug",
+    "Application.MainCLI DB.executor": "Run",
     "Application.MainCLI FS.executor": "Run",
     "Application.MainCLI.executor": "Run",
     "Application.MainGUI DB.executor": "Run",
@@ -191,7 +192,7 @@
       <command value="mvn javafx:run" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.LoginFSTest">
+  <component name="RunManager" selected="Application.MainGUI DB">
     <configuration name="MainCLI DB" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.pickyeaters.logic.cli.MainCLI" />
       <module name="PickyEaters" />
@@ -516,9 +517,10 @@
     <MESSAGE value="Remove some code smell" />
     <MESSAGE value="Refactor all RepositoryDB" />
     <MESSAGE value="Refactor some Repository&#10;Commenting and improving in readibility findRestaurant&#10;Removing code smell" />
-    <MESSAGE value="Cleaning last code smell" />
     <MESSAGE value="Add FileSystem DAO and removing skipped code smell" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add FileSystem DAO and removing skipped code smell" />
+    <MESSAGE value="Cleaning last code smell" />
+    <MESSAGE value="Bugfix on readSetAllergenList&#10;Graphical bugfix, now text will be rendered correctly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Bugfix on readSetAllergenList&#10;Graphical bugfix, now text will be rendered correctly" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -541,6 +543,26 @@
           <url>file://$PROJECT_DIR$/src/test/java/com/pickyeaters/logic/LoginFSTest.java</url>
           <line>44</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/PickieController.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/PickieController.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryDB.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/EatingPreferenceForm.java</url>
+          <line>77</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

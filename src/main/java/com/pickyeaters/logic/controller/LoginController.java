@@ -41,7 +41,6 @@ public class LoginController  {
 
     public static final String USER_TYPE_RESTAURATEUR="RESTAURATEUR";
     public static final String USER_TYPE_PICKIE="USER_TYPE_PICKIE";
-    public static final String USER_TYPE_ADMIN="USER_TYPE_ADMIN";
 
     private final Logger logger;
 
@@ -184,8 +183,6 @@ public class LoginController  {
             return USER_TYPE_RESTAURATEUR;
         } else if (session.isPickie()) {
             return USER_TYPE_PICKIE;
-        } else if (session.isAdmin()) {
-            return USER_TYPE_ADMIN;
         } else {
             throw new NotImplementedException();
         }

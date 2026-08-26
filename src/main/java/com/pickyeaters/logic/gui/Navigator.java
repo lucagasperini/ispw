@@ -140,8 +140,6 @@ public class Navigator {
             Navigator.navigateContent("/form/RestaurateurMain.fxml");
         } else if(loginView.isLoggedPickie()) {
             Navigator.navigateContent("/form/PickieMain.fxml");
-        } else if(loginView.isLoggedAdmin()) {
-            throw new NotImplementedException();
         } else {
             throw new NotImplementedException();
         }

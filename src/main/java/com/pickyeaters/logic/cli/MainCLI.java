@@ -70,8 +70,6 @@ public class MainCLI {
         } else if(loginView.isLoggedPickie()) {
             PickieMainForm mainForm = new PickieMainForm(app);
             mainForm.show();
-        } else if(loginView.isLoggedAdmin()) {
-            throw new NotImplementedException();
         } else {
             throw new NotImplementedException();
         }
