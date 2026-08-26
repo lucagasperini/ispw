@@ -106,7 +106,7 @@ public class IngredientRepositoryDB implements IngredientRepository {
 
     public List<String> allAllergenName() {
         try {
-            return readSetAllIngredientName();
+            return readSetAllAllergenName();
         } catch (DatabaseControllerException e) {
             logger.error(e.getMessage(), e);
             throw new GenericRepositoryException(e.getMessage());
@@ -201,7 +201,7 @@ public class IngredientRepositoryDB implements IngredientRepository {
                         query.getString().orElseThrow()
                 ));
             } catch (NoSuchElementException ignored) {
-                logger.warn("findAllergenListByIngredientID: Skip invalid element on database ");
+                logger.warn("readAllergenListByIngredientID: Skip invalid element on database ");
             }
         }
         query.close();
@@ -232,7 +232,7 @@ public class IngredientRepositoryDB implements IngredientRepository {
                         false
                 ));
             } catch (NoSuchElementException ignored) {
-                logger.warn("readIngredientListByExcludedGroupID: Skip invalid element on database ");
+                logger.warn("readSetIngredientByExcludedGroupID: Skip invalid element on database ");
             }
         }
         query.close();
@@ -249,7 +249,24 @@ public class IngredientRepositoryDB implements IngredientRepository {
             try {
                 outList.add(query.getString().orElseThrow());
             } catch (NoSuchElementException ignored) {
-                logger.warn("readAllIngredientName: Skip invalid element on database ");
+                logger.warn("readSetAllIngredientName: Skip invalid element on database ");
+            }
+        }
+        query.close();
+
+        return outList;
+    }
+
+    private List<String> readSetAllAllergenName() throws DatabaseControllerException {
+        List<String> outList = new ArrayList<>();
+        DatabaseController.Query query = database.queryResultSet("SELECT name FROM \"Allergen\"");
+        query.execute();
+
+        while (query.next()) {
+            try {
+                outList.add(query.getString().orElseThrow());
+            } catch (NoSuchElementException ignored) {
+                logger.warn("readSetAllAllergenName: Skip invalid element on database ");
             }
         }
         query.close();
@@ -273,7 +290,7 @@ public class IngredientRepositoryDB implements IngredientRepository {
                         query.getString().orElseThrow()
                 ));
             } catch (NoSuchElementException ignored) {
-                logger.warn("readAllergenByIngredient: Skip invalid element on database ");
+                logger.warn("readSetAllergenByIngredient: Skip invalid element on database ");
             }
         }
         query.close();
