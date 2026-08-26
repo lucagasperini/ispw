@@ -2,8 +2,10 @@ package com.pickyeaters.logic.model;
 
 import com.pickyeaters.logic.exception.NotImplementedException;
 
-public abstract class User {
-    private String id;
+import java.io.Serializable;
+
+public abstract class User implements Serializable {
+    private final String id;
     private String password;
     private String email;
     private String firstname;
@@ -19,9 +21,6 @@ public abstract class User {
 
 
     public boolean checkPassword(String password) {
-        if(password == null) {
-            throw new NotImplementedException();
-        }
         return this.password.equals(password);
     }
 
@@ -43,10 +42,6 @@ public abstract class User {
 
     public String getLastname() {
         return lastname;
-    }
-
-    public void setID(String id) {
-        this.id = id;
     }
 
     public void setPassword(String password) {

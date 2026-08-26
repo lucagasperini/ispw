@@ -65,7 +65,7 @@ public class PickieController {
         }
     }
 
-    public Result<EditEatingPreferenceReply> editEatingPreference(EditEatingPreferenceRequest request) {
+    public Result<Void> editEatingPreference(EditEatingPreferenceRequest request) {
         try {
             String userID = loginController.requestUserID(request);
             loginController.checkUserPermission(request, LoginController.PERMISSION_EDIT_EATINGPREFERENCE);
@@ -88,7 +88,7 @@ public class PickieController {
 
             EatingPreference eatingPreference = new EatingPreference(dislikeIngredientList, excludedGroupList, allergenList);
             pickieRepository.editEatingPreference(userID, eatingPreference);
-            return Result.ok(new EditEatingPreferenceReply());
+            return Result.ok(null);
         } catch (LoginControllerException | LoginControllerPermissionException | GenericRepositoryException e ) {
             logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());

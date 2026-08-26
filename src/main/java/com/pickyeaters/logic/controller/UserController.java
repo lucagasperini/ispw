@@ -41,7 +41,7 @@ public class UserController {
         }
     }
 
-    public Result<EditUserReply> editUser(EditUserRequest request) {
+    public Result<Void> editUser(EditUserRequest request) {
         try {
             String userID = loginController.requestUserID(request);
             loginController.checkUserPermission(request, LoginController.PERMISSION_CHANGE_DISH);
@@ -51,7 +51,7 @@ public class UserController {
                     request.getUser().getFirstname(), request.getUser().getLastname()
             );
             repository.editUser(user);
-            return Result.ok(new EditUserReply());
+            return Result.ok(null);
         } catch (LoginControllerException | LoginControllerPermissionException e) {
             logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());

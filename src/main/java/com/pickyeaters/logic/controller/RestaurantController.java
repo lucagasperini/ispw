@@ -1,7 +1,6 @@
 package com.pickyeaters.logic.controller;
 
 import com.pickyeaters.logic.bean.RestaurantBean;
-import com.pickyeaters.logic.bean.reply.EditRestaurantReply;
 import com.pickyeaters.logic.bean.reply.Result;
 import com.pickyeaters.logic.bean.reply.ShowRestaurantReply;
 import com.pickyeaters.logic.bean.request.EditRestaurantRequest;
@@ -54,7 +53,7 @@ public class RestaurantController {
         return new ShowRestaurantReply(restaurant.getID(), restaurantBean);
     }
 
-    public Result<EditRestaurantReply> editRestaurant(EditRestaurantRequest request) {
+    public Result<Void> editRestaurant(EditRestaurantRequest request) {
         try {
             String userID = loginController.requestUserID(request);
             Restaurant restaurant = new Restaurant(
@@ -66,7 +65,7 @@ public class RestaurantController {
                     null
             );
             repository.editRestaurantByOwner(userID, restaurant);
-            return Result.ok(new EditRestaurantReply());
+            return Result.ok(null);
         } catch (GenericRepositoryException e) {
             logger.error(LiteralMessage.RESTAURANT_CONTROLLER_NO_RESTAURANT, e);
             return Result.error(LiteralMessage.RESTAURANT_CONTROLLER_NO_RESTAURANT);

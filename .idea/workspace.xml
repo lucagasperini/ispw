@@ -18,22 +18,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Refactor some Repository&#10;Commenting and improving in readibility findRestaurant&#10;Removing code smell">
+    <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Cleaning last code smell">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryFS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryFS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepositoryFS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepositoryFS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/UserRepositoryFS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/pickyeaters/logic/LoginFSTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/SystemParameterBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/SystemParameterBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/AddDishReply.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/ChangeDishReply.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/EditEatingPreferenceReply.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/EditRestaurantReply.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/EditUserReply.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/reply/RemoveDishReply.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/MenuController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/MenuController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/PickieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/PickieController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/RestaurantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/RestaurantController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryRAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/IngredientRepositoryRAM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryRAM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/MenuRepositoryRAM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/PickieRepositoryDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepositoryDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/UserRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/UserRepositoryDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/LocaleView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/LocaleView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/VirtualView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/VirtualView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/ConfigView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/ConfigView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,9 +144,11 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Application.MainCLI DB.executor": "Debug",
+    "Application.MainCLI FS.executor": "Run",
     "Application.MainCLI.executor": "Run",
     "Application.MainGUI DB.executor": "Run",
     "Application.MainGUI.executor": "Run",
+    "JUnit.LoginFSTest.executor": "Run",
     "JUnit.PickieTest.executor": "Run",
     "JUnit.RestaurateurTest.executor": "Run",
     "Maven.PickyEaters [compile].executor": "Run",
@@ -188,11 +196,11 @@
       <recent name="com.pickyeaters.logic.view" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.pickyeaters.logic" />
+      <recent name="com.pickyeaters.logic.dao" />
       <recent name="com.pickyeaters.logic.gui" />
       <recent name="com.pickyeaters.logic.view" />
       <recent name="com.pickyeaters.logic.cli" />
-      <recent name="com.pickyeaters.logic.model" />
-      <recent name="com.pickyeaters.logic.dao" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -202,11 +210,25 @@
       <command value="mvn javafx:run" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PickieTest">
+  <component name="RunManager" selected="JUnit.LoginFSTest">
     <configuration name="MainCLI DB" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.pickyeaters.logic.cli.MainCLI" />
       <module name="PickyEaters" />
       <option name="PROGRAM_PARAMETERS" value="provider=psql logFile=pickyeater.log localeLang=it databaseName=picky databaseUser=picky databaseHost=localhost databasePort=5432 databasePassword=picky" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pickyeaters.logic.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainCLI FS" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.pickyeaters.logic.cli.MainCLI" />
+      <module name="PickyEaters" />
+      <option name="PROGRAM_PARAMETERS" value="logFile=pickyeater.log localeLang=it provider=fs" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.pickyeaters.logic.cli.*" />
@@ -282,6 +304,21 @@
         </data>
       </server-settings>
       <predefined_log_file enabled="true" id="JBoss" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginFSTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="PickyEaters" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pickyeaters.logic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.pickyeaters.logic" />
+      <option name="MAIN_CLASS_NAME" value="com.pickyeaters.logic.LoginFSTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -437,17 +474,20 @@
     </configuration>
     <list>
       <item itemvalue="Application.MainCLI" />
+      <item itemvalue="Application.MainCLI FS" />
       <item itemvalue="Application.MainCLI DB" />
       <item itemvalue="Application.MainGUI DB" />
       <item itemvalue="Application.MainGUI" />
+      <item itemvalue="JUnit.LoginFSTest" />
       <item itemvalue="JUnit.PickieTest" />
       <item itemvalue="JUnit.RestaurateurTest" />
       <item itemvalue="Maven.PickyEaters [javafx:run]" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PickieTest" />
+        <item itemvalue="JUnit.LoginFSTest" />
         <item itemvalue="JUnit.RestaurateurTest" />
+        <item itemvalue="JUnit.PickieTest" />
         <item itemvalue="Application.MainGUI" />
       </list>
     </recent_temporary>
@@ -495,7 +535,8 @@
     <MESSAGE value="Remove some code smell" />
     <MESSAGE value="Refactor all RepositoryDB" />
     <MESSAGE value="Refactor some Repository&#10;Commenting and improving in readibility findRestaurant&#10;Removing code smell" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor some Repository&#10;Commenting and improving in readibility findRestaurant&#10;Removing code smell" />
+    <MESSAGE value="Cleaning last code smell" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaning last code smell" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -513,6 +554,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/restaurant/RestaurantView.java</url>
           <line>15</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/pickyeaters/logic/LoginFSTest.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

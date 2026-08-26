@@ -10,7 +10,8 @@ public class SystemParameterBean {
 
     private static final String ACCEPTED_PROVIDER_RAM = "ram";
     private static final String ACCEPTED_PROVIDER_POSTGRES = "psql";
-    private static final Set<String> ACCEPTED_PROVIDER = Set.of(ACCEPTED_PROVIDER_RAM, ACCEPTED_PROVIDER_POSTGRES);
+    private static final String ACCEPTED_PROVIDER_FILESYSTEM = "fs";
+    private static final Set<String> ACCEPTED_PROVIDER = Set.of(ACCEPTED_PROVIDER_RAM, ACCEPTED_PROVIDER_POSTGRES, ACCEPTED_PROVIDER_FILESYSTEM);
 
     private String logFile = "";
     private String configFile = "";
@@ -154,5 +155,12 @@ public class SystemParameterBean {
             throw new BeanNullValueException();
         }
         return ACCEPTED_PROVIDER_POSTGRES.equals(this.provider);
+    }
+
+    public boolean isProviderFS() {
+        if(this.provider == null) {
+            throw new BeanNullValueException();
+        }
+        return ACCEPTED_PROVIDER_FILESYSTEM.equals(this.provider);
     }
 }

@@ -98,4 +98,20 @@ public class ConfigView extends VirtualView {
         }
     }
 
+    public boolean checkedProviderRAM() {
+        try {
+            return systemParameter.isProviderRAM();
+        } catch (BeanNullValueException e) {
+            throw new ConfigViewException("");
+        }
+    }
+
+    public boolean checkedProviderFileSystem() {
+        try {
+            return systemParameter.isProviderFS();
+        } catch (BeanNullValueException e) {
+            throw new ConfigViewException("");
+        }
+    }
+
 }

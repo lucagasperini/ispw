@@ -18,6 +18,8 @@ import com.pickyeaters.logic.view.eatingpreference.ShowEatingPreferenceView;
 import com.pickyeaters.logic.view.restaurant.EditRestaurantView;
 import com.pickyeaters.logic.view.restaurant.ShowRestaurantView;
 
+import java.io.IOException;
+
 public class Application {
     private final SystemParameterBean systemParameter = new SystemParameterBean();
 
@@ -36,27 +38,6 @@ public class Application {
     private RestaurantController restaurantController;
     private PickieController pickieController;
     private UserController userController;
-
-    @SuppressWarnings("java:S1450")
-    private IngredientRepository ingredientRepository;
-
-    @SuppressWarnings("java:S1450")
-    private MenuRepository menuRepository;
-
-    @SuppressWarnings("java:S1450")
-    private RestaurantRepository restaurantRepository;
-
-    @SuppressWarnings("java:S1450")
-    private UserRepository userRepository;
-
-    @SuppressWarnings("java:S1450")
-    private PickieRepository pickieRepository;
-
-    @SuppressWarnings("java:S1450")
-    private DishFactory dishFactory;
-
-    @SuppressWarnings("java:S1450")
-    private UserFactory userFactory;
 
     public Application(String[] args) {
         printer = new Printer();
@@ -95,16 +76,35 @@ public class Application {
     public void systemStart() {
         parameterCheck();
 
-        userFactory = new UserFactory(logger);
-        dishFactory = new DishFactory(logger);
+        UserFactory userFactory = new UserFactory(logger);
+        DishFactory dishFactory = new DishFactory(logger);
 
-        if(configView.checkedProviderDatabase()) {
+        IngredientRepository ingredientRepository;
+        MenuRepository menuRepository;
+        RestaurantRepository restaurantRepository;
+        UserRepository userRepository;
+        PickieRepository pickieRepository;
+
+        if (configView.checkedProviderDatabase()) {
             logger.info("Selected data mode: database connection");
             ingredientRepository = new IngredientRepositoryDB(logger, databaseController);
             userRepository = new UserRepositoryDB(logger, databaseController, userFactory);
             menuRepository = new MenuRepositoryDB(logger, databaseController, ingredientRepository, dishFactory);
             restaurantRepository = new RestaurantRepositoryDB(logger, databaseController, userRepository);
             pickieRepository = new PickieRepositoryDB(logger, databaseController, ingredientRepository);
+        } else if (configView.checkedProviderFileSystem()) {
+            try {
+                logger.info("Selected data mode: file system connection");
+                ingredientRepository = new IngredientRepositoryFS();
+                userRepository = new UserRepositoryFS(logger, System.getProperty("user.home"));
+                menuRepository = new MenuRepositoryFS();
+                restaurantRepository = new RestaurantRepositoryFS();
+                pickieRepository = new PickieRepositoryFS();
+            } catch (IOException e) {
+                logger.error("FATAL ERROR: Cannot start the application", e);
+                System.exit(1);
+                return;
+            }
         } else {
             logger.info("Selected data mode: memory connection");
             ingredientRepository = new IngredientRepositoryRAM(logger);

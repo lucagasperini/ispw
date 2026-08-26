@@ -34,7 +34,7 @@ public class MenuController {
         this.factory = dishFactory;
     }
 
-    public Result<ChangeDishReply> changeDish(ChangeDishRequest request) {
+    public Result<Void> changeDish(ChangeDishRequest request) {
         try {
             loginController.checkUserPermission(request, LoginController.PERMISSION_CHANGE_DISH);
             if(request.getDish().getIngredientList().isEmpty()) {
@@ -52,7 +52,7 @@ public class MenuController {
             );
 
             menuRepository.editDish(dish);
-            return Result.ok(new ChangeDishReply());
+            return Result.ok(null);
         } catch (LoginControllerException | GenericFactoryException | LoginControllerPermissionException e) {
             logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
@@ -60,7 +60,7 @@ public class MenuController {
 
     }
 
-    public Result<AddDishReply> addDish(AddDishRequest request) {
+    public Result<Void> addDish(AddDishRequest request) {
         try {
             String userID = loginController.requestUserID(request);
             loginController.checkUserPermission(request, LoginController.PERMISSION_ADD_DISH);
@@ -82,7 +82,7 @@ public class MenuController {
             );
 
             menuRepository.addDish(restaurant.getID(), dish);
-            return Result.ok(new AddDishReply());
+            return Result.ok(null);
         } catch (LoginControllerException | GenericFactoryException | LoginControllerPermissionException e) {
             logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
@@ -119,11 +119,11 @@ public class MenuController {
         }
     }
 
-    public Result<RemoveDishReply> removeDish(RemoveDishRequest request) {
+    public Result<Void> removeDish(RemoveDishRequest request) {
         try {
             loginController.checkUserPermission(request, LoginController.PERMISSION_REMOVE_DISH);
             menuRepository.removeDish(request.getID());
-            return Result.ok(new RemoveDishReply());
+            return Result.ok(null);
         } catch (LoginControllerException | GenericRepositoryException | LoginControllerPermissionException e) {
             logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
