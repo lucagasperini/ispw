@@ -71,6 +71,15 @@ public class MenuRepositoryDB implements MenuRepository {
         }
     }
 
+    public Optional<Dish> findDishByName(String restaurantID, String dishName) {
+        try {
+            return readDishByName(restaurantID, dishName);
+        } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
+            throw new GenericRepositoryException(e.getMessage());
+        }
+    }
+
     //----------------------- PRIVATE METHOD SECTION -----------------------//
 
     private List<Ingredient> readSetIngredientByDishID(String dishID) throws DatabaseControllerException {
@@ -257,6 +266,15 @@ public class MenuRepositoryDB implements MenuRepository {
         deleteDishIngredient(dish.getID());
         for (Ingredient i : dish.getIngredientList()) {
             createDishIngredient(dish.getID(), i);
+        }
+    }
+
+    private Optional<Dish> readDishByName(String restaurantID, String dishName) throws DatabaseControllerException {
+        try {
+            String dishID = readDishID(restaurantID, dishName).orElseThrow();
+            return readDishByID(dishID);
+        } catch (NoSuchElementException e) {
+            return Optional.empty();
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.pickyeaters.logic.gui;
 
+import com.pickyeaters.logic.exception.GenericViewException;
 import com.pickyeaters.logic.view.UserView;
 import com.pickyeaters.logic.view.restaurant.EditRestaurantView;
 import com.pickyeaters.logic.view.restaurant.ShowRestaurantView;
@@ -82,19 +83,23 @@ public class RestaurantDetailsForm {
 
     @FXML
     private void clickButtonSave(ActionEvent event) {
-        EditRestaurantView view = AppData.getInstance().getApp().displayEditRestaurantView();
-        view.insertName(inputRestaurantName.getText());
-        view.insertAddress(inputRestaurantAddress.getText());
-        view.insertPhone(inputRestaurantPhone.getText());
-        view.insertCity(inputRestaurantCity.getText());
-        view.submit();
-        UserView userView = AppData.getInstance().getApp().displayUserView();
-        userView.insertEmail(inputRestaurateurEmail.getText());
-        userView.insertFirstname(inputRestaurateurFirstname.getText());
-        userView.insertLastname(inputRestaurateurLastname.getText());
-        userView.submit();
-        Navigator.getMainForm().updateName();
-        Navigator.navigateContentParent();
+        try {
+            EditRestaurantView view = AppData.getInstance().getApp().displayEditRestaurantView();
+            view.insertName(inputRestaurantName.getText());
+            view.insertAddress(inputRestaurantAddress.getText());
+            view.insertPhone(inputRestaurantPhone.getText());
+            view.insertCity(inputRestaurantCity.getText());
+            view.submit();
+            UserView userView = AppData.getInstance().getApp().displayUserView();
+            userView.insertEmail(inputRestaurateurEmail.getText());
+            userView.insertFirstname(inputRestaurateurFirstname.getText());
+            userView.insertLastname(inputRestaurateurLastname.getText());
+            userView.submit();
+            Navigator.getMainForm().updateName();
+            Navigator.navigateContentParent();
+        } catch (GenericViewException e) {
+            Navigator.showError(e);
+        }
     }
 
 }

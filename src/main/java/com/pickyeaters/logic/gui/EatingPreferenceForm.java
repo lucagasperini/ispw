@@ -1,5 +1,6 @@
 package com.pickyeaters.logic.gui;
 
+import com.pickyeaters.logic.exception.GenericViewException;
 import com.pickyeaters.logic.view.eatingpreference.EditEatingPreferenceView;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -162,7 +163,11 @@ public class EatingPreferenceForm {
 
     @FXML
     void clickSaveChanges(ActionEvent event) {
-        view.submit();
-        Navigator.navigateContentParent();
+        try {
+            view.submit();
+            Navigator.navigateContentParent();
+        } catch (GenericViewException e) {
+            Navigator.showError(e);
+        }
     }
 }

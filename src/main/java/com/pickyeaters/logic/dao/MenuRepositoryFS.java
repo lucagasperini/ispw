@@ -27,4 +27,8 @@ public class MenuRepositoryFS implements MenuRepository {
     public void editDish(Dish dish) {
         throw new NotImplementedException();
     }
+
+    public Optional<Dish> findDishByName(String restaurantID, String dishName) {
+        throw new NotImplementedException();
+    }
 }

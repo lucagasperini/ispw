@@ -27,9 +27,9 @@ public class DishBean {
     }
 
     public DishBean(Dish dish) {
-        name = dish.getName();
-        description = dish.getDescription();
-        type = dish.getType();
+        setName(dish.getName());
+        setDescription(dish.getDescription());
+        setType(dish.getType());
         ingredientList = new ArrayList<>();
         for(Ingredient i : dish.getIngredientList()) {
             ingredientList.add(new DishIngredientBean(i.getName(), i.isOptional(), i.isCooked()));

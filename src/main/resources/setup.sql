@@ -211,6 +211,23 @@ BEGIN
 END;
 $BODY$;
 
+CREATE OR REPLACE PROCEDURE get_dish_by_name(
+    IN _restaurant_id varchar,
+    IN _dish_id varchar,
+    OUT _id varchar,
+    OUT _name varchar,
+    OUT _description varchar,
+    OUT _type varchar)
+LANGUAGE 'plpgsql'
+AS $BODY$
+BEGIN
+    SELECT id, name, description, type
+    INTO _id, _name, _description, _type
+    FROM "Dish"
+    WHERE fk_restaurant = _restaurant_id::uuid AND name = _name::CITEXT;
+END;
+$BODY$;
+
 -- ### IngredientRepository ###
 
 CREATE OR REPLACE PROCEDURE get_ingredient_by_name(

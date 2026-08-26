@@ -114,4 +114,13 @@ public class MenuRepositoryRAM implements MenuRepository {
         logger.error(e.getMessage(), e);
         throw e;
     }
+
+    public Optional<Dish> findDishByName(String restaurantID, String dishName) {
+        for (Dish d : map.get(restaurantID)) {
+            if(d.getName().equals(dishName)) {
+                return Optional.of(d);
+            }
+        }
+        return Optional.empty();
+    }
 }

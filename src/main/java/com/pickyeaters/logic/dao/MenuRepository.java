@@ -11,4 +11,5 @@ public interface MenuRepository {
     void removeDish(String dishID);
     Optional<Dish> findDishByID(String dishID);
     void editDish(Dish dish);
+    Optional<Dish> findDishByName(String restaurantID, String dishName);
 }

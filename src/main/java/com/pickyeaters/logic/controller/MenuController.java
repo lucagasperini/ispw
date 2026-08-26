@@ -34,13 +34,27 @@ public class MenuController {
         this.factory = dishFactory;
     }
 
+    private boolean isDishDuplicatedName(Restaurant restaurant, Dish newDish) {
+        try {
+            // find dish with same name, if not exists, return false
+            Dish otherDish = menuRepository.findDishByName(restaurant.getID(), newDish.getName()).orElseThrow();
+            // if they have same id, they are same dish then return false,
+            // otherwise they are different dish, so return true
+            return !otherDish.getID().equals(newDish.getID());
+        } catch (NoSuchElementException e) {
+            return false;
+        }
+    }
+
     public Result<Void> changeDish(ChangeDishRequest request) {
         try {
+            String userID = loginController.requestUserID(request);
             loginController.checkUserPermission(request, LoginController.PERMISSION_CHANGE_DISH);
             if(request.getDish().getIngredientList().isEmpty()) {
                 return Result.error(LiteralMessage.MENU_CONTROLLER_DISH_MUST_HAVE_ONE_INGREDIENT);
             }
 
+            Restaurant restaurant = restaurantRepository.findRestaurantByOwner(userID).orElseThrow();
             List<Ingredient> ingredientList = ingredientRepository.findIngredientList(request.getDish().getIngredientList());
 
             Dish dish = factory.createDish(
@@ -50,6 +64,11 @@ public class MenuController {
                     request.getDish().getType(),
                     ingredientList
             );
+
+            if(isDishDuplicatedName(restaurant, dish)) {
+                logger.warn(LiteralMessage.MENU_CONTROLLER_DISH_DUPLICATED_NAME);
+                return Result.error(LiteralMessage.MENU_CONTROLLER_DISH_DUPLICATED_NAME);
+            }
 
             menuRepository.editDish(dish);
             return Result.ok(null);
@@ -80,6 +99,11 @@ public class MenuController {
                     request.getDish().getType(),
                     ingredientList
             );
+
+            if(isDishDuplicatedName(restaurant, dish)) {
+                logger.warn(LiteralMessage.MENU_CONTROLLER_DISH_DUPLICATED_NAME);
+                return Result.error(LiteralMessage.MENU_CONTROLLER_DISH_DUPLICATED_NAME);
+            }
 
             menuRepository.addDish(restaurant.getID(), dish);
             return Result.ok(null);
