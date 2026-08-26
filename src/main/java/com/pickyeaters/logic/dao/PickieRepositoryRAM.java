@@ -15,13 +15,13 @@ public class PickieRepositoryRAM implements PickieRepository {
         eatingPreferenceMap = new HashMap<>();
 
         List<Allergen> la1 = new ArrayList<>();
-        la1.add(ingredientRepository.findAllergenByName("Allergen 1").orElseThrow());
-        la1.add(ingredientRepository.findAllergenByName("Allergen 2").orElseThrow());
+        la1.add(ingredientRepository.findAllergen("Allergen 1").orElseThrow());
+        la1.add(ingredientRepository.findAllergen("Allergen 2").orElseThrow());
 
         List<Ingredient> li1 = new ArrayList<>();
-        li1.add(ingredientRepository.findIngredientByName("Ingredient 2").orElseThrow());
+        li1.add(ingredientRepository.findIngredient("Ingredient 2").orElseThrow());
         List<Ingredient> li2 = new ArrayList<>();
-        li1.add(ingredientRepository.findIngredientByName("Ingredient 4").orElseThrow());
+        li1.add(ingredientRepository.findIngredient("Ingredient 4").orElseThrow());
 
         List<ExcludedGroup> leg1 = new ArrayList<>();
         leg1.add(ingredientRepository.findExcludedGroupByName(ExcludedGroup.GROUP_NAME_HALAL).orElseThrow());

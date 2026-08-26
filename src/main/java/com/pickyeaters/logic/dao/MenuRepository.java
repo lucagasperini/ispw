@@ -8,8 +8,7 @@ import java.util.Optional;
 public interface MenuRepository {
     List<Dish> findMenuByRestaurantID(String restaurantID);
     void addDish(String restaurantID, Dish dish);
-    void removeDish(String restaurantID, String dishID);
-    Optional<Dish> findDishByID(String restaurantID, String dishID);
+    void removeDish(String dishID);
     Optional<Dish> findDishByID(String dishID);
-    void editDish(String restaurantID, Dish dish);
+    void editDish(Dish dish);
 }

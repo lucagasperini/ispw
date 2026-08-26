@@ -43,7 +43,7 @@ public class MenuRepositoryDB implements MenuRepository {
         }
     }
 
-    public void removeDish(String restaurantID, String dishID) {
+    public void removeDish(String dishID) {
         try {
             deleteDishIngredient(dishID);
             deleteDish(dishID);
@@ -51,10 +51,6 @@ public class MenuRepositoryDB implements MenuRepository {
             logger.error(e.getMessage(), e);
             throw new GenericRepositoryException(e.getMessage());
         }
-    }
-
-    public Optional<Dish> findDishByID(String restaurantID, String dishID) {
-        return findDishByID(dishID);
     }
 
     public Optional<Dish> findDishByID(String dishID) {
@@ -66,9 +62,9 @@ public class MenuRepositoryDB implements MenuRepository {
         }
     }
 
-    public void editDish(String restaurantID, Dish dish) {
+    public void editDish(Dish dish) {
         try {
-            updateDish(restaurantID, dish);
+            updateDish(dish);
         } catch (DatabaseControllerException e) {
             logger.error(e.getMessage(), e);
             throw new GenericRepositoryException(e.getMessage());
@@ -247,7 +243,7 @@ public class MenuRepositoryDB implements MenuRepository {
         }
     }
 
-    private void updateDish(String restaurantID, Dish dish) throws DatabaseControllerException {
+    private void updateDish(Dish dish) throws DatabaseControllerException {
         DatabaseController.Query query = database.query(
                 "UPDATE \"Dish\" SET name=?, description=?, type=? WHERE id=?::uuid"
         );

@@ -36,22 +36,12 @@ public class MenuController {
 
     public Result<ChangeDishReply> changeDish(ChangeDishRequest request) {
         try {
-            String userID = loginController.requestUserID(request);
             loginController.checkUserPermission(request, LoginController.PERMISSION_CHANGE_DISH);
             if(request.getDish().getIngredientList().isEmpty()) {
                 return Result.error(LiteralMessage.MENU_CONTROLLER_DISH_MUST_HAVE_ONE_INGREDIENT);
             }
-            Restaurant restaurant = restaurantRepository.findRestaurantByOwner(userID).orElseThrow();
-            List<Ingredient> ingredientList = new ArrayList<>();
 
-            try {
-                for (DishIngredientBean ingredient : request.getDish().getIngredientList()) {
-                    ingredientList.add(ingredientRepository.findIngredientByName(ingredient.getName()).orElseThrow());
-                }
-            } catch (NoSuchElementException e) {
-                logger.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_INGREDIENT, e);
-                return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_INGREDIENT);
-            }
+            List<Ingredient> ingredientList = ingredientRepository.findIngredientList(request.getDish().getIngredientList());
 
             Dish dish = factory.createDish(
                     request.getID(),
@@ -61,14 +51,11 @@ public class MenuController {
                     ingredientList
             );
 
-            menuRepository.editDish(restaurant.getID(), dish);
+            menuRepository.editDish(dish);
             return Result.ok(new ChangeDishReply());
         } catch (LoginControllerException | GenericFactoryException | LoginControllerPermissionException e) {
             logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
-        } catch (NoSuchElementException e) {
-            logger.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_RESTAURANT_BY_USERID, e);
-            return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_RESTAURANT_BY_USERID);
         }
 
     }
@@ -84,16 +71,7 @@ public class MenuController {
             }
 
             Restaurant restaurant = restaurantRepository.findRestaurantByOwner(userID).orElseThrow();
-
-            List<Ingredient> ingredientList = new ArrayList<>();
-            try {
-                for (DishIngredientBean ingredient : request.getDish().getIngredientList()) {
-                    ingredientList.add(ingredientRepository.findIngredientByName(ingredient.getName()).orElseThrow());
-                }
-            } catch (NoSuchElementException e) {
-                logger.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_INGREDIENT, e);
-                return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_INGREDIENT);
-            }
+            List<Ingredient> ingredientList = ingredientRepository.findIngredientList(request.getDish().getIngredientList());
 
             Dish dish = factory.createDish(
                     "",
@@ -112,8 +90,6 @@ public class MenuController {
             logger.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_RESTAURANT_BY_USERID, e);
             return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_RESTAURANT_BY_USERID);
         }
-
-
     }
 
     public Result<ShowDishReply> showDish(ShowDishRequest request) {
@@ -145,14 +121,9 @@ public class MenuController {
 
     public Result<RemoveDishReply> removeDish(RemoveDishRequest request) {
         try {
-            String userID = loginController.requestUserID(request);
             loginController.checkUserPermission(request, LoginController.PERMISSION_REMOVE_DISH);
-            Restaurant restaurant = restaurantRepository.findRestaurantByOwner(userID).orElseThrow();
-            menuRepository.removeDish(restaurant.getID(), request.getID());
+            menuRepository.removeDish(request.getID());
             return Result.ok(new RemoveDishReply());
-        }  catch (NoSuchElementException e) {
-            logger.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_RESTAURANT_BY_USERID, e);
-            return Result.error(LiteralMessage.MENU_CONTROLLER_CANT_FIND_RESTAURANT_BY_USERID);
         } catch (LoginControllerException | GenericRepositoryException | LoginControllerPermissionException e) {
             logger.error(e.getMessage(), e);
             return Result.error(e.getMessage());
@@ -197,7 +168,7 @@ public class MenuController {
     public Result<ShowAllergenIngredientReply> showAllergenIngredient(ShowAllergenIngredientRequest request) {
         try {
             loginController.checkUserPermission(request, LoginController.PERMISSION_SHOW_ALLERGENINGREDIENT);
-            Ingredient ingredient = ingredientRepository.findIngredientByName(request.getIngredientName()).orElseThrow();
+            Ingredient ingredient = ingredientRepository.findIngredient(request.getIngredientName()).orElseThrow();
             List<Allergen> allergenList = ingredientRepository.findAllergenByIngredient(ingredient);
             List<DishAllergenBean> outList = new ArrayList<>();
             for(Allergen i : allergenList) {

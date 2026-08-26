@@ -16,6 +16,8 @@ public class LiteralMessage {
 
     public static final String MENU_REPOSITORY_CANT_REMOVE_DISH = "Cannot remove selected dish from restaurant";
     public static final String MENU_REPOSITORY_CANT_FIND_DISH = "Cannot remove selected dish from restaurant";
+    public static final String MENU_REPOSITORY_CANT_FIND_INGREDIENT = "Can't find ingredient";
+
 
     public static final String FXML_ERROR = "FXML ERROR";
 }

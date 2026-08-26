@@ -75,11 +75,11 @@ public class PickieController {
             List<ExcludedGroup> excludedGroupList = new ArrayList<>();
 
             for(String i: request.getEatingPreference().getDislikeIngredientList()) {
-                dislikeIngredientList.add(ingredientRepository.findIngredientByName(i).orElseThrow());
+                dislikeIngredientList.add(ingredientRepository.findIngredient(i).orElseThrow());
             }
 
             for(String i: request.getEatingPreference().getAllergenList()) {
-                allergenList.add(ingredientRepository.findAllergenByName(i).orElseThrow());
+                allergenList.add(ingredientRepository.findAllergen(i).orElseThrow());
             }
 
             for(String i: request.getEatingPreference().getExcludedGroupList()) {
@@ -98,36 +98,57 @@ public class PickieController {
         }
     }
 
+    private void checkDishUserCompatible(Dish dish, FindRestaurantBean bean, EatingPreference eatingPreference) {
+        // check if dish respect the user preference
+        if(!eatingPreference.checkDish(dish)) {
+            return;
+        }
+        // if dish is "type" and user need "type", then we found a match,
+        // so for next restaurant dish, turn off the need of this dish "type"
+        if(dish.isTypeAppetizer() && bean.isNeedApperizer()) {
+            bean.toggleNeedAppetizer();
+        }
+        if(dish.isTypeDrink() && bean.isNeedDrink() && eatingPreference.checkDish(dish)) {
+            bean.toggleNeedDrink();
+        }
+        if(dish.isTypeDessert() && bean.isNeedDessert() && eatingPreference.checkDish(dish)) {
+            bean.toggleNeedDessert();
+        }
+        if(dish.isTypeContour() && bean.isNeedContour() && eatingPreference.checkDish(dish)) {
+            bean.toggleNeedContour();
+        }
+        if(dish.isTypeFirst() && bean.isNeedFirst() && eatingPreference.checkDish(dish)) {
+            bean.toggleNeedFirst();
+        }
+        if(dish.isTypeSecond() && bean.isNeedSecond() && eatingPreference.checkDish(dish)) {
+            bean.toggleNeedSecond();
+        }
+    }
+
     private Map<String, RestaurantBean> getRestaurantUserCompatible(String userID, FindRestaurantBean findRestaurantBean) {
         Map<String, RestaurantBean> outMap = new HashMap<>();
         EatingPreference eatingPreference = pickieRepository.findEatingPreference(userID).orElseThrow();
         List<Restaurant> restaurantList = restaurantRepository.findRestaurantByCity(findRestaurantBean.getCity());
 
+        // foreach restaurant on the system
         for(Restaurant restaurant : restaurantList) {
+            // create a copy of original FindRestaurantBean
             FindRestaurantBean bean = new FindRestaurantBean(findRestaurantBean);
             List<Dish> menu = menuRepository.findMenuByRestaurantID(restaurant.getID());
-            for(Dish dish : menu) {
-                if(dish.isTypeAppetizer() && bean.isNeedApperizer() && eatingPreference.checkDish(dish)) {
-                    bean.toggleNeedAppetizer();
-                }
-                if(dish.isTypeDrink() && bean.isNeedDrink() && eatingPreference.checkDish(dish)) {
-                    bean.toggleNeedDrink();
-                }
-                if(dish.isTypeDessert() && bean.isNeedDessert() && eatingPreference.checkDish(dish)) {
-                    bean.toggleNeedDessert();
-                }
-                if(dish.isTypeContour() && bean.isNeedContour() && eatingPreference.checkDish(dish)) {
-                    bean.toggleNeedContour();
-                }
-                if(dish.isTypeFirst() && bean.isNeedFirst() && eatingPreference.checkDish(dish)) {
-                    bean.toggleNeedFirst();
-                }
-                if(dish.isTypeSecond() && bean.isNeedSecond() && eatingPreference.checkDish(dish)) {
-                    bean.toggleNeedSecond();
-                }
+            // if this restaurant has an empty menu, then skip it
+            // will not be a useful restaurant for the user
+            if(menu.isEmpty()) {
+                break;
             }
+            // foreach dish in menu
+            for(Dish dish : menu) {
+                // check if dish is compatible, will turn off some need eventually
+                checkDishUserCompatible(dish, bean, eatingPreference);
+            }
+            // check if all need are off, if so add the restaurant on the
+            // output map, else go to next restaurant
             if(!bean.isNeedFirst() && !bean.isNeedSecond() && !bean.isNeedContour() && !bean.isNeedDessert()
-                    && !bean.isNeedDrink() && !bean.isNeedApperizer() && !menu.isEmpty()) {
+                    && !bean.isNeedDrink() && !bean.isNeedApperizer()) {
 
                 outMap.put(restaurant.getID(), new RestaurantBean(restaurant.getName(), restaurant.getAddress(),
                         restaurant.getPhone(), restaurant.getCity()

@@ -1,11 +1,13 @@
 package com.pickyeaters.logic.dao;
 
+import com.pickyeaters.logic.bean.DishIngredientBean;
 import com.pickyeaters.logic.controller.DatabaseController;
 import com.pickyeaters.logic.exception.DatabaseControllerException;
 import com.pickyeaters.logic.exception.GenericRepositoryException;
 import com.pickyeaters.logic.model.Allergen;
 import com.pickyeaters.logic.model.ExcludedGroup;
 import com.pickyeaters.logic.model.Ingredient;
+import com.pickyeaters.logic.utils.LiteralMessage;
 import com.pickyeaters.logic.utils.Logger;
 
 import java.util.ArrayList;
@@ -21,8 +23,16 @@ public class IngredientRepositoryDB implements IngredientRepository {
         this.logger = logger;
         this.database = database;
     }
+    public Optional<Ingredient> findIngredient(DishIngredientBean ingredientBean) {
+        try {
+            return readIngredientByName(ingredientBean.getName());
+        } catch (DatabaseControllerException e) {
+            logger.error(e.getMessage(), e);
+            throw new GenericRepositoryException(e.getMessage());
+        }
+    }
 
-    public Optional<Ingredient> findIngredientByName(String ingredientName) {
+    public Optional<Ingredient> findIngredient(String ingredientName) {
         try {
             return readIngredientByName(ingredientName);
         } catch (DatabaseControllerException e) {
@@ -31,7 +41,20 @@ public class IngredientRepositoryDB implements IngredientRepository {
         }
     }
 
-    public Optional<Allergen> findAllergenByName(String allergenName) {
+    public List<Ingredient> findIngredientList(List<DishIngredientBean> ingredientBeanList) {
+        List<Ingredient> ingredientList = new ArrayList<>();
+        for(DishIngredientBean ingredientBean : ingredientBeanList) {
+            try {
+                ingredientList.add(findIngredient(ingredientBean).orElseThrow());
+            } catch (NoSuchElementException e) {
+                logger.error(LiteralMessage.MENU_REPOSITORY_CANT_FIND_INGREDIENT, e);
+                throw new GenericRepositoryException(e.getMessage());
+            }
+        }
+        return ingredientList;
+    }
+
+    public Optional<Allergen> findAllergen(String allergenName) {
         try {
             return readAllergenByName(allergenName);
         } catch (DatabaseControllerException e) {

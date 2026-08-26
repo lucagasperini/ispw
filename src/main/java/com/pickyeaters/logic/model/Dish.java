@@ -23,7 +23,6 @@ public abstract class Dish {
         this.ingredientList = List.copyOf(ingredientList);
     }
 
-
     public List<Ingredient> getIngredientList() {
         return ingredientList;
     }

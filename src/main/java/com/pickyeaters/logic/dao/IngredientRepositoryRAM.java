@@ -1,13 +1,16 @@
 package com.pickyeaters.logic.dao;
 
+import com.pickyeaters.logic.bean.DishIngredientBean;
 import com.pickyeaters.logic.exception.GenericRepositoryException;
 import com.pickyeaters.logic.model.Allergen;
 import com.pickyeaters.logic.model.ExcludedGroup;
 import com.pickyeaters.logic.model.Ingredient;
+import com.pickyeaters.logic.utils.LiteralMessage;
 import com.pickyeaters.logic.utils.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 public class IngredientRepositoryRAM implements IngredientRepository {
@@ -68,7 +71,12 @@ public class IngredientRepositoryRAM implements IngredientRepository {
         excludedGroupList.add(new ExcludedGroup("7", ExcludedGroup.GROUP_NAME_VEGAN, li2));
     }
 
-    public Optional<Ingredient> findIngredientByName(String ingredientName) {
+    @Override
+    public Optional<Ingredient> findIngredient(DishIngredientBean ingredientBean) {
+        return findIngredient(ingredientBean.getName());
+    }
+
+    public Optional<Ingredient> findIngredient(String ingredientName) {
         for(Ingredient i : ingredientList) {
             if(i.getName().equals(ingredientName)) {
                 return Optional.of(i);
@@ -77,7 +85,21 @@ public class IngredientRepositoryRAM implements IngredientRepository {
         return Optional.empty();
     }
 
-    public Optional<Allergen> findAllergenByName(String allergenName) {
+    @Override
+    public List<Ingredient> findIngredientList(List<DishIngredientBean> ingredientBeanList) {
+        List<Ingredient> outList = new ArrayList<>();
+        for(DishIngredientBean ingredientBean : ingredientBeanList) {
+            try {
+                outList.add(findIngredient(ingredientBean).orElseThrow());
+            } catch (NoSuchElementException e) {
+                logger.error(LiteralMessage.MENU_REPOSITORY_CANT_FIND_INGREDIENT, e);
+                throw new GenericRepositoryException(e.getMessage());
+            }
+        }
+        return outList;
+    }
+
+    public Optional<Allergen> findAllergen(String allergenName) {
         for(Allergen i : allergenList) {
             if(i.getName().equals(allergenName)) {
                 return Optional.of(i);

@@ -1,6 +1,7 @@
 package com.pickyeaters.logic.dao;
 
 import com.pickyeaters.logic.exception.GenericRepositoryException;
+import com.pickyeaters.logic.factory.DishFactory;
 import com.pickyeaters.logic.model.*;
 import com.pickyeaters.logic.utils.LiteralMessage;
 import com.pickyeaters.logic.utils.Logger;
@@ -22,28 +23,28 @@ public class MenuRepositoryRAM implements MenuRepository {
         String i5 = "Ingredient 5";
 
         List<Ingredient> li1 = new ArrayList<>();
-        li1.add(ingredientRepository.findIngredientByName(i1).orElseThrow());
-        li1.add(ingredientRepository.findIngredientByName(i2).orElseThrow());
+        li1.add(ingredientRepository.findIngredient(i1).orElseThrow());
+        li1.add(ingredientRepository.findIngredient(i2).orElseThrow());
         List<Ingredient> li2 = new ArrayList<>();
-        li2.add(ingredientRepository.findIngredientByName(i1).orElseThrow());
-        li2.add(ingredientRepository.findIngredientByName(i3).orElseThrow());
+        li2.add(ingredientRepository.findIngredient(i1).orElseThrow());
+        li2.add(ingredientRepository.findIngredient(i3).orElseThrow());
         List<Ingredient> li3 = new ArrayList<>();
-        li3.add(ingredientRepository.findIngredientByName(i2).orElseThrow());
+        li3.add(ingredientRepository.findIngredient(i2).orElseThrow());
         List<Ingredient> li4 = new ArrayList<>();
-        li4.add(ingredientRepository.findIngredientByName(i5).orElseThrow());
+        li4.add(ingredientRepository.findIngredient(i5).orElseThrow());
         List<Ingredient> li5 = new ArrayList<>();
-        li5.add(ingredientRepository.findIngredientByName(i2).orElseThrow());
-        li5.add(ingredientRepository.findIngredientByName(i3).orElseThrow());
-        li5.add(ingredientRepository.findIngredientByName(i4).orElseThrow());
+        li5.add(ingredientRepository.findIngredient(i2).orElseThrow());
+        li5.add(ingredientRepository.findIngredient(i3).orElseThrow());
+        li5.add(ingredientRepository.findIngredient(i4).orElseThrow());
         List<Ingredient> li6 = new ArrayList<>();
-        li6.add(ingredientRepository.findIngredientByName(i5).orElseThrow());
+        li6.add(ingredientRepository.findIngredient(i5).orElseThrow());
         List<Ingredient> li7 = new ArrayList<>();
-        li7.add(ingredientRepository.findIngredientByName(i1).orElseThrow());
-        li7.add(ingredientRepository.findIngredientByName(i2).orElseThrow());
+        li7.add(ingredientRepository.findIngredient(i1).orElseThrow());
+        li7.add(ingredientRepository.findIngredient(i2).orElseThrow());
         List<Ingredient> li8 = new ArrayList<>();
-        li8.add(ingredientRepository.findIngredientByName(i3).orElseThrow());
+        li8.add(ingredientRepository.findIngredient(i3).orElseThrow());
         List<Ingredient> li9 = new ArrayList<>();
-        li9.add(ingredientRepository.findIngredientByName(i5).orElseThrow());
+        li9.add(ingredientRepository.findIngredient(i5).orElseThrow());
 
         List<Dish> r1 = new ArrayList<>();
         r1.add(new DishFirst("1", "R1 Dish name 1", "R1 Description 1", li1));
@@ -75,12 +76,13 @@ public class MenuRepositoryRAM implements MenuRepository {
     }
 
 
-    public void removeDish(String restaurantID, String dishID) {
-        // TODO: Throw exception if no restaurantID on map
-        for (Dish i : map.get(restaurantID)) {
-            if (i.getID().equals(dishID)) {
-                map.get(restaurantID).remove(i);
-                return;
+    public void removeDish(String dishID) {
+        for(List<Dish> menu : map.values()) {
+            for (Dish i : menu) {
+                if (i.getID().equals(dishID)) {
+                    menu.remove(i);
+                    return;
+                }
             }
         }
         GenericRepositoryException e = new GenericRepositoryException(LiteralMessage.MENU_REPOSITORY_CANT_REMOVE_DISH);
@@ -88,33 +90,29 @@ public class MenuRepositoryRAM implements MenuRepository {
         throw e;
     }
 
-    public Optional<Dish> findDishByID(String restaurantID, String dishID) {
-        for (Dish i : map.get(restaurantID)) {
-            if (i.getID().equals(dishID)) {
-                return Optional.of(i);
-            }
-        }
-        GenericRepositoryException e = new GenericRepositoryException(LiteralMessage.MENU_REPOSITORY_CANT_FIND_DISH);
-        logger.error(e.getMessage(), e);
-        throw e;
-    }
-
     public Optional<Dish> findDishByID(String dishID) {
-        for(List<Dish> dishList : map.values()) {
-            for (Dish i : dishList) {
+        for(List<Dish> menu : map.values()) {
+            for (Dish i : menu) {
                 if (i.getID().equals(dishID)) {
                     return Optional.of(i);
                 }
             }
         }
-        GenericRepositoryException e = new GenericRepositoryException(LiteralMessage.MENU_REPOSITORY_CANT_FIND_DISH);
-        logger.error(e.getMessage(), e);
-        throw e;
+        return Optional.empty();
     }
 
-
-    public void editDish(String restaurantID, Dish dish) {
-        removeDish(restaurantID, dish.getID());
-        map.get(restaurantID).add(dish);
+    public void editDish(Dish dish) {
+        for(List<Dish> menu : map.values()) {
+            for (Dish i : menu) {
+                if (i.getID().equals(dish.getID())) {
+                    menu.remove(i);
+                    menu.add(dish);
+                    return;
+                }
+            }
+        }
+        GenericRepositoryException e = new GenericRepositoryException(LiteralMessage.MENU_REPOSITORY_CANT_REMOVE_DISH);
+        logger.error(e.getMessage(), e);
+        throw e;
     }
 }
