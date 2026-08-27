@@ -1,0 +1,151 @@
+<mxfile host="app.diagrams.net" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36">
+  <diagram id="58cdce13-f638-feb5-8d6f-7d28b1aa9fa0" name="Pagina-1">
+    <mxGraphModel dx="736" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Kp22PNdBrsrpWHCdLAGH-1" edge="1" parent="1" source="Kp22PNdBrsrpWHCdLAGH-2" style="edgeStyle=elbowEdgeStyle;html=1;labelBackgroundColor=none;endArrow=open;endSize=8;strokeColor=#ff0000;fontFamily=Verdana;fontSize=12;align=left;" target="Kp22PNdBrsrpWHCdLAGH-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp22PNdBrsrpWHCdLAGH-10" connectable="0" parent="Kp22PNdBrsrpWHCdLAGH-1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;click [button==&quot;provideMenuDetails&quot;] /&lt;/div&gt;&lt;div&gt;present menu&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.3433" y="3" as="geometry">
+            <mxPoint x="37" y="33" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kp22PNdBrsrpWHCdLAGH-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" value="On main view" vertex="1">
+          <mxGeometry height="60" width="120" x="270" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp22PNdBrsrpWHCdLAGH-3" parent="1" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="1397" y="395" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp22PNdBrsrpWHCdLAGH-4" edge="1" parent="1" source="Kp22PNdBrsrpWHCdLAGH-5" style="edgeStyle=elbowEdgeStyle;html=1;labelBackgroundColor=none;endArrow=open;endSize=8;strokeColor=#ff0000;fontFamily=Verdana;fontSize=12;align=left;" target="Kp22PNdBrsrpWHCdLAGH-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp22PNdBrsrpWHCdLAGH-5" parent="1" style="ellipse;html=1;shape=startState;fillColor=#000000;strokeColor=#ff0000;rounded=1;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;direction=south;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="130" y="245" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp22PNdBrsrpWHCdLAGH-6" edge="1" parent="1" source="Kp22PNdBrsrpWHCdLAGH-7" style="edgeStyle=elbowEdgeStyle;html=1;labelBackgroundColor=none;endArrow=open;endSize=8;strokeColor=#ff0000;fontFamily=Verdana;fontSize=12;align=left;" target="Kp22PNdBrsrpWHCdLAGH-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp22PNdBrsrpWHCdLAGH-12" connectable="0" parent="Kp22PNdBrsrpWHCdLAGH-6" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;click [button==&quot;Add dish&quot;] /&lt;/div&gt;&lt;div&gt;present add dish form&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.4404" y="-5" as="geometry">
+            <mxPoint x="22" y="25" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kp22PNdBrsrpWHCdLAGH-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" value="On menu" vertex="1">
+          <mxGeometry height="60" width="120" x="610" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp22PNdBrsrpWHCdLAGH-8" edge="1" parent="1" style="edgeStyle=elbowEdgeStyle;html=1;labelBackgroundColor=none;endArrow=open;endSize=8;strokeColor=#ff0000;fontFamily=Verdana;fontSize=12;align=left;" target="Kp22PNdBrsrpWHCdLAGH-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1280" y="410" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vWQ65Oo11ldLp-_yhXZI-17" connectable="0" parent="Kp22PNdBrsrpWHCdLAGH-8" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;click [button==&quot;OK&quot;] /&lt;/div&gt;&lt;div&gt;present main form&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.2308" y="1" as="geometry">
+            <mxPoint x="15" y="31" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kp22PNdBrsrpWHCdLAGH-9" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" value="On add dish" vertex="1">
+          <mxGeometry height="60" width="120" x="901" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp22PNdBrsrpWHCdLAGH-11" edge="1" parent="1" source="Kp22PNdBrsrpWHCdLAGH-7" style="edgeStyle=elbowEdgeStyle;html=1;labelBackgroundColor=none;endArrow=open;endSize=8;strokeColor=#ff0000;fontFamily=Verdana;fontSize=12;align=left;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="Kp22PNdBrsrpWHCdLAGH-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="526.53" y="170" />
+            </Array>
+            <mxPoint x="620" y="380" as="sourcePoint" />
+            <mxPoint x="739" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kp22PNdBrsrpWHCdLAGH-13" edge="1" parent="1" source="Kp22PNdBrsrpWHCdLAGH-9" style="edgeStyle=elbowEdgeStyle;html=1;labelBackgroundColor=none;endArrow=open;endSize=8;strokeColor=#ff0000;fontFamily=Verdana;fontSize=12;align=left;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" target="Kp22PNdBrsrpWHCdLAGH-7">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="810" y="170" />
+            </Array>
+            <mxPoint x="960" y="160" as="sourcePoint" />
+            <mxPoint x="680" y="160" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Kp22PNdBrsrpWHCdLAGH-14" connectable="0" parent="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;click [button==&quot;goBack&quot;] /&lt;/div&gt;&lt;div&gt;present main view&lt;/div&gt;" vertex="1">
+          <mxGeometry x="510" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="Kp22PNdBrsrpWHCdLAGH-15" connectable="0" parent="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;click [button==&quot;goBack&quot;] /&lt;/div&gt;&lt;div&gt;present menu&lt;/div&gt;" vertex="1">
+          <mxGeometry x="820" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="vWQ65Oo11ldLp-_yhXZI-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" value="&lt;div&gt;On add dish success message&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="1158" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="vWQ65Oo11ldLp-_yhXZI-2" edge="1" parent="1" source="Kp22PNdBrsrpWHCdLAGH-9" style="edgeStyle=elbowEdgeStyle;html=1;labelBackgroundColor=none;endArrow=open;endSize=8;strokeColor=#ff0000;fontFamily=Verdana;fontSize=12;align=left;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="vWQ65Oo11ldLp-_yhXZI-1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="920" y="300" as="sourcePoint" />
+            <mxPoint x="1091" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vWQ65Oo11ldLp-_yhXZI-3" connectable="0" parent="vWQ65Oo11ldLp-_yhXZI-2" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;click [button==&quot;Save&quot;]&amp;nbsp;&lt;/div&gt;&lt;div&gt;AND&lt;/div&gt;&lt;div&gt;Dish is valid /&lt;/div&gt;&lt;div&gt;save dish and dish saved message&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.4404" y="-5" as="geometry">
+            <mxPoint x="105" y="38" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vWQ65Oo11ldLp-_yhXZI-7" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" value="&lt;div&gt;On add dish error message&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="1158" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="vWQ65Oo11ldLp-_yhXZI-8" edge="1" parent="1" source="Kp22PNdBrsrpWHCdLAGH-9" style="edgeStyle=elbowEdgeStyle;html=1;labelBackgroundColor=none;endArrow=open;endSize=8;strokeColor=#ff0000;fontFamily=Verdana;fontSize=12;align=left;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="vWQ65Oo11ldLp-_yhXZI-7">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1040" y="10" as="sourcePoint" />
+            <mxPoint x="1170" y="20" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vWQ65Oo11ldLp-_yhXZI-9" connectable="0" parent="vWQ65Oo11ldLp-_yhXZI-8" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;click [button==&quot;Save&quot;]&lt;/div&gt;&lt;div&gt;AND&lt;/div&gt;&lt;div&gt;Dish is invalid /&lt;/div&gt;&lt;div&gt;present dish error message&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.4404" y="-5" as="geometry">
+            <mxPoint x="91" y="-40" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vWQ65Oo11ldLp-_yhXZI-10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=24;fillColor=#ffffc0;strokeColor=#ff0000;shadow=0;comic=0;labelBackgroundColor=none;fontFamily=Verdana;fontSize=12;fontColor=#000000;align=center;" value="On add ingredient" vertex="1">
+          <mxGeometry height="60" width="120" x="887" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="vWQ65Oo11ldLp-_yhXZI-11" edge="1" parent="1" source="Kp22PNdBrsrpWHCdLAGH-9" style="edgeStyle=elbowEdgeStyle;html=1;labelBackgroundColor=none;endArrow=open;endSize=8;strokeColor=#ff0000;fontFamily=Verdana;fontSize=12;align=left;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="vWQ65Oo11ldLp-_yhXZI-10">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="860" y="430" />
+            </Array>
+            <mxPoint x="1050" y="355" as="sourcePoint" />
+            <mxPoint x="909" y="520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vWQ65Oo11ldLp-_yhXZI-12" connectable="0" parent="vWQ65Oo11ldLp-_yhXZI-11" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;click [button==&quot;Add Ingredient&quot;] /&lt;/div&gt;&lt;div&gt;present Add Ingredient View&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.4404" y="-5" as="geometry">
+            <mxPoint x="-85" y="88" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vWQ65Oo11ldLp-_yhXZI-13" edge="1" parent="1" source="vWQ65Oo11ldLp-_yhXZI-10" style="edgeStyle=elbowEdgeStyle;html=1;labelBackgroundColor=none;endArrow=open;endSize=8;strokeColor=#ff0000;fontFamily=Verdana;fontSize=12;align=left;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" target="Kp22PNdBrsrpWHCdLAGH-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1040" y="430" />
+            </Array>
+            <mxPoint x="1070" y="530" as="sourcePoint" />
+            <mxPoint x="1149" y="650" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vWQ65Oo11ldLp-_yhXZI-14" connectable="0" parent="vWQ65Oo11ldLp-_yhXZI-13" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;click [button==&quot;Save&quot;] /&lt;/div&gt;&lt;div&gt;present add dish form&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.4404" y="-5" as="geometry">
+            <mxPoint x="65" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vWQ65Oo11ldLp-_yhXZI-15" edge="1" parent="1" source="vWQ65Oo11ldLp-_yhXZI-7" style="edgeStyle=elbowEdgeStyle;html=1;labelBackgroundColor=none;endArrow=open;endSize=8;strokeColor=#ff0000;fontFamily=Verdana;fontSize=12;align=left;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0;entryDx=0;entryDy=0;" target="Kp22PNdBrsrpWHCdLAGH-9">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1040" y="170" />
+            </Array>
+            <mxPoint x="1140" y="305" as="sourcePoint" />
+            <mxPoint x="1277" y="200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vWQ65Oo11ldLp-_yhXZI-16" connectable="0" parent="vWQ65Oo11ldLp-_yhXZI-15" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="&lt;div&gt;click [button==&quot;OK&quot;] /&lt;/div&gt;&lt;div&gt;present add dish form&lt;/div&gt;" vertex="1">
+          <mxGeometry relative="1" x="-0.4404" y="-5" as="geometry">
+            <mxPoint x="74" y="-24" as="offset" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

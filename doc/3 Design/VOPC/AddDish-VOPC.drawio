@@ -1,0 +1,354 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36">
+  <diagram name="Pagina-1" id="w6Qa21op8i-JLu98LUhx">
+    <mxGraphModel dx="4299" dy="2897" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="zw3pOuXWavWtWPK_SBUA-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=light-dark(#000000,#FFFFFF);" value="" vertex="1">
+          <mxGeometry height="1990" width="2509" x="-1169" y="-30" as="geometry" />
+        </mxCell>
+        <mxCell id="G4Z3Wom2GG0rW7dOG4M5-27" edge="1" parent="1" source="zw3pOuXWavWtWPK_SBUA-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" target="zw3pOuXWavWtWPK_SBUA-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G4Z3Wom2GG0rW7dOG4M5-28" edge="1" parent="1" source="zw3pOuXWavWtWPK_SBUA-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;dashed=1;" target="P80q-QAEtGaEmkGAkjba-46">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G4Z3Wom2GG0rW7dOG4M5-29" edge="1" parent="1" source="zw3pOuXWavWtWPK_SBUA-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;" target="P80q-QAEtGaEmkGAkjba-49">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="G4Z3Wom2GG0rW7dOG4M5-30" edge="1" parent="1" source="zw3pOuXWavWtWPK_SBUA-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;" target="P80q-QAEtGaEmkGAkjba-51">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zw3pOuXWavWtWPK_SBUA-3" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;control&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;MenuController&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;addDish(AddDishRequest): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- isDishDuplicated(restaurant: Restaurant, newDish: Dish): boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ changeDish(ChangeDishRequest): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ showDish(ShowDishRequest): ShowDishReply&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ removeDish(RemoveDishRequest): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ showMenu(ShowMenuRequest): ShowMenuReply&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ allIngredient(AllIngredientRequest): AllIngredientReply&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ showAllergenIngredient(ShowAllergenIngredientRequest): ShowAllergenIngredientReply&lt;/p&gt;" vertex="1">
+          <mxGeometry height="216" width="500" x="-464" y="1186" as="geometry" />
+        </mxCell>
+        <mxCell id="zw3pOuXWavWtWPK_SBUA-4" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;boundary&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;MenuView&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- menu: List&amp;lt;String&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ requestShowMenu(): List&amp;lt;String&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ displayShowDish(name: String): DishView&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ displayInsertDish():&amp;nbsp;DishView&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ displayLogin(): LoginView&lt;/p&gt;" vertex="1">
+          <mxGeometry height="149" width="250" x="507" y="679.61" as="geometry" />
+        </mxCell>
+        <mxCell id="zw3pOuXWavWtWPK_SBUA-5" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;User&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: String&lt;br&gt;- email: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- password: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- firstname: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- lastname: String&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ checkPassword(String): Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getID(): String&lt;br&gt;+ getEmail(): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getFirstname(): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getLastname(): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setEmail(String): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setFirstname(String): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setLastname(String): Void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="259.61" width="190" x="-702" y="333.21" as="geometry" />
+        </mxCell>
+        <mxCell id="zw3pOuXWavWtWPK_SBUA-17" edge="1" parent="1" source="zw3pOuXWavWtWPK_SBUA-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;endArrow=open;endFill=0;startArrow=none;startFill=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" target="AgCTJD093g5iQqFbg5IO-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-730" y="660" />
+              <mxPoint x="-730" y="580" />
+              <mxPoint x="-731" y="254" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zw3pOuXWavWtWPK_SBUA-18" connectable="0" parent="zw3pOuXWavWtWPK_SBUA-17" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="- restaurateur" vertex="1">
+          <mxGeometry relative="1" x="-0.1845" y="-1" as="geometry">
+            <mxPoint x="-40" y="142" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zw3pOuXWavWtWPK_SBUA-6" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;Restaurant&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- city: String&lt;br&gt;- name: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- phone: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- address: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getID(): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getCity(): String&lt;br&gt;+ getName(): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getTelephone(): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getAddress(): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getRestaurateur(): Restaurateur&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getMenu(): List&amp;lt;Dish&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setCity(String): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setName(String): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setPhone(String): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setAddress(String): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="320" width="190" x="-828" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="zw3pOuXWavWtWPK_SBUA-10" parent="1" style="ellipse;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="Log in" vertex="1">
+          <mxGeometry height="62.222222222222214" width="102.3076923076923" x="53.85" y="53.23" as="geometry" />
+        </mxCell>
+        <mxCell id="zw3pOuXWavWtWPK_SBUA-12" edge="1" parent="1" source="zw3pOuXWavWtWPK_SBUA-10" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="P80q-QAEtGaEmkGAkjba-23" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-22.310000000000002" y="205.57" as="sourcePoint" />
+            <mxPoint x="-100.00230769231013" y="135.68333333333345" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zw3pOuXWavWtWPK_SBUA-13" connectable="0" parent="zw3pOuXWavWtWPK_SBUA-12" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Includes" vertex="1">
+          <mxGeometry relative="1" x="0.4693" y="-1" as="geometry">
+            <mxPoint x="-3" y="30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zw3pOuXWavWtWPK_SBUA-24" edge="1" parent="1" source="zw3pOuXWavWtWPK_SBUA-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;startArrow=open;startFill=0;" target="zw3pOuXWavWtWPK_SBUA-3" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zw3pOuXWavWtWPK_SBUA-30" connectable="0" parent="zw3pOuXWavWtWPK_SBUA-24" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="- loginController" vertex="1">
+          <mxGeometry relative="1" x="0.2711" y="1" as="geometry">
+            <mxPoint x="-60" y="86" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="G4Z3Wom2GG0rW7dOG4M5-31" edge="1" parent="1" source="zw3pOuXWavWtWPK_SBUA-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;dashed=1;endArrow=open;endFill=0;" target="zw3pOuXWavWtWPK_SBUA-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zw3pOuXWavWtWPK_SBUA-14" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;control&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;LoginController&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;br&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ login(LoginRequest): LoginReply&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- getUserID(token: String): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ requestUserID(Request): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ checkUserPermission(): Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- generateToken(): String&lt;/p&gt;" vertex="1">
+          <mxGeometry height="181" width="300" x="-364" y="700" as="geometry" />
+        </mxCell>
+        <mxCell id="zw3pOuXWavWtWPK_SBUA-33" edge="1" parent="1" source="klSOGoiFmXUJk9q0lyiw-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;" target="zw3pOuXWavWtWPK_SBUA-14">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="204.5" y="790.5" />
+            </Array>
+            <mxPoint x="467" y="454.39000000000004" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zw3pOuXWavWtWPK_SBUA-34" connectable="0" parent="zw3pOuXWavWtWPK_SBUA-33" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="- loginController" vertex="1">
+          <mxGeometry relative="1" x="-0.8474" as="geometry">
+            <mxPoint x="-48" y="20" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-20" edge="1" parent="1" source="zw3pOuXWavWtWPK_SBUA-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;endArrow=open;endFill=0;" target="zw3pOuXWavWtWPK_SBUA-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-21" connectable="0" parent="klSOGoiFmXUJk9q0lyiw-20" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="- loginController" vertex="1">
+          <mxGeometry relative="1" x="-0.7875" y="1" as="geometry">
+            <mxPoint x="-3" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zw3pOuXWavWtWPK_SBUA-31" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;boundary&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;LoginView&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- email: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- password: String&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ insertEmail(String, String): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ insertPassword(String): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ login(): Void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="149" width="220" x="160.0000000000001" y="499.99999999999994" as="geometry" />
+        </mxCell>
+        <mxCell id="zw3pOuXWavWtWPK_SBUA-32" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;rounded=0;" value="&lt;div align=&quot;left&quot;&gt;NOTE: Parameter name removed when trivial&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="520" x="610" y="1919.61" as="geometry" />
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-3" edge="1" parent="1" source="P80q-QAEtGaEmkGAkjba-5" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="P80q-QAEtGaEmkGAkjba-14" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="382" y="-28.20999999999998" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-4" connectable="0" parent="P80q-QAEtGaEmkGAkjba-3" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Includes" vertex="1">
+          <mxGeometry relative="1" x="0.4693" y="-1" as="geometry">
+            <mxPoint x="-2" y="18" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-5" parent="1" style="ellipse;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="Add dish" vertex="1">
+          <mxGeometry height="62.222222222222214" width="102.3076923076923" x="190.00461538461536" y="-8.996666666666641" as="geometry" />
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-14" parent="1" style="ellipse;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="&lt;div&gt;Add dish&lt;/div&gt;&lt;div&gt;ingredient&lt;/div&gt;" vertex="1">
+          <mxGeometry height="62.222222222222214" width="102.3076923076923" x="410.00461538461553" y="-8.996666666666613" as="geometry" />
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-19" edge="1" parent="1" source="P80q-QAEtGaEmkGAkjba-5" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="P80q-QAEtGaEmkGAkjba-23" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="156" y="16.560000000000002" as="sourcePoint" />
+            <mxPoint x="-60" y="72.56" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-20" connectable="0" parent="P80q-QAEtGaEmkGAkjba-19" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="Extends" vertex="1">
+          <mxGeometry relative="1" x="-0.7945" y="3" as="geometry">
+            <mxPoint x="-98" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-21" edge="1" parent="1" source="P80q-QAEtGaEmkGAkjba-22" style="rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="P80q-QAEtGaEmkGAkjba-23" value="">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-220" y="92.00000000000006" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-22" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" value="Restaurateur" vertex="1">
+          <mxGeometry height="60" width="30" x="-240" y="33.00000000000006" as="geometry" />
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-23" parent="1" style="ellipse;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" value="Provide menu details" vertex="1">
+          <mxGeometry height="62.222222222222214" width="102.3076923076923" x="-100" y="-9.000000000000057" as="geometry" />
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-31" edge="1" parent="1" source="P80q-QAEtGaEmkGAkjba-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamondThin;endFill=0;startArrow=open;startFill=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="zw3pOuXWavWtWPK_SBUA-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-521.1700000000001" y="1199.39" as="sourcePoint" />
+            <mxPoint x="-756" y="1140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-29" connectable="0" parent="P80q-QAEtGaEmkGAkjba-31" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="- menu [*]" vertex="1">
+          <mxGeometry relative="1" x="0.9284" y="-2" as="geometry">
+            <mxPoint x="33" y="15" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-41" edge="1" parent="1" source="P80q-QAEtGaEmkGAkjba-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=0;" target="P80q-QAEtGaEmkGAkjba-46">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-426.1700000000001" y="1269.39" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-34" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;DishFirst&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="100" width="120" x="-1097" y="1356" as="geometry" />
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-42" edge="1" parent="1" source="P80q-QAEtGaEmkGAkjba-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=0;" target="P80q-QAEtGaEmkGAkjba-46">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-426.1700000000001" y="1269.39" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-35" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;DishSecond&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="100" width="120" x="-1097" y="1484.89" as="geometry" />
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-40" edge="1" parent="1" source="P80q-QAEtGaEmkGAkjba-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=0;" target="P80q-QAEtGaEmkGAkjba-46">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-426.1700000000001" y="1269.39" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-36" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;DishAppetizer&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="100" width="120" x="-1097" y="1186" as="geometry" />
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-43" edge="1" parent="1" source="P80q-QAEtGaEmkGAkjba-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=0;" target="P80q-QAEtGaEmkGAkjba-46">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-426.1700000000001" y="1269.39" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-37" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;DishContour&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="100" width="120" x="-1097" y="1636" as="geometry" />
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-44" edge="1" parent="1" source="P80q-QAEtGaEmkGAkjba-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=0;" target="P80q-QAEtGaEmkGAkjba-46">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-426.1700000000001" y="1269.39" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-38" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;DishDrink&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="100" width="118.85" x="-1095.85" y="1036" as="geometry" />
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-45" edge="1" parent="1" source="P80q-QAEtGaEmkGAkjba-39" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=block;endFill=0;" target="P80q-QAEtGaEmkGAkjba-46">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-426.1700000000001" y="1269.39" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-39" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;DishDessert&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;br&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="100" width="120" x="-1095.85" y="866" as="geometry" />
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-46" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;Dish&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- name: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- description: String&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getID(): String&lt;br&gt;+ getName(): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getDescription(): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getIngredientList(): List&amp;lt;Ingredient&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getType(): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setID(String): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setName(String): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setDescription(String): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setIngredientList(List&amp;lt;Ingredient&amp;gt;): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ isTypeAppetizer(): Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ isTypeDrink(): Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ isTypeFirst(): Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ isTypeSecond(): Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ isTypeContour(): Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ isTypeDessert(): Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="340" width="245" x="-856" y="1061" as="geometry" />
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-47" edge="1" parent="1" source="P80q-QAEtGaEmkGAkjba-49" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamondThin;endFill=0;startArrow=open;startFill=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="P80q-QAEtGaEmkGAkjba-46">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-190" y="990.3900000000001" as="sourcePoint" />
+            <mxPoint x="-310" y="990.3900000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-48" connectable="0" parent="P80q-QAEtGaEmkGAkjba-47" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="- ingredientList [*]" vertex="1">
+          <mxGeometry relative="1" x="-0.1845" y="-1" as="geometry">
+            <mxPoint x="44" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-49" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;Ingredient&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- name: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- cooked: Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- optional: Boolean&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getID(): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getName(): String&lt;br&gt;+ isCooked(): Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ isOptional(): Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getAllergenList(): List&amp;lt;Allergen&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setID(String): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setName(String): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setCooked(Boolean): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ setOptional(Boolean): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="265" width="190" x="-828.5" y="1441" as="geometry" />
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-51" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;Allergen&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- id: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- name: String&lt;/p&gt;&lt;br&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getID(): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getName(): String&lt;/p&gt;" vertex="1">
+          <mxGeometry height="160" width="190" x="-828.5" y="1759.6100000000001" as="geometry" />
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-52" edge="1" parent="1" source="P80q-QAEtGaEmkGAkjba-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=diamondThin;endFill=0;startArrow=open;startFill=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="P80q-QAEtGaEmkGAkjba-49">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-90" y="970.3900000000001" as="sourcePoint" />
+            <mxPoint x="-230" y="970.3900000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-53" connectable="0" parent="P80q-QAEtGaEmkGAkjba-52" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="- allergenList [*]" vertex="1">
+          <mxGeometry relative="1" x="-0.1845" y="-1" as="geometry">
+            <mxPoint x="49" y="-16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-81" edge="1" parent="1" source="P80q-QAEtGaEmkGAkjba-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;endArrow=block;endFill=0;" target="klSOGoiFmXUJk9q0lyiw-78">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-55" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;boundary&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;AddDishView&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ submit(): Void&lt;/p&gt;" vertex="1">
+          <mxGeometry height="111.75" width="130" x="517" y="989.98" as="geometry" />
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-57" edge="1" parent="1" source="klSOGoiFmXUJk9q0lyiw-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;endArrow=open;endFill=0;" target="zw3pOuXWavWtWPK_SBUA-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-89.06" y="1045.94" />
+            </Array>
+            <mxPoint x="447" y="945.64" as="sourcePoint" />
+            <mxPoint x="362" y="1064.39" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="P80q-QAEtGaEmkGAkjba-58" connectable="0" parent="P80q-QAEtGaEmkGAkjba-57" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="- menuController" vertex="1">
+          <mxGeometry relative="1" x="-0.838" y="5" as="geometry">
+            <mxPoint x="-38" y="-21" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AgCTJD093g5iQqFbg5IO-1" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;boundary&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;IngredientView&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- selectedIngredient: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- ingredientList: List&amp;lt;String&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- allergenList: List&amp;lt;String&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ requestSelectIngredient(String): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ requestShowIngredientList(): List&amp;lt;String&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ requestShowAllergenList(): List&amp;lt;String&amp;gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="169" width="260" x="840.6700000000001" y="611.33" as="geometry" />
+        </mxCell>
+        <mxCell id="AgCTJD093g5iQqFbg5IO-9" edge="1" parent="1" source="AgCTJD093g5iQqFbg5IO-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=block;endFill=0;" target="zw3pOuXWavWtWPK_SBUA-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AgCTJD093g5iQqFbg5IO-6" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;Restaurateur&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;br&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="104" width="120" x="-760" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="AgCTJD093g5iQqFbg5IO-10" edge="1" parent="1" source="AgCTJD093g5iQqFbg5IO-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=block;endFill=0;" target="zw3pOuXWavWtWPK_SBUA-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AgCTJD093g5iQqFbg5IO-7" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;Pickie&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;br&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;" vertex="1">
+          <mxGeometry height="104" width="120" x="-610" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-4" edge="1" parent="1" source="klSOGoiFmXUJk9q0lyiw-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.477;exitY=-0.001;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=open;endFill=0;exitPerimeter=0;" target="zw3pOuXWavWtWPK_SBUA-31">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="274.94" y="890.06" />
+              <mxPoint x="270" y="890.06" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-5" connectable="0" parent="klSOGoiFmXUJk9q0lyiw-4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="- loginView" vertex="1">
+          <mxGeometry relative="1" x="-0.7782" y="1" as="geometry">
+            <mxPoint x="37" y="64" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-6" connectable="0" parent="klSOGoiFmXUJk9q0lyiw-4" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="- loginView" vertex="1">
+          <mxGeometry relative="1" x="-0.8519" y="-4" as="geometry">
+            <mxPoint x="32" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-1" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;boundary&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;Application&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- processSystemParameters(String[]): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ systemStart(): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ displayLoginView(): LoginView&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ login(): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ logout(): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ displayMenuView(): MenuView&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ displayMenuView(restaurantID: String): MenuView&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ displayAddDishView(): AddDishView&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="272.5" width="310" x="127" y="909.61" as="geometry" />
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-7" edge="1" parent="1" source="klSOGoiFmXUJk9q0lyiw-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" target="zw3pOuXWavWtWPK_SBUA-4">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-283" y="838.61" as="sourcePoint" />
+            <mxPoint x="-241.00000000000003" y="769.61" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-8" edge="1" parent="1" source="klSOGoiFmXUJk9q0lyiw-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" target="P80q-QAEtGaEmkGAkjba-55">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="527" y="1310.61" as="sourcePoint" />
+            <mxPoint x="693" y="1039.6100000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-31" edge="1" parent="1" source="zw3pOuXWavWtWPK_SBUA-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=open;endFill=0;startArrow=diamond;startFill=0;" target="klSOGoiFmXUJk9q0lyiw-35">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-302" y="616.03" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-32" connectable="0" parent="klSOGoiFmXUJk9q0lyiw-31" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="- sessionList [*]" vertex="1">
+          <mxGeometry relative="1" x="-0.8249" y="-1" as="geometry">
+            <mxPoint x="-51" y="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-33" edge="1" parent="1" source="klSOGoiFmXUJk9q0lyiw-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=open;endFill=0;" target="zw3pOuXWavWtWPK_SBUA-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="-512" y="463" />
+            </Array>
+            <mxPoint x="-700" y="360.03" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-34" connectable="0" parent="klSOGoiFmXUJk9q0lyiw-33" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="- user" vertex="1">
+          <mxGeometry relative="1" x="-0.7871" y="-2" as="geometry">
+            <mxPoint x="-6" y="-11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-35" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;entity&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;Session&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- token: String&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getToken(): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getUserRestaurateur(): Restaurateur&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getUserPickie(): Pickie&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ isPickie(): Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ isRestaurateur(): Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getUserID(): String&lt;/p&gt;" vertex="1">
+          <mxGeometry height="186.03" width="240.57" x="-334.28999999999996" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-64" edge="1" parent="1" source="klSOGoiFmXUJk9q0lyiw-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;endArrow=open;endFill=0;strokeColor=light-dark(#000000,#FFFFFF);" target="zw3pOuXWavWtWPK_SBUA-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-65" connectable="0" parent="klSOGoiFmXUJk9q0lyiw-64" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" value="- menuController" vertex="1">
+          <mxGeometry relative="1" x="-0.9744" y="4" as="geometry">
+            <mxPoint x="-20" y="10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-74" edge="1" parent="1" source="klSOGoiFmXUJk9q0lyiw-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;dashed=1;endArrow=open;endFill=0;" target="AgCTJD093g5iQqFbg5IO-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-63" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;boundary&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;ReadableDishView&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;-&amp;nbsp;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ showName(): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ showDescription(): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ showIngredientNameList(): List&amp;lt;String&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ showAllergenList(): List&amp;lt;String&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ displayIngredientView(): IngredientView&lt;/p&gt;" vertex="1">
+          <mxGeometry height="272.5" width="260" x="1037" y="962.75" as="geometry" />
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-78" parent="1" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;fillColor=#dae8fc;strokeColor=#6c8ebf;" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;boundary&amp;gt;&amp;gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&lt;b&gt;EditableDishView&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- allIngredientList : List&amp;lt;String&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;- allTypeList: List&amp;lt;String&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ insertName(String): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ insertDescription(String): Void&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ selectType(String): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ addIngredient(String): Void&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ addIngredient(String, Boolean, Boolean)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ removeIngredient(String)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ containsIngredient(String): Boolean&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ showAllIngredient(): List&amp;lt;String&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ showAllType(): List&amp;lt;String&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ showAllergenIngredient(String): List&amp;lt;String&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" vertex="1">
+          <mxGeometry height="272.5" width="260" x="717" y="962.75" as="geometry" />
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-80" edge="1" parent="1" source="klSOGoiFmXUJk9q0lyiw-78" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=block;endFill=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="klSOGoiFmXUJk9q0lyiw-63">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1307" y="1049.6100000000001" as="sourcePoint" />
+            <mxPoint x="1377" y="1049.6100000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="klSOGoiFmXUJk9q0lyiw-118" parent="1" style="text;html=1;whiteSpace=wrap;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;rounded=0;" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;Add Dish&lt;/font&gt;" vertex="1">
+          <mxGeometry height="30" width="157" x="-40" y="161" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
