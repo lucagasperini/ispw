@@ -18,9 +18,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Some last cleaning">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/DishBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/DishBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Restaurant.java" afterDir="false" />
+    <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Cleaning">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/exception/GenericBeanException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/exception/BeanConversionException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/exception/BeanConversionException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/exception/BeanInvalidValueException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/exception/BeanInvalidValueException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/exception/BeanNullValueException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/exception/BeanNullValueException.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,9 +41,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Exception" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Exception" />
       </list>
     </option>
   </component>
@@ -495,7 +497,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Clean old code" />
     <MESSAGE value="First step of rework terminated, full working CLI" />
     <MESSAGE value="Rework of GUI" />
     <MESSAGE value="Last part of rework: Create database interface" />
@@ -520,7 +521,8 @@
     <MESSAGE value="You cant create dish without name or type" />
     <MESSAGE value="Improved logic, now display error on gui and doing sanity checks" />
     <MESSAGE value="Some last cleaning" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some last cleaning" />
+    <MESSAGE value="Cleaning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
