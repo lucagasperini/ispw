@@ -82,6 +82,9 @@ public class FindRestaurantView extends VirtualView {
 
     public void startSearch() {
         try {
+            if(findRestaurant.getCity() == null || findRestaurant.getCity().isEmpty()) {
+                throw new GenericViewException("Please, insert a city first!", "");
+            }
             FindRestaurantRequest request = new FindRestaurantRequest(baseRequest, findRestaurant);
             FindRestaurantReply reply = pickieController.findRestaurant(request).getValue();
             restaurantMap = reply.getRestaurantMap();

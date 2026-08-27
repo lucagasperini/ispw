@@ -18,13 +18,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Add GenericBeanException">
+    <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Add message box on add dish form">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/AddDishForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/AddDishForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/Navigator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/Navigator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/i18n_it.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/i18n_it.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/setup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/setup.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/FindRestaurantView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/FindRestaurantView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -499,7 +495,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Rework of GUI" />
     <MESSAGE value="Last part of rework: Create database interface" />
     <MESSAGE value="Created database interface" />
     <MESSAGE value="Update database schema and demo data" />
@@ -524,7 +519,8 @@
     <MESSAGE value="Some last cleaning" />
     <MESSAGE value="Cleaning" />
     <MESSAGE value="Add GenericBeanException" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add GenericBeanException" />
+    <MESSAGE value="Add message box on add dish form" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add message box on add dish form" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
