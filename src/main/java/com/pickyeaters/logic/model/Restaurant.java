@@ -3,14 +3,14 @@ package com.pickyeaters.logic.model;
 import java.util.List;
 
 public class Restaurant {
-    private String id;
+    private final String id;
     private String name;
     private String phone;
     private String address;
     private String city;
     private Restaurateur restaurateur;
 
-    private List<Dish> menu;
+    private final List<Dish> menu;
 
     public Restaurant(String id, String name, String phone, String address, String city, Restaurateur restaurateur, List<Dish> menu) {
         this.id = id;
@@ -19,6 +19,7 @@ public class Restaurant {
         this.address = address;
         this.city = city;
         this.restaurateur = restaurateur;
+        this.menu = menu;
     }
 
     public Restaurant(String id, String name, String phone, String address, String city, Restaurateur restaurateur) {

@@ -18,17 +18,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Improved logic, now display error on gui and doing sanity checks">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="7f8b6cf9-a484-4633-ae10-e284bf8bee13" name="Changes" comment="Some last cleaning">
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/DishBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/DishBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/request/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/bean/request/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepositoryDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/dao/RestaurantRepositoryDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/AddIngredientForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/gui/AddIngredientForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Ingredient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Restaurant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/Restaurant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/dish/EditableDishView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pickyeaters/logic/view/dish/EditableDishView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -503,7 +495,6 @@
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Reworking code" />
     <MESSAGE value="Clean old code" />
     <MESSAGE value="First step of rework terminated, full working CLI" />
     <MESSAGE value="Rework of GUI" />
@@ -528,7 +519,8 @@
     <MESSAGE value="Removed old code" />
     <MESSAGE value="You cant create dish without name or type" />
     <MESSAGE value="Improved logic, now display error on gui and doing sanity checks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved logic, now display error on gui and doing sanity checks" />
+    <MESSAGE value="Some last cleaning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some last cleaning" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
