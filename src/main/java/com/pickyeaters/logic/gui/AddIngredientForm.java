@@ -1,5 +1,6 @@
 package com.pickyeaters.logic.gui;
 
+import com.pickyeaters.logic.exception.GenericViewException;
 import com.pickyeaters.logic.view.dish.AddDishView;
 import com.pickyeaters.logic.view.dish.ChangeDishView;
 import javafx.event.ActionEvent;
@@ -114,21 +115,23 @@ public class AddIngredientForm {
 
     @FXML
     void clickButtonSave(ActionEvent event) {
-
-        TreeItem<String> selectedItem = treeIngredient.getSelectionModel().getSelectedItem();
-        if(selectedItem != null) {
-            if(addDishView != null) {
-                addDishView.addIngredient(
-                        selectedItem.getValue(), checkBoxOptional.isSelected(), checkBoxCooked.isSelected()
-                );
-                Navigator.navigateContentParent(new AddDishForm(addDishView));
-            } else {
-                changeDishView.addIngredient(
-                        selectedItem.getValue(), checkBoxOptional.isSelected(), checkBoxCooked.isSelected()
-                );
-                Navigator.navigateContentParent(new ChangeDishForm(changeDishView));
+        try {
+            TreeItem<String> selectedItem = treeIngredient.getSelectionModel().getSelectedItem();
+            if (selectedItem != null) {
+                if (addDishView != null) {
+                    addDishView.addIngredient(
+                            selectedItem.getValue(), checkBoxOptional.isSelected(), checkBoxCooked.isSelected()
+                    );
+                    Navigator.navigateContentParent(new AddDishForm(addDishView));
+                } else {
+                    changeDishView.addIngredient(
+                            selectedItem.getValue(), checkBoxOptional.isSelected(), checkBoxCooked.isSelected()
+                    );
+                    Navigator.navigateContentParent(new ChangeDishForm(changeDishView));
+                }
             }
+        } catch (GenericViewException e) {
+            Navigator.showError(e);
         }
-
     }
 }

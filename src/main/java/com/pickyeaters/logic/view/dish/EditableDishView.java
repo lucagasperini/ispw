@@ -6,6 +6,7 @@ import com.pickyeaters.logic.bean.request.AllIngredientRequest;
 import com.pickyeaters.logic.bean.request.Request;
 import com.pickyeaters.logic.bean.request.ShowAllergenIngredientRequest;
 import com.pickyeaters.logic.controller.MenuController;
+import com.pickyeaters.logic.exception.BeanInvalidValueException;
 import com.pickyeaters.logic.exception.GenericViewException;
 import com.pickyeaters.logic.exception.ResultErrorException;
 
@@ -59,9 +60,11 @@ abstract class EditableDishView extends ReadableDishView {
         if(!allIngredientList.contains(ingredient)) {
             throw new GenericViewException("This ingredient doesn't exist! Name: " + ingredient, "INVALID_INGREDIENT");
         }
-        if(!containsIngredient(ingredient)) {
-            this.dish.getIngredientList().add(new DishIngredientBean(ingredient));
+        try {
+            dish.addIngredient(new DishIngredientBean(ingredient));
             notifyAllObserver();
+        } catch (BeanInvalidValueException e) {
+            throw new GenericViewException("This ingredient is duplicated! Name: " + ingredient, "INVALID_INGREDIENT");
         }
     }
 
@@ -69,9 +72,11 @@ abstract class EditableDishView extends ReadableDishView {
         if(!allIngredientList.contains(ingredient)) {
             throw new GenericViewException("This ingredient doesn't exist! Name: " + ingredient, "INVALID_INGREDIENT");
         }
-        if(!containsIngredient(ingredient)) {
-            this.dish.getIngredientList().add(new DishIngredientBean(ingredient, optional, cooked));
+        try {
+            dish.addIngredient(new DishIngredientBean(ingredient, optional, cooked));
             notifyAllObserver();
+        } catch (BeanInvalidValueException e) {
+            throw new GenericViewException("This ingredient is duplicated! Name: " + ingredient, "INVALID_INGREDIENT");
         }
     }
 
@@ -84,16 +89,6 @@ abstract class EditableDishView extends ReadableDishView {
            }
         }
         throw new GenericViewException("Ingredient " + ingredient + " is not present on dish " + dish.getName(), "");
-    }
-
-
-    public boolean containsIngredient(String ingredient) {
-        for(DishIngredientBean i : dish.getIngredientList()) {
-            if(i.getName().equals(ingredient)) {
-                return true;
-            }
-        }
-        return false;
     }
 
 

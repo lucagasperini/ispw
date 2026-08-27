@@ -1,5 +1,7 @@
 package com.pickyeaters.logic.model;
 
+import java.util.List;
+
 public class Restaurant {
     private String id;
     private String name;
@@ -8,13 +10,19 @@ public class Restaurant {
     private String city;
     private Restaurateur restaurateur;
 
-    public Restaurant(String id, String name, String phone, String address, String city, Restaurateur restaurateur) {
+    private List<Dish> menu;
+
+    public Restaurant(String id, String name, String phone, String address, String city, Restaurateur restaurateur, List<Dish> menu) {
         this.id = id;
         this.name = name;
         this.phone = phone;
         this.address = address;
         this.city = city;
         this.restaurateur = restaurateur;
+    }
+
+    public Restaurant(String id, String name, String phone, String address, String city, Restaurateur restaurateur) {
+        this(id, name, phone, address,city, restaurateur, null);
     }
 
     public String getID() {
@@ -41,8 +49,8 @@ public class Restaurant {
         return restaurateur;
     }
 
-    public void setID(String id) {
-        this.id = id;
+    public List<Dish> getMenu() {
+        return menu;
     }
 
     public void setName(String name) {
@@ -61,7 +69,4 @@ public class Restaurant {
         this.city = city;
     }
 
-    public void setRestaurateur(Restaurateur restaurateur) {
-        this.restaurateur = restaurateur;
-    }
 }

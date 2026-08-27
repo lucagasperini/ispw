@@ -26,10 +26,6 @@ public abstract class User implements Serializable {
         return id;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -40,10 +36,6 @@ public abstract class User implements Serializable {
 
     public String getLastname() {
         return lastname;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public void setEmail(String email) {

@@ -90,7 +90,7 @@ public class Application {
             ingredientRepository = new IngredientRepositoryDB(logger, databaseController);
             userRepository = new UserRepositoryDB(logger, databaseController, userFactory);
             menuRepository = new MenuRepositoryDB(logger, databaseController, ingredientRepository, dishFactory);
-            restaurantRepository = new RestaurantRepositoryDB(logger, databaseController, userRepository);
+            restaurantRepository = new RestaurantRepositoryDB(logger, databaseController, userRepository, menuRepository);
             pickieRepository = new PickieRepositoryDB(logger, databaseController, ingredientRepository);
         } else if (configView.checkedProviderFileSystem()) {
             try {

@@ -11,7 +11,7 @@ public class Ingredient {
     private List<Allergen> allergenList;
 
     public Ingredient(String id, String name, List<Allergen> allergenList, boolean cooked, boolean optional) {
-        setID(id);
+        this.id = id;
         setName(name);
         this.allergenList = List.copyOf(allergenList);
         setCooked(cooked);
@@ -40,10 +40,6 @@ public class Ingredient {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public void setID(String id) {
-        this.id = id;
     }
 
     public void setCooked(boolean cooked) {

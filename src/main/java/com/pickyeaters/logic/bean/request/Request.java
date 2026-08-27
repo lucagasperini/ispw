@@ -14,8 +14,4 @@ public class Request {
     public String getToken() {
         return token;
     }
-
-    public boolean isValid() {
-        return !token.isEmpty();
-    }
 }

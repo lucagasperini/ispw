@@ -1,6 +1,7 @@
 package com.pickyeaters.logic.bean;
 
 import com.pickyeaters.logic.exception.BeanInvalidValueException;
+import com.pickyeaters.logic.exception.GenericViewException;
 import com.pickyeaters.logic.model.Dish;
 import com.pickyeaters.logic.model.Ingredient;
 import java.util.ArrayList;
@@ -73,4 +74,22 @@ public class DishBean {
     public void setIngredientList(List<DishIngredientBean> ingredientList) {
         this.ingredientList = ingredientList;
     }
+
+    public void addIngredient(DishIngredientBean ingredient) {
+        if(!containsIngredient(ingredient.getName())) {
+            ingredientList.add(ingredient);
+        } else {
+            throw new BeanInvalidValueException("Duplicated ingredient!");
+        }
+    }
+
+    public boolean containsIngredient(String ingredient) {
+        for(DishIngredientBean i : ingredientList) {
+            if(i.getName().equals(ingredient)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

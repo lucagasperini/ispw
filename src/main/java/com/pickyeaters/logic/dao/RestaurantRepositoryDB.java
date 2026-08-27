@@ -3,6 +3,7 @@ package com.pickyeaters.logic.dao;
 import com.pickyeaters.logic.controller.DatabaseController;
 import com.pickyeaters.logic.exception.DatabaseControllerException;
 import com.pickyeaters.logic.exception.GenericRepositoryException;
+import com.pickyeaters.logic.model.Dish;
 import com.pickyeaters.logic.model.Restaurant;
 import com.pickyeaters.logic.model.Restaurateur;
 import com.pickyeaters.logic.model.User;
@@ -17,11 +18,13 @@ public class RestaurantRepositoryDB implements RestaurantRepository{
     private final Logger logger;
     private DatabaseController database;
     private UserRepository userRepository;
+    private MenuRepository menuRepository;
 
-    public RestaurantRepositoryDB(Logger logger, DatabaseController database, UserRepository userRepository) {
+    public RestaurantRepositoryDB(Logger logger, DatabaseController database, UserRepository userRepository, MenuRepository menuRepository) {
         this.logger = logger;
         this.database = database;
         this.userRepository = userRepository;
+        this.menuRepository = menuRepository;
     }
 
     public Optional<Restaurant> findRestaurantByOwner(String userID) {
@@ -90,13 +93,16 @@ public class RestaurantRepositoryDB implements RestaurantRepository{
             String restCity = query.getString().orElseThrow();
             query.close();
 
+            List<Dish> menu = menuRepository.findMenuByRestaurantID(restID);
+
             return Optional.of(new Restaurant(
                     restID,
                     restName,
                     restPhone,
                     restAddress,
                     restCity,
-                    (Restaurateur) user
+                    (Restaurateur) user,
+                    menu
             ));
         } catch (NoSuchElementException e) {
             return Optional.empty();
