@@ -275,7 +275,7 @@ $BODY$;
 
 INSERT INTO "Restaurant" (name, phone, address, city) VALUES
 ('La Trattoria del Nonno', '3331234567', 'Via Roma, 10', 'Roma'),
-('Pizzeria Antica Forno', '3339876543', 'Piazza Navona, 5', 'Roma'),
+('Pizzeria Antica Forno', '3339876543', 'Piazza Navona, 5', 'Pisa'),
 ('Osteria del Sole', '3331122334', 'Corso Vittorio Emanuele II, 20', 'Milano'),
 ('Trattoria Toscana Saporita', '3335678901', 'Via dei Gigli, 45', 'Firenze'),
 ('Ristorante Mediterraneo', '3332233445', 'Lungarno Torrigiani, 12', 'Pisa'),

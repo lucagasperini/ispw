@@ -55,6 +55,7 @@ public class AddDishForm extends DishForm {
     protected void clickSaveChanges(ActionEvent event) {
         try {
             addDishView.submit();
+            Navigator.showInformation("ADD_DISH");
             Navigator.navigateContentParent();
         } catch (GenericViewException e) {
             Navigator.showError(e);

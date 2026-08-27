@@ -149,14 +149,29 @@ public class Navigator {
         return mainForm;
     }
 
-    public static void showError(String title, String header, String content) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
+    private static void showMessage(String title, String header, String content, Alert.AlertType type) {
+        Alert alert = new Alert(type);
 
         alert.setTitle(title);
         alert.setHeaderText(header);
         alert.setContentText(content);
 
         alert.showAndWait();
+    }
+
+    public static void showInformation(String title, String header, String content) {
+        showMessage(title, header, content, Alert.AlertType.INFORMATION);
+    }
+
+    public static void showInformation(String key) {
+        String title = AppData.getInstance().i18n(key + "_ALERT_CONFERMATION_TITLE");
+        String header = AppData.getInstance().i18n(key + "_ALERT_CONFERMATION_HEADER");
+        String content = AppData.getInstance().i18n(key + "_ALERT_CONFERMATION_CONTENT");
+        showInformation(title, header, content);
+    }
+
+    public static void showError(String title, String header, String content) {
+        showMessage(title, header, content, Alert.AlertType.ERROR);
     }
 
     public static void showError(String message, String key) {
